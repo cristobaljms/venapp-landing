@@ -1,5 +1,5 @@
-import Head from "next/head"
-import PropTypes from "prop-types"
+import Head from "next/head";
+import PropTypes from "prop-types";
 
 const DocHead = (props) => (
   <>
@@ -30,9 +30,15 @@ const DocHead = (props) => (
       {props.imageAlt && (
         <meta property="twitter:image:alt" content={props.imageAlt} />
       )}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+        rel="stylesheet"
+      ></link>
     </Head>
   </>
-)
+);
 
 DocHead.propTypes = {
   title: PropTypes.string.isRequired,
@@ -41,6 +47,6 @@ DocHead.propTypes = {
   imageUrl: PropTypes.string,
   imageAlt: PropTypes.string,
   twitter: PropTypes.string,
-}
+};
 
-export default DocHead
+export default DocHead;

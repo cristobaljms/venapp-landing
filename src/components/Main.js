@@ -7,7 +7,6 @@ const Main = ({ children }) => {
       sx={{
         display: "flex",
         flex: 1,
-        flexDirection: "column",
       }}
     >
       {children}

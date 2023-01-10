@@ -1,6 +1,7 @@
 import { TransitionProvider } from "../src/context/TransitionContext"
 import TransitionLayout from "../src/animation/TransitionLayout"
 import { Box } from "theme-ui"
+import Header from "../src/components/Header"
 
 export default function MyApp({ Component, pageProps }) {
   return (
