@@ -1,5 +1,5 @@
 import React, { useRef, useContext } from "react"
-import { gsap } from "gsap"
+import { gsap } from "gsap-trial"
 import { SplitText } from "gsap/dist/SplitText"
 import { Box } from "theme-ui"
 import useIsomorphicLayoutEffect from "./useIsomorphicLayoutEffect"

@@ -1,5 +1,5 @@
 import React, { useRef, useContext } from "react"
-import { gsap } from "gsap"
+import { gsap } from "gsap-trial"
 import useIsomorphicLayoutEffect from "./useIsomorphicLayoutEffect"
 import { TransitionContext } from "../context/TransitionContext"
 import AnimateInOut from "./AnimateInOut"

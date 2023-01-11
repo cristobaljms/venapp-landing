@@ -1,4 +1,4 @@
-import { gsap } from "gsap"
+import { gsap } from "gsap-trial"
 import { TransitionContext } from "../context/TransitionContext"
 import { useState, useContext, useRef } from "react"
 import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect"

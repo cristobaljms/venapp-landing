@@ -5,6 +5,7 @@ const Main = ({ children }) => {
     <Box
       as="main"
       sx={{
+        position: "relative",
         display: "flex",
         flex: 1,
         flexDirection: "column",

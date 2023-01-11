@@ -1,18 +1,16 @@
 import React, { useRef, useContext } from "react";
 import { Box, Image } from "theme-ui";
 import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
-import { TransitionContext } from "../context/TransitionContext";
 import Header from "../components/Header";
 import { Container } from "theme-ui";
 import styles from "../../styles/Scene1.module.css";
 
 export const Scene1 = () => {
-  const { timeline } = useContext(TransitionContext);
 
   return (
-    <Box className={styles.root}>
+    <Box className={styles.root} id="scene1">
       <Container px={4}>
-        <Header />
+        {/* <Header /> */}
         <Box className={styles.content}>
           <Image
             className={styles.imgNueva}

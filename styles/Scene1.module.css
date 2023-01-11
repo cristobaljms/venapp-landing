@@ -2,9 +2,16 @@
   height: 100vh;
   position: relative;
   width: 100%;
-  display: flex;
   overflow: hidden;
   background: linear-gradient(90deg,#4C27AF,#7851EA);
+}
+
+.smartphone {
+  position: absolute;
+  max-width: none;
+  width: calc(100% + 500px);
+  top: -1500px;
+  left: -250px;
 }
 
 .content {

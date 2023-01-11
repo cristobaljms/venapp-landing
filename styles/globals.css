@@ -1,1 +1,18 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.path-button {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #fff;
+    border-radius: 50%;
+    position: fixed;
+    left: 50%;
+    right: 50%;
+    width: 166px;
+    height: 166px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: -30px;
+}

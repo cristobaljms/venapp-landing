@@ -1,16 +1,16 @@
-import React, { useRef, useContext } from "react";
+import React from "react";
 import { Box } from "theme-ui";
 import { Container } from "theme-ui";
-import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
-import { TransitionContext } from "../context/TransitionContext";
 import styles from "../../styles/Scene2.module.css";
 
 export const Scene2 = () => {
   return (
-    <Box className={styles.root}>
-      <Container px={4}>
-        <Box className={styles.content}></Box>
-      </Container>
-    </Box>
+    <div className={styles.root}>
+      <div className="container">
+        <div className={styles.content}>
+          <h1 className="text-3xl font-bold underline">Hello world!</h1>
+        </div>
+      </div>
+    </div>
   );
 };

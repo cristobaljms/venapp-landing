@@ -1,4 +1,4 @@
-import { gsap } from "gsap";
+import { gsap } from "gsap-trial";
 import { useRef } from "react";
 import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
 import Link from "next/link";

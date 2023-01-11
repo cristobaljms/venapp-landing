@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from "react"
-import { gsap } from "gsap"
+import { gsap } from "gsap-trial"
 import { Flex, Box } from "theme-ui"
 import useIsomorphicLayoutEffect from "./useIsomorphicLayoutEffect"
 import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin"
