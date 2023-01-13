@@ -1,0 +1,98 @@
+
+.outer-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--section-1-background-color);
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-image: url('/section_1/background.png');
+  overflow-y: hidden;
+}
+
+.container {
+  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  display: flex;
+  flex-direction: row;;
+  padding: 3rem;
+  max-width: 900px;
+}
+
+.phone {
+  width: 320px;
+  margin-bottom: -200px;
+}
+
+.phone-container {
+  flex: 2;
+  position: relative;
+}
+
+.content {
+  flex: 1;
+  position: relative;
+}
+
+.content h2 {
+  font-weight: 200;
+  font-size: 3rem;
+  line-height: 52px;
+}
+
+.content p {
+  font-weight: 400;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+}
+
+.overlay {
+  width: 210px;
+  height: 275px;
+  position: absolute;
+  top: 30%;
+  right: 16%;
+  background-image: url('/section_1/hearts.png');
+  background-size: cover;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+ 
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-position: left;
+  }
+  
+  .phone {
+    width: 250px;
+    object-fit: contain;
+    margin-bottom: -210px;
+  }
+  
+  .content {
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+  
+  .content h2 {
+    font-weight: 400;
+  }
+  
+  .content p {
+    font-size: 0.65rem;
+  }
+
+  .overlay {
+    display: none;
+  }
+
+  .outer-container{
+    background-position: left;
+  }
+}
