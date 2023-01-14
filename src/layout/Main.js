@@ -1,10 +1,7 @@
-import { Box } from "theme-ui"
-
 const Main = ({ children }) => {
   return (
-    <Box
-      as="main"
-      sx={{
+    <main
+      style={{
         position: "relative",
         display: "flex",
         flex: 1,
@@ -12,8 +9,8 @@ const Main = ({ children }) => {
       }}
     >
       {children}
-    </Box>
-  )
-}
+    </main>
+  );
+};
 
-export default Main
+export default Main;

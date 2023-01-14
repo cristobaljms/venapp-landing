@@ -1,6 +1,4 @@
-import { ThemeProvider } from "theme-ui"
-import Layout from "./Layout"
-import Theme from "./Theme"
+import Layout from "./Layout";
 
 const Wrapper = (props) => {
   // Want Google Analytics? --> https://github.com/react-ga/react-ga --> add your UI code below
@@ -10,11 +8,7 @@ const Wrapper = (props) => {
   //   ReactGA.pageview(window.location.pathname + window.location.search)
   // }
 
-  return (
-    <ThemeProvider theme={Theme}>
-      <Layout {...props} />
-    </ThemeProvider>
-  )
-}
+  return <Layout {...props} />;
+};
 
-export default Wrapper
+export default Wrapper;

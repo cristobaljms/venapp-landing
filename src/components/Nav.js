@@ -1,47 +1,46 @@
-import { Box, Button } from "theme-ui";
 import NavHome from "./NavHome";
 import NavLink from "./NavLink";
 
 const Nav = () => (
-  <Box
-    as="nav"
-    sx={{
+  <nav
+    style={{
       display: "flex",
       flexWrap: "wrap",
-      py: 3,
+      padding: "24px 0",
       position: "relative",
       zIndex: 999999,
+      backgroundColor: "transparent",
     }}
   >
-    <Box
-      sx={{
-        width: ["100%", "50%"],
-        pl: [0, 3],
-        textAlign: ["center", "left"],
+    <div
+      style={{
+        width: "50%",
+        paddingLeft: 24,
+        textAlign: "left",
         display: "flex",
         alignItems: "center",
       }}
     >
       <NavHome />
-    </Box>
-    <Box
-      sx={{
-        width: ["100%", "50%"],
-        textAlign: ["center", "right"],
-        pr: [0, 3],
+    </div>
+    <div
+      style={{
+        width: "50%",
+        textAlign: "right",
+        paddingRight: 24,
         overflow: "hidden",
       }}
     >
-      <NavLink href="/" delay={2}>
+      <NavLink href="/" delay={1.5}>
         Descubre
       </NavLink>
-      <NavLink href="/" delay={2.1}>
+      <NavLink href="/" delay={1.6}>
         ¿Cómo Funciona?
       </NavLink>
-      <NavLink href="/" delay={2.3}>
-        <Button
-          sx={{
-            bg: "white",
+      <NavLink href="/" delay={1.7}>
+        <button
+          style={{
+            backgroundColor: "white",
             color: "#201D3C",
             borderRadius: "9px",
             fontWeight: "800 !important",
@@ -49,10 +48,10 @@ const Nav = () => (
           }}
         >
           Descargar APP
-        </Button>
+        </button>
       </NavLink>
-    </Box>
-  </Box>
+    </div>
+  </nav>
 );
 
 export default Nav;

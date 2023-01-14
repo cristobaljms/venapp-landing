@@ -1,0 +1,34 @@
+.root {
+  height: 400vh;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sceneContentOne {
+  width: 100%;
+  height: 100vh;
+  background: rgb(38, 0, 255);
+}
+
+.sceneContentTwo {
+  width: 100%;
+  height: 100vh;
+  background: rgb(255, 255, 255);
+}
+
+.sceneContentThree {
+  width: 100%;
+  height: 100vh;
+  background: rgb(30, 24, 65);
+}
+
+.sceneContentFourr {
+  width: 100%;
+  height: 100vh;
+  background: rgb(255, 35, 145);
+}
+
+.phone {
+  position: absolute;
+}

@@ -1,21 +1,20 @@
-import { useRef, useContext, useLayoutEffect } from "react";
+import { useRef, useContext } from "react";
 import Wrapper from "../src/layout/Wrapper";
 import { Scene1 } from "../src/scenes/Scene1";
 import { Scene2 } from "../src/scenes/Scene2";
 import { Scene3 } from "../src/scenes/Scene3";
-import { Scene4 } from "../src/scenes/Scene4";
 
 import useIsomorphicLayoutEffect from "../src/animation/useIsomorphicLayoutEffect";
 import { SmootherContext } from "../src/context/SmootherContext";
 
 import gsap from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
+import { ScrollToPlugin } from "gsap-trial/dist/ScrollToPlugin";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const IndexPage = () => {
   const smoother = useContext(SmootherContext);
-  const scene1Ref = useRef();
 
   useIsomorphicLayoutEffect(() => {
     smoother && smoother.effects("[data-speed], [data-lag]", {});
@@ -42,10 +41,6 @@ const IndexPage = () => {
         <Scene1 />
         <Scene2 />
         <Scene3 />
-        <Scene4 />
-        <div className="path-button" onClick={scrollTo}>
-          <img src="/assets/img/flecha.png" alt="" />
-        </div>
       </div>
     </Wrapper>
   );

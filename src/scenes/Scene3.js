@@ -1,14 +1,113 @@
-import React from "react";
-import { Box } from "theme-ui";
-import { Container } from "theme-ui";
+import Image from "next/image";
+import React, { useRef } from "react";
 import styles from "../../styles/Scene3.module.css";
+import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
+import { gsap } from "gsap-trial";
+import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
 
 export const Scene3 = () => {
+  useIsomorphicLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+  }, []);
+
   return (
-    <Box className={styles.root}>
-      <Container px={4}>
-        <Box className={styles.content}></Box>
-      </Container>
-    </Box>
+    <div id="scene3" className={styles.root}>
+      <div className="container">
+        <div className={styles.content}>
+          <div className={styles.textWrapper}>
+            <span className={styles.venChantBtn}>
+              Ven<b>Chat</b>
+            </span>
+            <h2 className={styles.text1}>
+              <span style={{ color: "#90CC55" }}>Envía y recibe</span> archivos
+              y mensajes
+            </h2>
+            <p className={styles.text2}>
+              Chatea, comparte y mantente conectado a través de VenChat.
+            </p>
+          </div>
+          <div className={styles.imagesWrapper}>
+            <div className={styles.card}>
+              <div className={styles.cardTitleWrapper}>
+                <h3 className={styles.cardTitle}>Mensaje AutoBorrado</h3>
+              </div>
+              <p className={styles.cardText}>
+                Desde VenChat puedes configurar cualquier chat grupal o
+                individual para que los mensajes se eliminen automáticamente.
+              </p>
+            </div>
+            <div className={styles.iphoneWrapper}>
+              <img
+                className={styles.iPhoneChat}
+                src="/assets/img/scene3/iPhoneChat.png"
+                alt=""
+              />
+              <img
+                className={styles.globo1}
+                src="/assets/img/scene3/globo-1.png"
+                alt=""
+              />
+              <img
+                className={styles.globo2}
+                src="/assets/img/scene3/globo-2.png"
+                alt=""
+              />
+              <img
+                className={styles.globo3}
+                src="/assets/img/scene3/globo-3.png"
+                alt=""
+              />
+            </div>
+            <div className={styles.card}>
+              <div className={styles.cardTitleWrapper}>
+                <h3 className={styles.cardTitle}>Mensaje Oculto</h3>
+              </div>
+              <p className={styles.cardText}>
+                Tu seguridad y privacidad son prioritarias en VenChat. Envía y
+                recibe mensajes ocultos que solo tú puedes leer.
+              </p>
+            </div>
+
+            <div className={styles.card}>
+              <div className={styles.cardTitleWrapper}>
+                <h3 className={styles.cardTitle}>Mensaje Masivos</h3>
+              </div>
+              <p className={styles.cardText}>
+                Envía mensajes a muchas personas en un instante. VenChat es
+                ideal para dar anuncios importantes, enviar invitaciones o
+                promociones ¡Tú decides!
+              </p>
+            </div>
+            <div className={styles.filas}>
+              <img
+                className={styles.fila1}
+                src="/assets/img/scene3/fila-1.png"
+                alt=""
+              />
+              <img
+                className={styles.fila2}
+                src="/assets/img/scene3/fila-2.png"
+                alt=""
+              />
+            </div>
+            {/*  <img
+              className={styles.globo1}
+              src="/assets/img/scene3/globo-1.png"
+              alt=""
+            />
+            <img
+              className={styles.globo2}
+              src="/assets/img/scene3/globo-2.png"
+              alt=""
+            />
+            <img
+              className={styles.globo3}
+              src="/assets/img/scene3/globo-3.png"
+              alt=""
+            /> */}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };

@@ -1,12 +1,11 @@
 import { gsap } from "gsap-trial";
 import { useRef } from "react";
-import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
 import Link from "next/link";
-import { Box, Image } from "theme-ui";
+import Image from "next/image";
+import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
 
 const NavHome = () => {
   const icon = useRef();
-
 
   useIsomorphicLayoutEffect(() => {
     gsap.set(icon.current, { x: -10 });
@@ -21,17 +20,18 @@ const NavHome = () => {
 
   return (
     <Link href="/">
-      <Box ref={icon} as="span" sx={{ display: "inline-block", opacity: 0 }}>
+      <span ref={icon} style={{ display: "inline-block", opacity: 0 }}>
         <Image
           src="/assets/img/LOGO.png"
           alt=""
-          sx={{
+          width={258}
+          height={47}
+          style={{
             position: "relative",
             left: "4px",
-            height: 47,
           }}
         />
-      </Box>
+      </span>
     </Link>
   );
 };

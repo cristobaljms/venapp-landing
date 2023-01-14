@@ -4,17 +4,18 @@ import { gsap } from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
 import { ScrollSmoother } from "gsap-trial/dist//ScrollSmoother";
 import { SmootherContext } from "../src/context/SmootherContext";
+import { TransitionProvider } from "../src/context/TransitionContext";
 import PageTransition from "../src/components/Page-Transition";
 import useIsomorphicLayoutEffect from "../src/animation/useIsomorphicLayoutEffect";
-import "../styles/globals.css"
+import "../styles/globals.css";
 
 export default function MyApp({ Component, pageProps }) {
   let [smoother, setSmoother] = useState();
   const router = useRouter();
 
-  useIsomorphicLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
+  useIsomorphicLayoutEffect(() => {
     let smoother = ScrollSmoother.create({
       smooth: 1,
       normalizeScroll: true,
@@ -28,13 +29,15 @@ export default function MyApp({ Component, pageProps }) {
 
   return (
     <SmootherContext.Provider value={smoother}>
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
-          <PageTransition route={router.asPath}>
-            <Component {...pageProps} />
-          </PageTransition>
+      <TransitionProvider>
+        <div id="smooth-wrapper">
+          <div id="smooth-content">
+            <PageTransition route={router.asPath}>
+              <Component {...pageProps} />
+            </PageTransition>
+          </div>
         </div>
-      </div>
+      </TransitionProvider>
     </SmootherContext.Provider>
   );
 }

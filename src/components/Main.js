@@ -1,16 +1,14 @@
-import { Box } from "theme-ui"
 
 const Main = ({ children }) => {
   return (
-    <Box
-      as="main"
-      sx={{
+    <main
+      styles={{
         display: "flex",
         flex: 1,
       }}
     >
       {children}
-    </Box>
+    </main>
   )
 }
 

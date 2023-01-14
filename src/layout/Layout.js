@@ -1,5 +1,4 @@
 import Head from "./Head"
-import Style from "./Style"
 import Main from "./Main"
 
 
@@ -8,7 +7,6 @@ const Layout = (props) => {
     <>
       <Head {...props} />
       <Main>{props.children}</Main>
-      <Style />
     </>
   )
 }
