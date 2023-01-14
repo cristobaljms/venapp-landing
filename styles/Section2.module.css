@@ -1,52 +1,100 @@
-
-.container {
-
-  width: 100vw;
+.root {
   height: 100vh;
-  background-color: var(--section-2-background-color);
+  position: relative;
+  width: 100%;
   display: flex;
-
-}
-
-.badge {
-  background-color: #fff;
-  display: inline;
-  border-radius: 1rem;
-  color: var(--section-2-background-color);
-  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
-  font-size: 0.75rem;
-}
-
-.badge span {
-  font-weight: bold;
+  overflow: hidden;
+  background: #fff;
+  padding: 78px 0;
 }
 
 .content {
-
-  width: 40%;
-  padding: 3rem;
-  padding-left: 0;
+  display: flex;
+  margin: 0 auto !important;
+  gap: 50px;
+  width: 100%;
 }
 
-.content h2 {
-  font-weight: 200;
-  font-size: 6rem;
-  line-height: 5.5rem;
-  color: #201D3C;
+.hayDeTodoWrapper {
+  width: 50%;
 }
 
-.content p {
-  margin-top: 1.5rem;
+.phoneWrapper {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.background {
+.phone {
+  object-fit: contain;
+}
 
-  width: 60%;
-  height: 100vh;
-  background-size: cover;
-  background-position: right;
-  background-repeat: no-repeat;
-  margin-right: -4rem;
-  background-image: url('/section_2/several_smartphones.png');
+.hayDeTodoContent {
+  position: relative;
+  padding-top: 227px;
+  opacity: 0;
+  transform: translate(0px, 200px);
+}
 
+.icon1 {
+  position: absolute;
+  top: 5%;
+  left: 250px;
+}
+
+.icon2 {
+  position: absolute;
+  top: 17%;
+  left: 477px;
+}
+
+.icon3 {
+  position: absolute;
+  top: 36%;
+  left: 600px;
+}
+
+.icon4 {
+  position: absolute;
+  top: 60%;
+  left: 462px;
+}
+
+.icon5 {
+  position: absolute;
+  top: 62%;
+  left: 250px;
+}
+
+.icon6 {
+  position: absolute;
+  bottom: -20px;
+  left: 200px;
+}
+
+@media screen and (max-width: 1919px) {
+  .hayDeTodoContent {
+    padding-top: 127px;
+  }
+}
+
+@media screen and (max-width: 1535px) {
+  .icon5 {
+    position: absolute;
+    top: 56%;
+    left: 250px;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .hayDeTodoContent {
+    padding-top: 107px;
+  }
+
+  .icon5 {
+    position: absolute;
+    top: 56%;
+    left: 250px;
+  }
 }

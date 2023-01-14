@@ -1,37 +1,17 @@
-.container {
-  width: 100vw;
+.root {
   height: 100vh;
-  background-color: var(--section-4-background-color);
   position: relative;
-  overflow-y: hidden;
-}
-
-.phone {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 470px;
-  right: 100px
-}
-
-.inner-container {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  overflow: hidden;
+  background: rgb(38, 0, 255);
+}
+
+.content {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
   justify-content: center;
-  height: 100%;
-  padding: 0 0 0 4rem;
-  width: 60%
-}
-
-.container h2 {
-  font-size: 4.5rem;
-  font-weight: bold;
-}
-
-.container h4 {
-  font-weight: 300;
-  font-size: 3rem;
-  line-height: 1.2;
-  margin: 1.25rem 0;
-
+  margin: 0 auto !important;
 }

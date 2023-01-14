@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React, { useRef, useContext } from "react";
-import styles from "../../styles/Scene2.module.css";
+import styles from "../../styles/Section2.module.css";
 import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
 import { gsap } from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
 import { TransitionContext } from "../context/TransitionContext";
-export const Scene2 = () => {
+export const Section2 = () => {
   const { timeline } = useContext(TransitionContext);
   const icon1Ref = React.useRef();
   const hayDeTodoRef = useRef();
@@ -14,7 +14,7 @@ export const Scene2 = () => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.to("#hayDeTodoRef", {
       scrollTrigger: {
-        trigger: "#scene2",
+        trigger: "#section2",
         scrub: true,
         start: "-300px",
         end: "top",
@@ -28,7 +28,7 @@ export const Scene2 = () => {
     timeline.add(
       gsap.to("#hayDeTodoRef", {
         scrollTrigger: {
-          trigger: "#scene2",
+          trigger: "#section2",
           scrub: true,
           markers: true,
           start: "top",
@@ -44,20 +44,20 @@ export const Scene2 = () => {
   }, []);
 
   return (
-    <div id="scene2" className={styles.root}>
+    <div id="section2" className={styles.root}>
       <div className={styles.content}>
         <div className={styles.phoneWrapper}>
           <img
             id="phoneid"
             className={styles.phone}
             alt=""
-            src="/assets/img/scene2/phone.png"
+            src="/assets/img/section2/phone.png"
           />
         </div>
         <div className={styles.hayDeTodoWrapper}>
           <div id="hayDeTodoRef" className={styles.hayDeTodoContent}>
             <Image
-              src={"/assets/img/scene2/hay-de-todo.png"}
+              src={"/assets/img/section2/hay-de-todo.png"}
               alt=""
               width={483}
               height={533}
@@ -65,7 +65,7 @@ export const Scene2 = () => {
             />
             <div className={styles.icon1}>
               <Image
-                src={"/assets/img/scene2/icon1.png"}
+                src={"/assets/img/section2/icon1.png"}
                 alt=""
                 width={99}
                 height={99}
@@ -73,7 +73,7 @@ export const Scene2 = () => {
             </div>
             <div className={styles.icon2}>
               <Image
-                src={"/assets/img/scene2/icon2.png"}
+                src={"/assets/img/section2/icon2.png"}
                 alt=""
                 width={55}
                 height={55}
@@ -81,7 +81,7 @@ export const Scene2 = () => {
             </div>
             <div className={styles.icon3}>
               <Image
-                src={"/assets/img/scene2/icon3.png"}
+                src={"/assets/img/section2/icon3.png"}
                 alt=""
                 width={64}
                 height={71}
@@ -89,7 +89,7 @@ export const Scene2 = () => {
             </div>
             <div className={styles.icon4}>
               <Image
-                src={"/assets/img/scene2/icon4.png"}
+                src={"/assets/img/section2/icon4.png"}
                 alt=""
                 width={67}
                 height={58}
@@ -97,7 +97,7 @@ export const Scene2 = () => {
             </div>
             <div className={styles.icon5}>
               <Image
-                src={"/assets/img/scene2/icon5.png"}
+                src={"/assets/img/section2/icon5.png"}
                 alt=""
                 width={91}
                 height={89}
@@ -105,7 +105,7 @@ export const Scene2 = () => {
             </div>
             <div className={styles.icon6}>
               <Image
-                src={"/assets/img/scene2/icon6.png"}
+                src={"/assets/img/section2/icon6.png"}
                 alt=""
                 width={55}
                 height={49}

@@ -1,17 +1,17 @@
 import Image from "next/image";
 import React, { useRef } from "react";
-import styles from "../../styles/Scene3.module.css";
+import styles from "../../styles/Section3.module.css";
 import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
 import { gsap } from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
 
-export const Scene3 = () => {
+export const Section3 = () => {
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
   }, []);
 
   return (
-    <div id="scene3" className={styles.root}>
+    <div id="section3" className={styles.root}>
       <div className="container">
         <div className={styles.content}>
           <div className={styles.textWrapper}>
@@ -39,22 +39,22 @@ export const Scene3 = () => {
             <div className={styles.iphoneWrapper}>
               <img
                 className={styles.iPhoneChat}
-                src="/assets/img/scene3/iPhoneChat.png"
+                src="/assets/img/section3/iPhoneChat.png"
                 alt=""
               />
               <img
                 className={styles.globo1}
-                src="/assets/img/scene3/globo-1.png"
+                src="/assets/img/section3/globo-1.png"
                 alt=""
               />
               <img
                 className={styles.globo2}
-                src="/assets/img/scene3/globo-2.png"
+                src="/assets/img/section3/globo-2.png"
                 alt=""
               />
               <img
                 className={styles.globo3}
-                src="/assets/img/scene3/globo-3.png"
+                src="/assets/img/section3/globo-3.png"
                 alt=""
               />
             </div>
@@ -81,28 +81,28 @@ export const Scene3 = () => {
             <div className={styles.filas}>
               <img
                 className={styles.fila1}
-                src="/assets/img/scene3/fila-1.png"
+                src="/assets/img/section3/fila-1.png"
                 alt=""
               />
               <img
                 className={styles.fila2}
-                src="/assets/img/scene3/fila-2.png"
+                src="/assets/img/section3/fila-2.png"
                 alt=""
               />
             </div>
             {/*  <img
               className={styles.globo1}
-              src="/assets/img/scene3/globo-1.png"
+              src="/assets/img/section3/globo-1.png"
               alt=""
             />
             <img
               className={styles.globo2}
-              src="/assets/img/scene3/globo-2.png"
+              src="/assets/img/section3/globo-2.png"
               alt=""
             />
             <img
               className={styles.globo3}
-              src="/assets/img/scene3/globo-3.png"
+              src="/assets/img/section3/globo-3.png"
               alt=""
             /> */}
           </div>
