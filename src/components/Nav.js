@@ -45,6 +45,7 @@ const Nav = () => (
             borderRadius: "9px",
             fontWeight: "800 !important",
             fontSize: "18px",
+            padding: "10px 30px"
           }}
         >
           Descargar APP

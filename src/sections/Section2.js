@@ -10,38 +10,21 @@ export const Section2 = () => {
   const icon1Ref = React.useRef();
   const hayDeTodoRef = useRef();
 
-  useIsomorphicLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.to("#hayDeTodoRef", {
-      scrollTrigger: {
-        trigger: "#section2",
-        scrub: true,
-        start: "-300px",
-        end: "top",
-      },
-      opacity: 1,
-      delay: 0.5,
-      duration: 1,
-      y: 0,
-    });
-
-    timeline.add(
-      gsap.to("#hayDeTodoRef", {
-        scrollTrigger: {
-          trigger: "#section2",
-          scrub: true,
-          markers: true,
-          start: "top",
-          end: "center",
-        },
-        y: 100,
-        delay: 0.5,
-        duration: 1,
-        delay: 1,
-      }),
-      0
-    );
-  }, []);
+  // useIsomorphicLayoutEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
+  //   gsap.to("#hayDeTodoRef", {
+  //     scrollTrigger: {
+  //       trigger: "#section2",
+  //       scrub: true,
+  //       start: "-300px",
+  //       end: "top",
+  //     },
+  //     opacity: 1,
+  //     delay: 0.5,
+  //     duration: 1,
+  //     y: 0,
+  //   });
+  // }, []);
 
   return (
     <div id="section2" className={styles.root}>
@@ -61,7 +44,6 @@ export const Section2 = () => {
               alt=""
               width={483}
               height={533}
-              style={styles.hayDeTodoImg}
             />
             <div className={styles.icon1}>
               <Image
