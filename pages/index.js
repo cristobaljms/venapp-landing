@@ -3,7 +3,9 @@ import Wrapper from "../src/layout/Wrapper";
 import { Section1 } from "../src/sections/Section1";
 import { Section2 } from "../src/sections/Section2";
 import { Section3 } from "../src/sections/Section3";
+import { Section4 } from "../src/sections/Section4";
 import { Section6 } from "../src/sections/Section6";
+import { Section5 } from "../src/sections/Section5";
 import { Section7 } from "../src/sections/Section7";
 import { Section8 } from "../src/sections/Section8";
 import { Section9 } from "../src/sections/Section9";
@@ -45,6 +47,8 @@ const IndexPage = () => {
         <Section1 />
         <Section2 />
         <Section3 />
+        <Section4 />
+        <Section5 />
         <Section6 />
         <Section7 />
         <Section8 />

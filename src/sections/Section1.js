@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
 import Header from "../components/Header";
 import styles from "../../styles/Section1.module.css";
-import { gsap } from "gsap-trial";
 
 export const Section1 = () => {
   const el = useRef();

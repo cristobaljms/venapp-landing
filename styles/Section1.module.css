@@ -17,7 +17,7 @@
 .content {
   width: 100%;
   max-width: 1619px;
-  height: calc(100vh - 50px);
+  height: 90vh;
   position: relative;
   display: flex;
   justify-content: center;
@@ -26,23 +26,23 @@
 
 .imgNueva {
   position: absolute;
-  bottom: 880px;
+  top: 0;
 }
 
 .imgVenapp {
   position: absolute;
-  bottom: 468px;
+  top: 132px;
 }
 
 .imgVenappTrazo {
   position: absolute;
   z-index: 10;
-  bottom: 468px;
+  top: 132px;
 }
 
 .img2 {
   position: absolute;
-  bottom: 250px;
+  top: 420px;
   z-index: 10;
   right: 0;
 }
@@ -50,4 +50,41 @@
 .imgGroup {
   position: absolute;
   bottom: -180px;
+  max-width: 90vw;
+}
+
+@media screen and (max-width: 1919px) {
+  .content {
+    max-width: 90vw;
+  }
+
+  .imgGroup {
+    max-width: 90vw;
+  }
+}
+
+@media screen and (max-width: 1819px) {
+  .imgGroup {
+    position: absolute;
+    bottom: -180px;
+    max-width: 90vw;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .imgVenapp {
+    top: 100px;
+  }
+  
+  .imgVenappTrazo {
+    top: 100px;
+  }
+  
+  .img2 {
+    top: 320px;
+  }
+  
+  .imgGroup {
+    bottom: -80px;
+  }
 }
