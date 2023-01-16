@@ -1,27 +1,41 @@
 import styles from "../../styles/Section7.module.css";
+import Image from "next/image";
 
 export const Section7 = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.background}></div>
-
-      <div className={styles.content}>
-        <div className={styles.badge}>
-          {strings.ven} <span>U</span>
+    <div className={styles["outer-container"]}>
+      <Image
+        src="/section_1/background.png"
+        alt=""
+        fill
+        style={{ objectFit: "cover" }}
+      />
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <h2> {strings.title} </h2>
+          <p> {strings.description} </p>
         </div>
-
-        <h2>{strings.title}</h2>
-
-        <p>{strings.descriptions}</p>
+        <div className={styles["phone-container"]}>
+          <div className={styles.phone}>
+            <Image
+              src="/section_1/phone.png"
+              alt="phone"
+              width={655}
+              height={1259}
+              style={{ objectFit: "contain", maxHeight: "100%" }}
+            />
+            <div className={styles.overlay}></div>
+            <div className={styles["overlay-text"]}>{strings.number}</div> 
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 const strings = {
-  title: "Cursos cursos y mas cursos",
-  ven: "Ven",
-  descriptions:
-    "Encuentra un amplio abanico de contenido educativo para que sigas preparandote y aprendiendo sobre los temas que mas te interesan. Accede a los mejores cursos online totalmente gratis y en tu propio tiempo.",
+  number: "12758K",
+  title: "Conecta Comparte y expande tu mundo",
+  description:
+    "Podras compartir contenido, eventos, imagenes, videos y mucho mas.",
 };
-

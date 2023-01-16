@@ -2,34 +2,22 @@ import styles from "../../styles/Section6.module.css";
 
 export const Section6 = () => {
   return (
-    <div className={styles["outer-container"]}>
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <h2> {strings.title} </h2>
-          <p> {strings.description} </p>
+    <div className={styles.container}>
+      <div className={styles.background}></div>
+      <div className={styles.content}>
+        <div className={styles.badge}>
+          {strings.ven}<span>U</span>
         </div>
-
-        <div className={styles["phone-container"]}>
-          <div>
-            <img
-              src="/section_1/phone.png"
-              alt="phone"
-              className={styles.phone}
-            />
-            <div className={styles.overlay}></div>
-            <div className={styles["overlay-text"]}>
-              {strings.number}
-            </div>
-          </div>
-        </div>
+        <h2>{strings.title}</h2>
+        <p>{strings.descriptions}</p>
       </div>
     </div>
   );
 };
 
 const strings = {
-  number: "12758K",
-  title: "Conecta Comparte y expande tu mundo",
-  description:
-    "Podras compartir contenido, eventos, imagenes, videos y mucho mas.",
+  title: "Cursos, cursos y mas cursos",
+  ven: "Ven",
+  descriptions:
+    "Encuentra un amplio abanico de contenido educativo para que sigas preparandote y aprendiendo sobre los temas que mas te interesan. Accede a los mejores cursos online totalmente gratis y en tu propio tiempo.",
 };

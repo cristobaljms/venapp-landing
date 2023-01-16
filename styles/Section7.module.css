@@ -1,84 +1,162 @@
+.outer-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--section-1-background-color);
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
 
 .container {
-
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--section-2-background-color);
+  width: 100%;
+  align-items: center;
   display: flex;
-
+  padding: 4.5rem;
+  position: relative;
 }
 
-.badge {
-  background-color: #fff;
-  display: inline;
-  border-radius: 1.5rem;
-  color: var(--section-2-background-color);
-  padding: 0.1rem 1rem 0.1rem 1rem;
-  font-size: 1.25rem;
+.phone {
+  margin-bottom: -340px;
+  max-height: 100vh;
 }
 
-.badge span {
-  font-weight: bold;
+.phone-container {
+  flex: 2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.phone-container > div {
+  position: relative;
+  max-width: 620px;
 }
 
 .content {
-
-  width: 40%;
-  width: 30%;
-  padding: 3rem;
-  padding-left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  position: relative;
+  width: 550px;
 }
 
 .content h2 {
-  font-weight: 200;
-  font-size: 8rem;
-  line-height: 0.9;
-  color: #201D3C;
+  font-weight: 400;
+  font-size: 105px;
+  line-height: 1;
 }
 
 .content p {
-  margin-top: 1.5rem;
-  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  font-size: 25px;
 }
 
-.background {
+.overlay-text {
+  font-size: 6rem;
+  font-weight: 300;
+  position: absolute;
+  left: 130%;
+  top: 46%;
+}
 
-  width: 70%;
-  height: 100vh;
+.overlay {
+  width: 410px;
+  height: 535px;
+  position: absolute;
+  top: 10%;
+  right: -40%;
+  background-image: url("/section_1/hearts.png");
   background-size: cover;
-  background-size: 120%;
-  background-position: right;
-  background-repeat: no-repeat;
-  margin-right: -4rem;
-  background-image: url('/section_2/several_smartphones.png');
-
 }
 
-@media (max-width: 1500px) {
 
-  .content {
-    width: 40%;
+@media screen and (max-width: 1919px) {
+  .content h2 {
+    font-size: 80px;
   }
+  
+  .content p {
+    font-size: 22px;
+  }
+}
 
-  .background {
-    width: 60%;
+@media screen and (max-width: 1600px) {
+  .content {
+    position: relative;
+    width: 405px
   }
 
   .content h2 {
-    font-weight: 200;
-    font-size: 6rem;
-  }
-
-  .badge {
-    font-size: 0.8rem;
-  }
-
-  .content p {
-    font-size: 0.8rem;
+    font-size: 70px;
   }
   
+  .content p {
+    font-size: 20px;
+  }
+
+  .phone {
+    margin-bottom: -305px;
+  }
+
+  .overlay {
+    width: 250px;
+    height: 325px;
+    top: 20%;
+    right: -20%;
+  }
+
+  .overlay-text {
+    left: 100%;
+    top: 50%;
+  }
+}
+
+@media (max-width: 1500px) {
+  .overlay-text {
+    top: 57%;
+    left: 90%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .phone {
+    margin-bottom: -255px;
+  }
+
+  .content h2 {
+    font-size: 50px;
+  }
+  
+  .content p {
+    font-size: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-position: left;
+  }
+
+  .phone {
+    width: 250px;
+    object-fit: contain;
+    margin-bottom: -210px;
+  }
+
+  .content {
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+
+  .overlay {
+    display: none;
+  }
+
+  .outer-container {
+    background-position: left;
+  }
 }

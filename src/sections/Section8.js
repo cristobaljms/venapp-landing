@@ -2,23 +2,25 @@ import styles from "../../styles/Section8.module.css";
 
 export const Section8 = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles["inner-container"]}>
-        <div className={styles["videos-container"]}>
-          {videos.map((video, index) => {
-            return (
-              <div key={index}>
-                <div className={styles.square}></div>
-                <p>{video.text}</p>
-              </div>
-            );
-          })}
-        </div>
+    <div className={styles.root}>
+      <div className="container">
+        <div className={styles["inner-container"]}>
+          <div className={styles["videos-container"]}>
+            {videos.map((video, index) => {
+              return (
+                <div key={index}>
+                  <div className={styles.square}></div>
+                  <p>{video.text}</p>
+                </div>
+              );
+            })}
+          </div>
 
-        <div className={styles.content}>
-          <h2>{strings.title}</h2>
-          <p>{strings.description}</p>
-          <button>{strings.watchAllTutorials}</button>
+          <div className={styles.content}>
+            <h2 className={styles.text1}>{strings.title}</h2>
+            <p className={styles.text2}>{strings.description}</p>
+            <button className={styles.button}>{strings.watchAllTutorials}</button>
+          </div>
         </div>
       </div>
     </div>
