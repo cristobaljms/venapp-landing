@@ -2,7 +2,7 @@
 .container {
   width: 100vw;
   height: 100vh;
-  padding: 3rem;
+  padding: 3rem 6rem;
   color: gray;
   display: flex;
   flex-direction: column;
@@ -17,22 +17,26 @@
 }
 
 .container button {
-  background-color:  gray;
+  background-color:  #dfe6ef;
   padding: 0.8rem 1.5rem;
-  margin-top: 1rem;
+  margin-top: 6rem;
   border-radius: 0.5rem;
-  color: #fff;
+  color: #030306;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .container h2 {
   text-align: center;
   font-weight: 400;
-  font-size: 4.5rem;
+  font-size: 6rem;
+  color: #231e3c;
 }
 
 .container p {
   text-align: center;
   font-weight: 500;
+  font-size: 1.6rem;
 }
 
 .content {
@@ -41,7 +45,7 @@
 
 .videos-container {
   display: grid;
-  gap: 2rem;
+  gap: 6rem;
   grid-template-columns: repeat(3,1fr);
   text-align: center;
 }
@@ -53,11 +57,36 @@
 
 .square {
   width: 100%;
-  height: 210px;
+  height: 320px;
   background-color: #04BF8A;
   border-radius: 1rem;
   background-image: url('/section_3/smartphone.png');
   background-size: contain;
   background-position: bottom;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 1500px) {
+
+  .container {
+    padding: 3rem;
+  }
+
+  .container h2 {
+    font-size: 3rem;
+  }
+
+  .container p {
+    font-size: 1rem;
+  }
+
+  .container button {
+    margin-top: 4rem;
+    font-size: 0.8rem;
+  }
+
+  .square {
+    height: 200px;
+  }
+  
 }

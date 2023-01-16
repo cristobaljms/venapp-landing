@@ -10,6 +10,16 @@ export const Section9 = () => {
           {strings.description} <br></br>
           {strings.description2}
         </p>
+        <div className={styles.tag}>
+          <img 
+            src="/assets/img/section9/google-play.png"
+            alt="google store tag"
+          />
+          <img 
+            src="/assets/img/section9/app-store.png"
+            alt="app store tag"
+          />
+        </div>
       </div>
 
       <img
