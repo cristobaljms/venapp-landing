@@ -65,3 +65,28 @@
   background-position: bottom;
   background-repeat: no-repeat;
 }
+
+@media (max-width: 1500px) {
+
+  .container {
+    padding: 3rem;
+  }
+
+  .container h2 {
+    font-size: 3rem;
+  }
+
+  .container p {
+    font-size: 1rem;
+  }
+
+  .container button {
+    margin-top: 4rem;
+    font-size: 0.8rem;
+  }
+
+  .square {
+    height: 200px;
+  }
+  
+}

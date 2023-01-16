@@ -71,6 +71,41 @@
   background-size: cover;
 }
 
+@media (max-width: 1500px) {
+  
+  .content h2 {
+    font-size: 4rem;
+  }
+
+  .content p {
+    font-size: 1.2rem;
+  }
+
+  .phone {
+    width: 480px;
+    margin-bottom: -405px;
+  }
+
+  .overlay {
+    width: 250px;
+    height: 325px;
+    position: absolute;
+    top: 20%;
+    right: 0%;
+    background-image: url('/section_1/hearts.png');
+    background-size: cover;
+  }
+
+  .overlay-text {
+    font-size: 3rem;
+    font-weight: 300;
+    position: absolute;
+    left: 92%;
+    top: 50%;
+  }  
+
+}
+
 /* Mobile */
 @media (max-width: 700px) {
  

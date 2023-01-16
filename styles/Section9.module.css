@@ -48,3 +48,33 @@
 .tag img {
   margin-right: 2rem;
 }
+
+@media (max-width: 1500px) {
+
+  .phone {
+    width: 420px;
+    transform: translateX(-50%);
+  }
+
+  .container h2 {
+    font-size: 4rem;
+    font-weight: 900;
+  }
+
+  .container h4 {
+    font-size: 2.25rem;
+  }
+
+  .container p {
+    font-size: 1.15rem;
+  }
+
+  .tag img  {
+    width: 150px;
+    margin-top: 0;
+  }
+
+  .inner-container {
+    width: 45%;
+  }
+}
