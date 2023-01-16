@@ -30,11 +30,13 @@ export const Section2 = () => {
     <div id="section2" className={styles.root}>
       <div className={styles.content}>
         <div className={styles.phoneWrapper}>
-          <img
-            id="phoneid"
-            className={styles.phone}
-            alt=""
+          <Image
             src="/assets/img/section2/phone.png"
+            width={446}
+            height={877}
+            style={{ objectFit: "contain", maxWidth: "auto", right: 0 }}
+            alt=""
+            quality={75}
           />
         </div>
         <div className={styles.hayDeTodoWrapper}>
@@ -44,6 +46,7 @@ export const Section2 = () => {
               alt=""
               width={483}
               height={533}
+              quality={75}
             />
             <div className={styles.icon1}>
               <Image
@@ -51,6 +54,7 @@ export const Section2 = () => {
                 alt=""
                 width={99}
                 height={99}
+                quality={75}
               />
             </div>
             <div className={styles.icon2}>
@@ -59,6 +63,7 @@ export const Section2 = () => {
                 alt=""
                 width={55}
                 height={55}
+                quality={75}
               />
             </div>
             <div className={styles.icon3}>
@@ -67,6 +72,7 @@ export const Section2 = () => {
                 alt=""
                 width={64}
                 height={71}
+                quality={75}
               />
             </div>
             <div className={styles.icon4}>
@@ -75,6 +81,7 @@ export const Section2 = () => {
                 alt=""
                 width={67}
                 height={58}
+                quality={75}
               />
             </div>
             <div className={styles.icon5}>
@@ -83,6 +90,7 @@ export const Section2 = () => {
                 alt=""
                 width={91}
                 height={89}
+                quality={75}
               />
             </div>
             <div className={styles.icon6}>
@@ -91,6 +99,7 @@ export const Section2 = () => {
                 alt=""
                 width={55}
                 height={49}
+                quality={75}
               />
             </div>
           </div>

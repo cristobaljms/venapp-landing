@@ -47,10 +47,11 @@
   right: 0;
 }
 
-.imgGroup {
-  position: absolute;
-  bottom: -180px;
-  max-width: 90vw;
+.imageGroupWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  bottom: -200px;
 }
 
 @media screen and (max-width: 1919px) {
@@ -58,18 +59,11 @@
     max-width: 90vw;
   }
 
-  .imgGroup {
-    max-width: 90vw;
+  .imageGroupWrapper {
+    bottom: -180px;
   }
 }
 
-@media screen and (max-width: 1819px) {
-  .imgGroup {
-    position: absolute;
-    bottom: -180px;
-    max-width: 90vw;
-  }
-}
 
 @media screen and (max-width: 1600px) {
   .imgVenapp {
@@ -84,7 +78,7 @@
     top: 320px;
   }
   
-  .imgGroup {
+  .imageGroupWrapper {
     bottom: -80px;
   }
 }

@@ -3,6 +3,7 @@ import styles from "../../styles/Section4.module.css";
 import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
 import { gsap } from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
+import Image from "next/image";
 
 export const Section4 = () => {
   useIsomorphicLayoutEffect(() => {
@@ -33,22 +34,52 @@ export const Section4 = () => {
       </div>
       <div className={styles.images}>
         <div className={`${styles.card} ${styles.card1}`}>
-          <img src="/assets/img/section4/image1.png" alt="" />
+          <Image
+            src="/assets/img/section4/image1.png"
+            alt=""
+            width={359}
+            height={269}
+            style={{ objectFit: "contain", maxHeight: "100%" }}
+            quality={60}
+          />
         </div>
         <div className={`${styles.card} ${styles.card2}`}>
-          <img src="/assets/img/section4/image2.png" alt="" />
+          <Image
+            src="/assets/img/section4/image2.png"
+            alt=""
+            width={514}
+            height={340}
+            style={{ objectFit: "contain", maxHeight: "100%" }}
+            quality={60}
+          />
         </div>
         <div className={`${styles.card} ${styles.card3}`}>
-          <img src="/assets/img/section4/image3.png" alt="" />
+          <Image
+            src="/assets/img/section4/image3.png"
+            alt=""
+            width={537}
+            height={536}
+            style={{ objectFit: "contain", maxHeight: "100%" }}
+            quality={60}
+          />
         </div>
         <div className={`${styles.card} ${styles.card4}`}>
-          <img src="/assets/img/section4/image4.png" alt="" />
+          <Image
+            src="/assets/img/section4/image4.png"
+            alt=""
+            width={382}
+            height={384}
+            style={{ objectFit: "contain", maxHeight: "100%" }}
+            quality={60}
+          />
         </div>
         <div className={styles.phone}>
-          <img
-            style={{ objectFit: "contain" }}
+          <Image
             src="/assets/img/section4/phone.png"
             alt=""
+            width={715}
+            height={648}
+            style={{ objectFit: "contain", maxHeight: "100%" }}
           />
         </div>
       </div>

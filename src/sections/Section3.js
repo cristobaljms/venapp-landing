@@ -37,11 +37,15 @@ export const Section3 = () => {
               </p>
             </div>
             <div className={styles.iphoneWrapper}>
-              <img
-                className={styles.iPhoneChat}
-                src="/assets/img/section3/iPhoneChat.png"
-                alt=""
-              />
+              <div className={styles.iPhoneChat}>
+                <Image
+                  src="/assets/img/section3/iPhoneChat.png"
+                  alt=""
+                  width={425}
+                  height={924}
+                  style={{ objectFit: "contain", maxHeight: "100%" }}
+                />
+              </div>
               <img
                 className={styles.globo1}
                 src="/assets/img/section3/globo-1.png"
@@ -79,32 +83,25 @@ export const Section3 = () => {
               </p>
             </div>
             <div className={styles.filas}>
-              <img
-                className={styles.fila1}
-                src="/assets/img/section3/fila-1.png"
-                alt=""
-              />
-              <img
-                className={styles.fila2}
-                src="/assets/img/section3/fila-2.png"
-                alt=""
-              />
+              <div className={styles.fila1}>
+                <Image
+                  src="/assets/img/section3/fila-1.png"
+                  alt=""
+                  width={1131}
+                  height={172}
+                  style={{objectFit: "contain"}}
+                />
+              </div>
+              <div className={styles.fila2}>
+                <Image
+                  src="/assets/img/section3/fila-2.png"
+                  alt=""
+                  width={1131}
+                  height={172}
+                  style={{objectFit: "contain"}}
+                />
+              </div>
             </div>
-            {/*  <img
-              className={styles.globo1}
-              src="/assets/img/section3/globo-1.png"
-              alt=""
-            />
-            <img
-              className={styles.globo2}
-              src="/assets/img/section3/globo-2.png"
-              alt=""
-            />
-            <img
-              className={styles.globo3}
-              src="/assets/img/section3/globo-3.png"
-              alt=""
-            /> */}
           </div>
         </div>
       </div>

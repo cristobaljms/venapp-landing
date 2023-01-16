@@ -3,6 +3,7 @@ import styles from "../../styles/Section5.module.css";
 import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
 import { gsap } from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
+import Image from "next/image";
 
 export const Section5 = () => {
   useIsomorphicLayoutEffect(() => {
@@ -12,12 +13,22 @@ export const Section5 = () => {
   return (
     <div id="section5" className={styles.root}>
       <div className={styles.image}>
-        <img
-          className={styles.comicImg}
-          src="/assets/img/section5/comics.png"
+        <div className={styles.comicImg}>
+          <Image
+            src="/assets/img/section5/comics.png"
+            alt=""
+            fill
+            style={{ objectFit: "contain" }}
+          />
+        </div>
+
+        <Image
+          src="/assets/img/section5/phone.png"
           alt=""
+          width={960}
+          height={706}
+          style={{ objectFit: "contain", maxWidth: "100%" }}
         />
-        <img src="/assets/img/section5/phone.png" alt="" />
       </div>
       <div className="container">
         <div className={styles.content}>

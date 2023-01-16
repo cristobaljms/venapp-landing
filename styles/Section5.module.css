@@ -61,7 +61,8 @@
   position: absolute;
   top: 0;
   right: -15%;
-  max-width: 618px;
+  width: 718px;
+  height: 624px;
 }
 
 @media screen and (max-width: 1919px) {
