@@ -18,18 +18,22 @@
   align-items: center;
   display: flex;
   flex-direction: row;;
-  padding: 3rem;
-  max-width: 900px;
+  padding: 4.5rem;
 }
 
 .phone {
-  width: 320px;
-  margin-bottom: -200px;
+  width: 620px;
+  margin-bottom: -515px;
 }
 
 .phone-container {
   flex: 2;
   position: relative;
+}
+
+.phone-container > div {
+  position: relative;
+  max-width: 620px;
 }
 
 .content {
@@ -39,22 +43,30 @@
 
 .content h2 {
   font-weight: 200;
-  font-size: 3rem;
-  line-height: 52px;
+  font-size: 6rem;
+  line-height: 1;
 }
 
 .content p {
-  font-weight: 400;
-  margin-top: 0.75rem;
-  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.overlay-text {
+  font-size: 6rem;
+  font-weight: 300;
+  position: absolute;
+  left: 130%;
+  top: 46%;
 }
 
 .overlay {
-  width: 210px;
-  height: 275px;
+  width: 410px;
+  height: 535px;
   position: absolute;
-  top: 30%;
-  right: 16%;
+  top: 10%;
+  right: -40%;
   background-image: url('/section_1/hearts.png');
   background-size: cover;
 }

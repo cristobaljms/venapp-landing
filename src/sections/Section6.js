@@ -10,13 +10,17 @@ export const Section6 = () => {
         </div>
 
         <div className={styles["phone-container"]}>
-          <img
-            src="/section_1/phone.png"
-            alt="phone"
-            className={styles.phone}
-          />
-
-          <div className={styles.overlay}></div>
+          <div>
+            <img
+              src="/section_1/phone.png"
+              alt="phone"
+              className={styles.phone}
+            />
+            <div className={styles.overlay}></div>
+            <div className={styles["overlay-text"]}>
+              {strings.number}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -24,6 +28,7 @@ export const Section6 = () => {
 };
 
 const strings = {
+  number: "12758K",
   title: "Conecta Comparte y expande tu mundo",
   description:
     "Podras compartir contenido, eventos, imagenes, videos y mucho mas.",

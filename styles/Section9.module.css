@@ -10,8 +10,9 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 470px;
-  right: 100px
+  width: 620px;
+  right: 0;
+  transform: translateX(-50%);
 }
 
 .inner-container {
@@ -24,14 +25,26 @@
 }
 
 .container h2 {
-  font-size: 4.5rem;
-  font-weight: bold;
+  font-size: 8rem;
+  font-weight: 900;
 }
 
 .container h4 {
   font-weight: 300;
-  font-size: 3rem;
+  font-size: 4.75rem;
   line-height: 1.2;
   margin: 1.25rem 0;
+}
 
+.container p {
+  font-size: 2rem;
+}
+
+.tag {
+  display: flex;
+  margin-top: 5rem;
+}
+
+.tag img {
+  margin-right: 2rem;
 }
