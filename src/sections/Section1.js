@@ -1,14 +1,9 @@
-import React, { useRef } from "react";
-import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
+import React from "react";
 import Header from "../components/Header";
 import styles from "../../styles/Section1.module.css";
 import Image from "next/image";
 
 export const Section1 = () => {
-  const el = useRef();
-
-  useIsomorphicLayoutEffect(() => {}, []);
-
   return (
     <div className={styles.root} id="section1">
       <div>
