@@ -16,6 +16,7 @@ import { SmootherContext } from "../src/context/SmootherContext";
 import gsap from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
 import { ScrollToPlugin } from "gsap-trial/dist/ScrollToPlugin";
+import { AnimationProvider } from "../src/context/AnimationContext";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -35,26 +36,28 @@ const IndexPage = () => {
   }
 
   return (
-    <Wrapper
-      url=""
-      title="VenApp"
-      description=""
-      twitter=""
-      imageUrl=""
-      imageAlt=""
-    >
-      <div>
-        <Section1 />
-        <Section2 />
-        <Section3 />
-        <Section4 />
-        <Section5 />
-        <Section6 />
-        <Section7 />
-        <Section8 />
-        <Section9 />
-      </div>
-    </Wrapper>
+    <AnimationProvider>
+      <Wrapper
+        url=""
+        title="VenApp"
+        description=""
+        twitter=""
+        imageUrl=""
+        imageAlt=""
+      >
+        <div>
+          <Section1 />
+          <Section2 />
+          <Section3 />
+          <Section4 />
+          <Section5 />
+          <Section6 />
+          <Section7 />
+          <Section8 />
+          <Section9 />
+        </div>
+      </Wrapper>  
+    </AnimationProvider>
   );
 };
 

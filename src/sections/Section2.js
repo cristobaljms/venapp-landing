@@ -5,29 +5,34 @@ import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
 import { gsap } from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
 import { TransitionContext } from "../context/TransitionContext";
-export const Section2 = () => {
-  const { timeline } = useContext(TransitionContext);
-  const icon1Ref = React.useRef();
-  const hayDeTodoRef = useRef();
 
-  // useIsomorphicLayoutEffect(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
-  //   gsap.to("#hayDeTodoRef", {
-  //     scrollTrigger: {
-  //       trigger: "#section2",
-  //       scrub: true,
-  //       start: "-300px",
-  //       end: "top",
-  //     },
-  //     opacity: 1,
-  //     delay: 0.5,
-  //     duration: 1,
-  //     y: 0,
-  //   });
-  // }, []);
+import clx from 'classnames';
+import { useScroll, motion, useTransform } from "framer-motion";
+import { useAnimationContext } from "../context/AnimationContext";
+
+
+export const Section2 = () => {
+
+  const { scrollY } = useScroll();
+  const { vh, currentSection, ref2 } = useAnimationContext();
+  //Hay de todo container
+  const containerTranslateY = useTransform(scrollY,[0,vh,vh,vh*2],[vh,0,0,vh]);
+  const containerTranslateY2 = useTransform(scrollY,[vh,vh*2],[0,vh]);
+
+  //root container
+  const rootTranslateY = useTransform(scrollY,[vh,vh*2],[0,vh]);
+  const rootOpacity    = useTransform(scrollY,[vh,vh*2],[1,0]);
 
   return (
-    <div id="section2" className={styles.root}>
+    <section ref = {ref2}>
+    <motion.div 
+      id="section2" 
+      className={clx(styles.root,"slide section2")} 
+      style = {{
+        translateY: rootTranslateY,
+        opacity: rootOpacity
+      }}
+    >
       <div className={styles.content}>
         <div className={styles.phoneWrapper}>
           <Image
@@ -39,7 +44,12 @@ export const Section2 = () => {
             quality={75}
           />
         </div>
-        <div className={styles.hayDeTodoWrapper}>
+        <motion.div 
+          className={styles.hayDeTodoWrapper}
+          style = {{
+            translateY: containerTranslateY
+          }}
+        >
           <div id="hayDeTodoRef" className={styles.hayDeTodoContent}>
             <Image
               src={"/assets/img/section2/hay-de-todo.png"}
@@ -103,8 +113,9 @@ export const Section2 = () => {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
+    </section>
   );
 };

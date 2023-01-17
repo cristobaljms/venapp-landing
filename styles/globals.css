@@ -141,3 +141,19 @@ body {
     max-width: 1200px;
   }
 }
+
+.slide {
+  position: relative;
+}
+
+.section1 {
+  z-index: 900;
+}
+
+.section2 {
+  z-index: 800;
+}
+
+.section3 {
+  z-index: 700;
+}
