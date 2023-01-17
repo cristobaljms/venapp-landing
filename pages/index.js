@@ -98,17 +98,17 @@ const IndexPage = () => {
       imageAlt=""
     >
       <div className="content-path-button">
-        <div className="path-button">
-          <Link
-            activeClass="active"
-            to={`section${section}`}
-            spy={true}
-            smooth={true}
-            duration={400}
-          >
+        <Link
+          activeClass="active"
+          to={`section${section}`}
+          spy={true}
+          smooth={true}
+          duration={400}
+        >
+          <div className="path-button">
             <img src="/assets/img/flecha.png" alt="" />
-          </Link>
-        </div>
+          </div>
+        </Link>
       </div>
 
       <div ref={stepref_1}>

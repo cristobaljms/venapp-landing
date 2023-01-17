@@ -152,7 +152,7 @@ body {
 }
 
 @media (max-width: 1281px) {
-    .path-button {
+  .path-button {
     top: 82vh;
   }
   .container {
