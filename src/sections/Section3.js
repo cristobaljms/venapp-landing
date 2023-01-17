@@ -89,7 +89,7 @@ export const Section3 = () => {
                   alt=""
                   width={1131}
                   height={172}
-                  style={{objectFit: "contain"}}
+                  style={{ objectFit: "contain" }}
                 />
               </div>
               <div className={styles.fila2}>
@@ -98,7 +98,7 @@ export const Section3 = () => {
                   alt=""
                   width={1131}
                   height={172}
-                  style={{objectFit: "contain"}}
+                  style={{ objectFit: "contain" }}
                 />
               </div>
             </div>

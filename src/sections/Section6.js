@@ -2,7 +2,7 @@ import styles from "../../styles/Section6.module.css";
 
 export const Section6 = () => {
   return (
-    <div className={styles.container}>
+    <div  id="section6" className={styles.container}>
       <div className={styles.background}></div>
       <div className={styles.content}>
         <div className={styles.badge}>

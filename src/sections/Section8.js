@@ -2,7 +2,7 @@ import styles from "../../styles/Section8.module.css";
 
 export const Section8 = () => {
   return (
-    <div className={styles.root}>
+    <div  id="section8" className={styles.root}>
       <div className="container">
         <div className={styles["inner-container"]}>
           <div className={styles["videos-container"]}>

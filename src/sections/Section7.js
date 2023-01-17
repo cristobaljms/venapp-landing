@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const Section7 = () => {
   return (
-    <div className={styles["outer-container"]}>
+    <div  id="section7" className={styles["outer-container"]}>
       <Image
         src="/section_1/background.png"
         alt=""

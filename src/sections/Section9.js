@@ -3,7 +3,7 @@ import styles from "../../styles/Section9.module.css";
 
 export const Section9 = () => {
   return (
-    <div className={styles.container}>
+    <div  id="section9" className={styles.container}>
       <div className="container">
         <div className={styles.content}>
           <div className={styles.textContent}>
