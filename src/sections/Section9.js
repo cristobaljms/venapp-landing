@@ -30,7 +30,7 @@ export const Section9 = () => {
           </div>
           <div className={styles.phoneContent}>
             <Image
-              src="/section_4/smartphone.png"
+              src="/assets/img/section9/phone2.png"
               alt="ven app smartphone"
               width={694}
               height={1330}
