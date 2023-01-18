@@ -97,11 +97,31 @@ const AnimationProvider = ({children,...props}) => {
     sizeFactorWidth
   });
 
+  const toPxWidth = (value) => {
+    return value * viewportWidth / 100;
+  }
+
+  const toPxHeight = (value) => {
+    return value * viewportHeight / 100;
+  }
+
+  const toPercentHeight = value => {
+    return value * 100 / viewportHeight;
+  }
+
+  const scaleHeightPercentPerfect = (widthValue,aspectRatio) => {
+    return `${toPercentHeight( toPxWidth(widthValue) / aspectRatio) }%`
+  }
+
   return (
     <AnimationContext.Provider {...props} value = {{
       isAnimate: animateLabel === "animate",
       vh: viewportHeight,
       vw: viewportWidth,
+      toPxWidth,
+      toPxHeight,
+      toPercentHeight,
+      scaleHeightPercentPerfect,
       sizeFactor,
       sizeFactorWidth,
       //sections

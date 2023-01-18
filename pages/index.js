@@ -1,5 +1,6 @@
 import { useRef, useContext } from "react";
 import Wrapper from "../src/layout/Wrapper";
+import PhoneFrame from "../src/components/PhoneFrame";
 import { Section1 } from "../src/sections/Section1";
 import { Section2 } from "../src/sections/Section2";
 import { Section3 } from "../src/sections/Section3";
@@ -9,6 +10,7 @@ import { Section5 } from "../src/sections/Section5";
 import { Section7 } from "../src/sections/Section7";
 import { Section8 } from "../src/sections/Section8";
 import { Section9 } from "../src/sections/Section9";
+
 
 import useIsomorphicLayoutEffect from "../src/animation/useIsomorphicLayoutEffect";
 import { SmootherContext } from "../src/context/SmootherContext";
@@ -45,17 +47,19 @@ const IndexPage = () => {
         imageUrl=""
         imageAlt=""
       >
-        <div>
-          <Section1 />
-          <Section2 />
-          <Section3 />
-          <Section4 />
-          <Section5 />
-          <Section6 />
-          <Section7 />
-          <Section8 />
-          <Section9 />
-        </div>
+        <PhoneFrame>
+          <div>
+            <Section1 />
+            <Section2 />
+            <Section3 />
+            <Section4 />
+            <Section5 />
+            <Section6 />
+            <Section7 />
+            <Section8 />
+            <Section9 />
+          </div>
+        </PhoneFrame>
       </Wrapper>  
     </AnimationProvider>
   );
