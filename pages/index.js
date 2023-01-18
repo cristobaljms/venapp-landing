@@ -15,6 +15,7 @@ import useIsomorphicLayoutEffect from "../src/animation/useIsomorphicLayoutEffec
 import gsap from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
 import { ScrollToPlugin } from "gsap-trial/dist/ScrollToPlugin";
+import { AnimationProvider } from "../src/context/AnimationContext";
 
 import { Link } from "react-scroll";
 
@@ -89,56 +90,58 @@ const IndexPage = () => {
   };
 
   return (
-    <Wrapper
-      url=""
-      title="VenApp"
-      description=""
-      twitter=""
-      imageUrl=""
-      imageAlt=""
-    >
-      <div className="content-path-button">
-        <Link
-          activeClass="active"
-          to={`section${section}`}
-          spy={true}
-          smooth={true}
-          duration={400}
-        >
-          <div className="path-button">
-            <img src="/assets/img/flecha.png" alt="" />
-          </div>
-        </Link>
-      </div>
+    <AnimationProvider>
+      <Wrapper
+        url=""
+        title="VenApp"
+        description=""
+        twitter=""
+        imageUrl=""
+        imageAlt=""
+      >
+        <div className="content-path-button">
+          <Link
+            activeClass="active"
+            to={`section${section}`}
+            spy={true}
+            smooth={true}
+            duration={400}
+          >
+            <div className="path-button">
+              <img src="/assets/img/flecha.png" alt="" />
+            </div>
+          </Link>
+        </div>
 
-      <div ref={stepref_1}>
-        <Section1 />
-      </div>
-      <div ref={stepref_2}>
-        <Section2 />
-      </div>
-      <div ref={stepref_3}>
-        <Section3 />
-      </div>
-      <div ref={stepref_4}>
-        <Section4 />
-      </div>
-      <div ref={stepref_5}>
-        <Section5 />
-      </div>
-      <div ref={stepref_6}>
-        <Section6 />
-      </div>
-      <div ref={stepref_7}>
-        <Section7 />
-      </div>
-      <div ref={stepref_8}>
-        <Section8 />
-      </div>
-      <div ref={stepref_9}>
-        <Section9 />
-      </div>
-    </Wrapper>
+        <div ref={stepref_1}>
+          <Section1 />
+        </div>
+        <div ref={stepref_2}>
+          <Section2 />
+        </div>
+        <div ref={stepref_3}>
+          <Section3 />
+        </div>
+        <div ref={stepref_4}>
+          <Section4 />
+        </div>
+        <div ref={stepref_5}>
+          <Section5 />
+        </div>
+        <div ref={stepref_6}>
+          <Section6 />
+        </div>
+        <div ref={stepref_7}>
+          <Section7 />
+        </div>
+        <div ref={stepref_8}>
+          <Section8 />
+        </div>
+        <div ref={stepref_9}>
+          <Section9 />
+        </div>
+      </Wrapper>
+    </AnimationProvider>
   );
 };
 

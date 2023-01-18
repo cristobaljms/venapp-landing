@@ -3,45 +3,179 @@ import Header from "../components/Header";
 import styles from "../../styles/Section1.module.css";
 import Image from "next/image";
 
+import { motion, useScroll, useTransform } from "framer-motion";
+import clx from 'classnames';
+import { useAnimationContext } from "../context/AnimationContext";
+
+const containerVariants = {
+  initial: {
+    width: "100%",
+    height: "100vh",
+    translateX: 0,
+    translateY: 0
+  },
+  animate: {
+    width: 300,
+    translateX: 240,
+    height: "80vh",
+    translateY: 200
+  }
+}
+
+const textVariants = {
+  initial: {
+    top: 320,
+    width: 282,
+    right: 0
+  },
+  animate: {
+    top: 70,
+    width: 208,
+    right: 15
+  }
+}
+
+const textVariants2 = {
+  initial: {
+    width: 328
+  },
+  animate: {
+    width: 150
+  }
+}
+
+const textVariantsVenApp = {
+  initial: {
+    top: 100
+  },
+  animate: {
+    top: 45
+  }
+}
+
 export const Section1 = () => {
+
+  const { isAnimate, vh, vw, sizeFactorWidth: sw, sizeFactor: s , ref1, currentSection } = useAnimationContext();
+  const { scrollY } = useScroll();
+  //Container
+  const containerTranslateY = useTransform(scrollY,[0,vh],[0,vh + (94 * s)]);
+  const containerWidth      = useTransform(scrollY,[0,vh],[vw, (300)]);
+  //const containerTranslateX = useTransform(scrollY,[0,vh],["0%","100%"]);
+  const containerTranslateX = useTransform(scrollY,[0,vh],[0,234]);
+  const containerHeight     = useTransform(scrollY,[0,vh],[vh,620 * s]);
+  //Header
+  const headerTranslateY    = useTransform(scrollY,[0,vh * 0.10],["0%","-100%"])
+  //ContentContainer
+  const contentContainerPadding = useTransform(scrollY,[0,vh],["20px",0]);
+  //Content
+  const contentTop          = useTransform(scrollY,[0,vh],[0,-105]);
+  //PeopleImage
+  const peopleImageTop      = useTransform(scrollY,[0,vh],[0,vh]);
+  const peopleImageHeight   = useTransform(scrollY,[0,vh],[576,340]);
+  //La nueva
+  const textLaNuevaTop      = useTransform(scrollY,[0,vh],[0,-200]);
+  const textLaNuevaScale    = useTransform(scrollY,[0,vh],[1,0.5]);
+  //Ven App
+  const textVenAppTop       = useTransform(scrollY,[0,vh],[100,-140]);
+  const textVenAppScale     = useTransform(scrollY,[0,vh],[1,0.8]);
+  //2.0
+  const text2Top            = useTransform(scrollY,[0,vh],[320,-125]);
+  const text2Scale          = useTransform(scrollY,[0,vh],[1, 0.8]);
+
   return (
-    <div className={styles.root} id="section1">
-      <div>
-        <Header />
-        <div className="container">
-          <div className={styles.content}>
-            <img
+    <section className={clx(styles.root)} id="section1" ref = {ref1}>
+      <motion.div 
+        className={clx(styles.container,"slide section1")}
+        animate={isAnimate ? "animate" : "initial"}
+        variants={containerVariants}
+        style = {{ 
+          translateY: containerTranslateY,
+          translateX: containerTranslateX,
+          width: containerWidth,
+          height: containerHeight
+        }}
+      >
+        <motion.div
+          style = {{
+            translateY: headerTranslateY
+          }}
+        >
+          <Header />
+        </motion.div>
+        <motion.div 
+          className={clx("container",styles['content-container'])}
+          style = {{
+            paddingLeft: contentContainerPadding,
+            paddingRight: contentContainerPadding
+          }}
+        >
+          <motion.div 
+            className= {styles.content}
+            style    = {{
+              top: contentTop
+            }}
+          >
+            <motion.img
               className={styles.imgNueva}
               src="/assets/img/section1/la-nueva.png"
               alt=""
+              variants={textVariants2}
+              animate={isAnimate ? "animate" : "initial"}
+              style= {{
+                top: textLaNuevaTop,
+                scale: textLaNuevaScale
+              }}
             />
-            <img
+            <motion.img
               className={styles.imgVenapp}
               src="/assets/img/section1/venapp-landing-blanco.png"
               alt=""
+              variants={textVariantsVenApp}
+              animate={isAnimate ? "animate" : "initial"}
+              style = {{
+                top: textVenAppTop,
+                scale: textVenAppScale
+              }}
             />
-            <img
+            <motion.img
               className={styles.imgVenappTrazo}
               src="/assets/img/section1/venapp-landingtrazo.png"
               alt=""
+              variants={textVariantsVenApp}
+              animate={isAnimate ? "animate" : "initial"}
+              style = {{
+                top: textVenAppTop,
+                scale: textVenAppScale
+              }}
             />
-            <img
+            <motion.img
               className={styles.img2}
+              variants={textVariants}
+              animate={isAnimate ? "animate" : "initial"}
               src="/assets/img/section1/2.png"
               alt=""
+              style={{
+                top: text2Top,
+                scale: text2Scale
+              }}
             />
-            <div className={styles.imageGroupWrapper}>
+            <motion.div 
+              style = {{
+                height: peopleImageHeight
+              }}
+              className={styles.imageGroupWrapper}
+            >
               <Image
                 src="/assets/img/section1/group.png"
                 fill
-                style={{ objectFit: "contain", bottom: 0 }}
+                style={{ objectFit: "cover", bottom: 0, objectPosition: "top" }}
                 alt=""
                 quality={75}
               />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </section>
   );
 };
