@@ -112,7 +112,7 @@ body {
 }
 
 .path-button {
-  background-color: rgba(79, 36, 219, 0.4);
+  background-color: rgba(0, 0, 0, 0.15);
   border: 1px solid #fff;
   border-radius: 50%;
   position: fixed;
@@ -127,6 +127,10 @@ body {
   cursor: pointer;
   top: 88vh;
   z-index: 100;
+}
+
+.path-button:hover {
+  background-color: rgba(0, 0, 0, 0.35);
 }
 
 .container {
