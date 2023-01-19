@@ -11,20 +11,48 @@ export const Section3 = () => {
   const { scrollY } = useScroll();
   
   //root container
-  const rootTranslateY = useTransform(scrollY,[vh,2*vh],[-vh,0]);
+  const rootTranslateY = useTransform(scrollY,
+    [vh, 2*vh, 2*vh, 3*vh],
+    [-vh,0, 0, vh]
+  );
 
+  const rootOpacity = useTransform(scrollY, [2*vh, 3*vh], [1,0]);
+
+  //Envia y recibe archivos container
+  const textTranslateX = useTransform(scrollY,
+    [vh,2*vh],
+    ["-100%","0%"]
+  );
+
+  //Fila 1
+  const row1TranslateX = useTransform(scrollY,
+    [vh,2*vh],
+    ["100vw","0"]  
+  )
+
+  //Fila 2
+  const row2TranslateX = useTransform(scrollY,
+    [vh,2*vh],
+    ["100%","0%"]  
+  )
   return (
     <section ref = {ref3}> 
       <motion.div 
         id="section3" 
         className={clx(styles.root,"slide section3")}
         style = {{
-          translateY: rootTranslateY
+          translateY: rootTranslateY,
+          opacity: rootOpacity
         }}
       >
         <div className={clx("container")}>
           <div className={styles.content}>
-            <div className={styles.textWrapper}>
+            <motion.div 
+              className={styles.textWrapper}
+              style = {{
+                translateX: textTranslateX
+              }}
+            >
               <span className={styles.venChantBtn}>
                 Ven<b>Chat</b>
               </span>
@@ -35,7 +63,7 @@ export const Section3 = () => {
               <p className={styles.text2}>
                 Chatea, comparte y mantente conectado a través de VenChat.
               </p>
-            </div>
+            </motion.div>
             <div className={styles.imagesWrapper}>
               <div className={styles.card}>
                 <div className={styles.cardTitleWrapper}>
@@ -93,7 +121,12 @@ export const Section3 = () => {
                 </p>
               </div>
               <div className={styles.filas}>
-                <div className={styles.fila1}>
+                <motion.div 
+                  className={styles.fila1}
+                  style = {{
+                    translateX: textTranslateX
+                  }}
+                >
                   <Image
                     src="/assets/img/section3/fila-1.png"
                     alt=""
@@ -101,8 +134,13 @@ export const Section3 = () => {
                     height={172}
                     style={{objectFit: "contain"}}
                   />
-                </div>
-                <div className={styles.fila2}>
+                </motion.div>
+                <motion.div 
+                  className={styles.fila2}
+                  style = {{
+                    translateX: row2TranslateX
+                  }}
+                >
                   <Image
                     src="/assets/img/section3/fila-2.png"
                     alt=""
@@ -110,7 +148,7 @@ export const Section3 = () => {
                     height={172}
                     style={{objectFit: "contain"}}
                   />
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>

@@ -180,6 +180,18 @@ body {
   z-index: 700;
 }
 
+.section4 {
+  z-index: 600;
+}
+
+.section5 {
+  z-index: 500;
+}
+
+.section6 {
+  z-index: 400;
+}
+
 .section {
   position: fixed;
   width: 100%;

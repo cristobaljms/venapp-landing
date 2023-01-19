@@ -6,6 +6,8 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import clx from 'classnames';
 import { useAnimationContext } from "../context/AnimationContext";
+import { BREAKPOINTS, mapDesireWidth, usePhoneContext } from "../components/PhoneFrame";
+import useBreakpoints from "use-breakpoint";
 
 const containerVariants = {
   initial: {
@@ -55,14 +57,27 @@ const textVariantsVenApp = {
 
 export const Section1 = () => {
 
-  const { isAnimate, vh, vw, sizeFactorWidth: sw, sizeFactor: s , ref1, currentSection } = useAnimationContext();
+  const { isAnimate,toPxHeight, toPxWidth, vh, vw, sizeFactorWidth: sw, sizeFactor: s , ref1, currentSection } = useAnimationContext();
   const { scrollY } = useScroll();
+  const { breakpoint : bp } = useBreakpoints(BREAKPOINTS);
+  const { finalHeightSection1 } = usePhoneContext();
+  console.log({finalHeightSection1, b: toPxHeight(finalHeightSection1)})
   //Container
-  const containerTranslateY = useTransform(scrollY,[0,vh],[0,vh + (94 * s)]);
-  const containerWidth      = useTransform(scrollY,[0,vh],[vw, (300)]);
-  //const containerTranslateX = useTransform(scrollY,[0,vh],["0%","100%"]);
-  const containerTranslateX = useTransform(scrollY,[0,vh],[0,234]);
-  const containerHeight     = useTransform(scrollY,[0,vh],[vh,620 * s]);
+  const containerTranslateY = useTransform(scrollY,
+    [0,vh,vh,vh*2],
+    [0, vh + 50, vh + 50, vh*2+50]
+  );
+
+  const containerWidth      = useTransform(scrollY,[0,vh],[vw, mapDesireWidth[bp] - 15 - 10]);
+  
+  const containerTranslateX = useTransform(scrollY,
+    [0, vh, vh, vh*2],
+    [0, toPxWidth(20) + 10, toPxWidth(20) + 10, toPxWidth(40) + 10]
+  );
+
+  const containerOpacity = useTransform(scrollY,[vh,2*vh],[1,0]);
+
+  const containerHeight     = useTransform(scrollY,[0,vh],[vh, finalHeightSection1 - 25]);
   //Header
   const headerTranslateY    = useTransform(scrollY,[0,vh * 0.10],["0%","-100%"])
   //ContentContainer
@@ -92,7 +107,8 @@ export const Section1 = () => {
           translateY: containerTranslateY,
           translateX: containerTranslateX,
           width: containerWidth,
-          height: containerHeight
+          height: containerHeight,
+          opacity: containerOpacity
         }}
       >
         <motion.div
