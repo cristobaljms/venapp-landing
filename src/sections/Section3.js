@@ -20,20 +20,38 @@ export const Section3 = () => {
 
   //Envia y recibe archivos container
   const textTranslateX = useTransform(scrollY,
-    [vh,2*vh],
-    ["-100%","0%"]
+    [vh, 2*vh, 2*vh, 3*vh],
+    ["-100%", "0%", "0%", "-100%" ]
   );
 
-  //Fila 1
-  const row1TranslateX = useTransform(scrollY,
-    [vh,2*vh],
-    ["100vw","0"]  
+  //Fila1
+    const row1TranslateX = useTransform(scrollY,
+      [vh, 2*vh, 2*vh, 3*vh],
+      ["-100%", "0%", "0%", "100%" ]
+    );
+  
+
+  //Comillas container
+  const marksTranslateY = useTransform(scrollY,
+    [vh, vh*2, vh*2, vh*3],
+    ["200%%","0%","0%","-200%"]
+  )
+
+  const marksOpacity = useTransform(scrollY, 
+    [vh, vh*2],
+    [0,1]  
+  )
+
+  //Texto container
+  const textTranslateY = useTransform(scrollY,
+    [vh, vh*2, vh*2, vh*3],
+    ["100%","0%","0%","100%"] 
   )
 
   //Fila 2
   const row2TranslateX = useTransform(scrollY,
-    [vh,2*vh],
-    ["100%","0%"]  
+    [vh, 2*vh, 2*vh, 3*vh],
+    ["100%", "0%", "0%", "-100%"]  
   )
   return (
     <section ref = {ref3}> 
@@ -65,7 +83,12 @@ export const Section3 = () => {
               </p>
             </motion.div>
             <div className={styles.imagesWrapper}>
-              <div className={styles.card}>
+              <motion.div 
+                className={styles.card}
+                style = {{
+                  translateY: textTranslateY
+                }}
+              >
                 <div className={styles.cardTitleWrapper}>
                   <h3 className={styles.cardTitle}>Mensaje AutoBorrado</h3>
                 </div>
@@ -73,7 +96,7 @@ export const Section3 = () => {
                   Desde VenChat puedes configurar cualquier chat grupal o
                   individual para que los mensajes se eliminen automáticamente.
                 </p>
-              </div>
+              </motion.div>
               <div className={styles.iphoneWrapper}>
                 <div className={styles.iPhoneChat}>
                   <Image
@@ -84,23 +107,40 @@ export const Section3 = () => {
                     style={{ objectFit: "contain", maxHeight: "100%" }}
                   />
                 </div>
-                <img
+                <motion.img
                   className={styles.globo1}
                   src="/assets/img/section3/globo-1.png"
                   alt=""
+                  style = {{
+                    opacity: marksOpacity,
+                    translateY: marksTranslateY
+                  }}
                 />
-                <img
+                <motion.img
                   className={styles.globo2}
                   src="/assets/img/section3/globo-2.png"
                   alt=""
+                  style = {{
+                    opacity: marksOpacity,
+                    translateY: marksTranslateY
+                  }}
                 />
-                <img
+                <motion.img
                   className={styles.globo3}
                   src="/assets/img/section3/globo-3.png"
                   alt=""
+                  style = {{
+                    opacity: marksOpacity,
+                    translateY: marksTranslateY
+                  }}
                 />
               </div>
-              <div className={styles.card}>
+              <motion.div 
+                className={styles.card}
+                style = {{ 
+                  translateY: textTranslateY
+                }}
+              >
                 <div className={styles.cardTitleWrapper}>
                   <h3 className={styles.cardTitle}>Mensaje Oculto</h3>
                 </div>
@@ -108,9 +148,14 @@ export const Section3 = () => {
                   Tu seguridad y privacidad son prioritarias en VenChat. Envía y
                   recibe mensajes ocultos que solo tú puedes leer.
                 </p>
-              </div>
+              </motion.div>
 
-              <div className={styles.card}>
+              <motion.div 
+                className={styles.card}
+                style = {{
+                  translateY: textTranslateY
+                }}
+              >
                 <div className={styles.cardTitleWrapper}>
                   <h3 className={styles.cardTitle}>Mensaje Masivos</h3>
                 </div>
@@ -119,12 +164,12 @@ export const Section3 = () => {
                   ideal para dar anuncios importantes, enviar invitaciones o
                   promociones ¡Tú decides!
                 </p>
-              </div>
+              </motion.div>
               <div className={styles.filas}>
                 <motion.div 
                   className={styles.fila1}
                   style = {{
-                    translateX: textTranslateX
+                    translateX: row1TranslateX
                   }}
                 >
                   <Image

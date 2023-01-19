@@ -21,6 +21,19 @@ export const mapDesireWidth = {
   xl: 600
 }
 
+export const mapDesireWidth2 = {
+  m: 200,
+  l: 290,
+  xl: 400
+}
+
+export const mapDesireWidth3 = {
+  m: 300,
+  l: 450,
+  xl: 600
+}
+
+
 const mapPhoneTop = {
   m: "10%",
   l: "5%",
@@ -40,8 +53,12 @@ const PhoneFrame = ({ children }) => {
   //Phone desire data
   const offsetPercent = 15;
   const phoneDesireWidth = mapDesireWidth[bp];
+  const phoneDesireWidth2 = mapDesireWidth2[bp];
+  const phoneDesireWidth3 = mapDesireWidth3[bp];
   const phoneInitialWidthPercent = 100 + offsetPercent;
   const phoneFinalWidthPercent = phoneDesireWidth * 100 / vw;
+  const phoneFinalWidthPercent2 = phoneDesireWidth2 * 100 / vw;
+  const phoneFinalWidthPercent3 = phoneDesireWidth3 * 100 / vw;
   const phoneLeft = (vw * offsetPercent / 100) / -2
 
   const phoneInitialHeightPercent =  toPercentHeight( toPxWidth(phoneInitialWidthPercent) / phoneAspectRatio );
@@ -49,22 +66,57 @@ const PhoneFrame = ({ children }) => {
   
   //Animate phone
   const phoneWidthAnimated = useTransform(scrollY,
-    [ 0, vh ],
-    [ `${ phoneInitialWidthPercent }%`, `${phoneFinalWidthPercent}%` ]
+    [ 0, vh, vh, vh * 2, vh*2, vh*3 ],
+    [ 
+      `${ phoneInitialWidthPercent }%`, `${phoneFinalWidthPercent}%`, 
+      `${phoneFinalWidthPercent}%`, `${phoneFinalWidthPercent2}%`,
+      `${phoneFinalWidthPercent2}%`, `${phoneFinalWidthPercent3}%`
+    ]
   )
   
   const phoneLeftAnimated   = useTransform(scrollY,
-    [0,vh,vh,vh*2], 
-    [ `${phoneLeft * 100 / vw}%` , "20%", "20%" , "40%" ]
+    [0,vh,vh,vh*2, vh*2, vh*3, vh*3, vh * 4], 
+    [ 
+      `${phoneLeft * 100 / vw}%` , "20%", 
+      "20%" , "43%",
+      "43%" , "32%",
+      "32%" , "5%"
+    ]
   )
 
-  const phoneScale = useTransform(scrollY,
-    [vh,vh*2],
-    [1, 0.8]  
+  const phoneHeightAnimated = useTransform(scrollY,
+    [0, vh, vh, vh * 2, vh*2, vh*3], 
+    [ 
+      `${phoneInitialHeightPercent}%`, scaleHeightPercentPerfect(phoneFinalWidthPercent,phoneAspectRatio),  
+      scaleHeightPercentPerfect(phoneFinalWidthPercent,phoneAspectRatio), scaleHeightPercentPerfect(phoneFinalWidthPercent2, phoneAspectRatio),
+      scaleHeightPercentPerfect(phoneFinalWidthPercent2, phoneAspectRatio), scaleHeightPercentPerfect(phoneFinalWidthPercent3, phoneAspectRatio)
+    ]
   )
 
-  const phoneHeightAnimated = useTransform(scrollY,[0,vh], [ `${phoneInitialHeightPercent}%`, scaleHeightPercentPerfect(phoneFinalWidthPercent,phoneAspectRatio)  ])
-  const phoneTop            = useTransform(scrollY,[0,vh], [ "-20%", mapPhoneTop[bp] ?? "5%" ]);
+  const phoneTop            = useTransform(scrollY,
+    [0, vh, vh, vh * 2, vh * 2, vh * 3, vh * 3, vh * 4], 
+    [ 
+      "-20%", mapPhoneTop[bp] ?? "5%",
+      "5%", "20%",
+      "20%", "38%",
+      "38%", "0%"
+    ]
+  );
+
+  const phoneRotate = useTransform(scrollY,
+    [vh * 3, vh * 4],
+    [0,90] 
+  )
+
+  const phoneOriginX = useTransform(scrollY,
+    [vh * 3, vh * 3 + 1],
+    ["0px","900px"] 
+  )
+
+  const phoneOriginY = useTransform(scrollY,
+    [vh * 3, vh * 3 + 1],
+    ["0px","0px"] 
+  )
   
   
   useEffect(() => {
@@ -86,6 +138,10 @@ const PhoneFrame = ({ children }) => {
           height: phoneHeightAnimated,
           top: phoneTop,
           //scale: phoneScale
+          rotate: phoneRotate,
+          //originX: phoneOriginX,
+          //originY: phoneOriginY
+          
         }}
       >
         <Image
