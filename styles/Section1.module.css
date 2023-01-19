@@ -2,15 +2,8 @@
   height: 100vh;
   position: relative;
   width: 100%;
-  scroll-snap-align: start;
-}
-
-.container {
-  width: 100%;
-  height: 100vh;
-  background-color: red;
-  background: linear-gradient(90deg,#4C27AF,#7851EA);
   overflow: hidden;
+  background: linear-gradient(90deg,#4C27AF,#7851EA);
 }
 
 .smartphone {
@@ -39,6 +32,8 @@
 .imgVenapp {
   position: absolute;
   top: 132px;
+  transform: translateY(100px);
+  opacity: 0;
 }
 
 .imgVenappTrazo {
@@ -56,7 +51,7 @@
 
 .imageGroupWrapper {
   width: 100%;
-  height: 576px;
+  height: 100%;
   position: relative;
   bottom: -200px;
 }

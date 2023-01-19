@@ -6,7 +6,6 @@
   overflow: hidden;
   background: #fff;
   padding: 78px 0;
-  scroll-snap-align: start;
 }
 
 .content {
@@ -27,6 +26,7 @@
   height: 100%;
   display: flex;
   justify-content: flex-end;
+  transform: translateX(-100px);
   opacity: 0;
 }
 
@@ -36,14 +36,19 @@
 
 .hayDeTodoContent {
   position: relative;
-  /* opacity: 0;
-  transform: translate(0px, 200px); */
+}
+
+.hayDeTodoText {
+  transform: translateY(100px);
+  opacity: 0;
 }
 
 .icon1 {
   position: absolute;
   bottom: 100%;
   left: 250px;
+  transform: translateY(-100px);
+  opacity: 0;
 }
 
 .icon2 {
@@ -52,6 +57,8 @@
   left: 477px;
   width: 56px;
   height: 56px;
+  transform: translateY(-100px);
+  opacity: 0;
 }
 
 .icon3 {
@@ -60,6 +67,8 @@
   left: 600px;
   width: 65px;
   height: 71px;
+  transform: translateY(-100px);
+  opacity: 0;
 }
 
 .icon4 {
@@ -68,18 +77,24 @@
   left: 462px;
   width: 67px;
   height: 58px;
+  transform: translateY(100px);
+  opacity: 0;
 }
 
 .icon5 {
   position: absolute;
   bottom: 40%;
   left: 250px;
+  transform: translateY(100px);
+  opacity: 0;
 }
 
 .icon6 {
   position: absolute;
   bottom: -20px;
   left: 200px;
+  transform: translateY(100px);
+  opacity: 0;
 }
 
 @media screen and (max-width: 1440px) {

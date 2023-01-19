@@ -6,7 +6,6 @@
   background: #fff;
   padding: 78px 0 0 0;
   display: flex;
-  scroll-snap-align: start;
 }
 
 .content {
@@ -64,6 +63,7 @@
   right: -15%;
   width: 718px;
   height: 624px;
+  z-index: 100;
 }
 
 @media screen and (max-width: 1919px) {

@@ -4,38 +4,121 @@ import styles from "../../styles/Section2.module.css";
 import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
 import { gsap } from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
-import { TransitionContext } from "../context/TransitionContext";
-
-import clx from 'classnames';
-import { useScroll, motion, useTransform } from "framer-motion";
-import { useAnimationContext } from "../context/AnimationContext";
-
 
 export const Section2 = () => {
+  const phoneRef = React.useRef();
+  const icon1ref = useRef();
+  const icon2ref = useRef();
+  const icon3ref = useRef();
+  const icon4ref = useRef();
+  const icon5ref = useRef();
+  const icon6ref = useRef();
+  const hayDeTodoTextRef = useRef();
 
-  const { scrollY } = useScroll();
-  const { vh, currentSection, ref2 } = useAnimationContext();
-  //Hay de todo container
-  const containerTranslateY = useTransform(scrollY,[0,vh,vh,vh*2],[vh,0,0,vh]);
-  const containerTranslateY2 = useTransform(scrollY,[vh,vh*2],[0,vh]);
-  //Decorators
-  const decoratorsTranslateY = useTransform(scrollY,[vh,vh*2],[0,-vh]);
-  //root container
-  const rootTranslateY = useTransform(scrollY,[vh,vh*2],[0,vh]);
-  const rootOpacity    = useTransform(scrollY,[vh,vh*2],[1,0]);
+  useIsomorphicLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to(phoneRef.current, {
+      scrollTrigger: {
+        trigger: phoneRef.current,
+        start: "top center",
+        end: "center center",
+      },
+      x: 0,
+      opacity: 1,
+      duration: 1,
+      delay: 0.3,
+    });
+    
+    gsap.to(icon1ref.current, {
+      scrollTrigger: {
+        trigger: phoneRef.current,
+        start: "top center",
+        end: "center center",
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      delay: 0.5,
+      rotate: 180,
+    });
+
+    gsap.to(icon2ref.current, {
+      scrollTrigger: {
+        trigger: phoneRef.current,
+        start: "top center",
+        end: "center center",
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      delay: 0.5,
+    });
+
+    gsap.to(icon3ref.current, {
+      scrollTrigger: {
+        trigger: phoneRef.current,
+        start: "top center",
+        end: "center center",
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      delay: 0.5,
+    });
+
+    gsap.to(icon4ref.current, {
+      scrollTrigger: {
+        trigger: phoneRef.current,
+        start: "top center",
+        end: "center center",
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      delay: 0.5,
+    });
+
+    gsap.to(icon5ref.current, {
+      scrollTrigger: {
+        trigger: phoneRef.current,
+        start: "top center",
+        end: "center center",
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      delay: 0.5,
+    });
+
+    gsap.to(icon6ref.current, {
+      scrollTrigger: {
+        trigger: phoneRef.current,
+        start: "top center",
+        end: "center center",
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      delay: 0.5,
+    });
+
+    gsap.to(hayDeTodoTextRef.current, {
+      scrollTrigger: {
+        trigger: phoneRef.current,
+        start: "top center",
+        end: "center center",
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      delay: 0.5,
+    });
+  }, []);
 
   return (
-    <section ref = {ref2}>
-    <motion.div 
-      id="section2" 
-      className={clx(styles.root,"slide section2")} 
-      style = {{
-        translateY: rootTranslateY,
-        opacity: rootOpacity
-      }}
-    >
+    <div id="section2" className={styles.root}>
       <div className={styles.content}>
-        {<div className={styles.phoneWrapper}>
+        <div ref={phoneRef} className={styles.phoneWrapper}>
           <Image
             src="/assets/img/section2/phone.png"
             width={446}
@@ -44,19 +127,10 @@ export const Section2 = () => {
             alt=""
             quality={75}
           />
-        </div>}
-        <motion.div 
-          className={styles.hayDeTodoWrapper}
-          style = {{
-            //translateY: containerTranslateY
-          }}
-        >
+        </div>
+        <div className={styles.hayDeTodoWrapper}>
           <div id="hayDeTodoRef" className={styles.hayDeTodoContent}>
-            <motion.div
-              style={{
-                translateY: containerTranslateY
-              }}
-            >
+            <span className={styles.hayDeTodoText} ref={hayDeTodoTextRef}>
               <Image
                 src={"/assets/img/section2/hay-de-todo.png"}
                 alt=""
@@ -64,13 +138,8 @@ export const Section2 = () => {
                 height={533}
                 quality={75}
               />
-            </motion.div>
-            <motion.div 
-              className={styles.icon1}
-              style = {{
-                translateY: decoratorsTranslateY
-              }}
-            >
+            </span>
+            <div ref={icon1ref} className={styles.icon1}>
               <Image
                 src={"/assets/img/section2/icon1.png"}
                 alt=""
@@ -78,13 +147,8 @@ export const Section2 = () => {
                 height={99}
                 quality={75}
               />
-            </motion.div>
-            <motion.div 
-              className={styles.icon2}
-              style = {{
-                translateY: decoratorsTranslateY
-              }}
-            >
+            </div>
+            <div ref={icon2ref} className={styles.icon2}>
               <Image
                 src={"/assets/img/section2/icon2.png"}
                 alt=""
@@ -92,13 +156,8 @@ export const Section2 = () => {
                 height={55}
                 quality={75}
               />
-            </motion.div>
-            <motion.div 
-              className={styles.icon3}
-              style = {{
-                translateY: decoratorsTranslateY
-              }}
-            >
+            </div>
+            <div ref={icon3ref} className={styles.icon3}>
               <Image
                 src={"/assets/img/section2/icon3.png"}
                 alt=""
@@ -106,13 +165,8 @@ export const Section2 = () => {
                 height={71}
                 quality={75}
               />
-            </motion.div>
-            <motion.div 
-              className={styles.icon4}
-              style={{
-                translateY: containerTranslateY
-              }}
-            >
+            </div>
+            <div ref={icon4ref} className={styles.icon4}>
               <Image
                 src={"/assets/img/section2/icon4.png"}
                 alt=""
@@ -120,13 +174,8 @@ export const Section2 = () => {
                 height={58}
                 quality={75}
               />
-            </motion.div>
-            <motion.div 
-              className={styles.icon5}
-              style={{
-                translateY: containerTranslateY
-              }}
-            >
+            </div>
+            <div ref={icon5ref} className={styles.icon5}>
               <Image
                 src={"/assets/img/section2/icon5.png"}
                 alt=""
@@ -134,13 +183,8 @@ export const Section2 = () => {
                 height={89}
                 quality={75}
               />
-            </motion.div>
-            <motion.div 
-              className={styles.icon6}
-              style={{
-                translateY: containerTranslateY
-              }}
-            >
+            </div>
+            <div ref={icon6ref} className={styles.icon6}>
               <Image
                 src={"/assets/img/section2/icon6.png"}
                 alt=""
@@ -148,11 +192,10 @@ export const Section2 = () => {
                 height={49}
                 quality={75}
               />
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </div>
-    </motion.div>
-    </section>
+    </div>
   );
 };

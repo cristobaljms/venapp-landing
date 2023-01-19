@@ -111,17 +111,3 @@ const strings = {
     "Conoce todo lo que puedes hacer con tu VenApp y sacale provecho.",
 };
 
-const videos = [
-  {
-    text: "Lorem ipsum dolor sit amet",
-    image: "/section_3/smartphone.png",
-  },
-  {
-    text: "Lorem ipsum dolor sit amet",
-    image: "/section_3/smartphone.png",
-  },
-  {
-    text: "Lorem ipsum dolor sit amet",
-    image: "/section_3/smartphone.png",
-  },
-];
