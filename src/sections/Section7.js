@@ -1,7 +1,34 @@
 import styles from "../../styles/Section7.module.css";
 import Image from "next/image";
+import { gsap } from "gsap-trial";
+import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
+import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
+import { useRef } from "react";
 
 export const Section7 = () => {
+  const imgref = useRef();
+  const textref = useRef();
+
+  useIsomorphicLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: "#section7",
+          start: "top center",
+          end: "center center",
+          scrub: true,
+        },
+      })
+      .to("#section7", {
+        opacity: 1,
+      })
+      .to(textref.current, {
+        opacity: 1,
+        x: 0,
+      })      
+  }, []);
+  
   return (
     <div  id="section7" className={styles["outer-container"]}>
       <Image
@@ -11,12 +38,12 @@ export const Section7 = () => {
         style={{ objectFit: "cover" }}
       />
       <div className={styles.container}>
-        <div className={styles.content}>
+        <div ref={textref} className={styles.content}>
           <h2> {strings.title} </h2>
           <p> {strings.description} </p>
         </div>
         <div className={styles["phone-container"]}>
-          <div className={styles.phone}>
+          <div ref={imgref} className={styles.phone}>
             <Image
               src="/section_1/phone.png"
               alt="phone"

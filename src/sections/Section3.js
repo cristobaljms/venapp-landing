@@ -6,8 +6,28 @@ import { gsap } from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
 
 export const Section3 = () => {
+  const phoneRef = React.useRef();
+  const icon1ref = useRef();
+  const icon2ref = useRef();
+  const icon3ref = useRef();
+  const icon4ref = useRef();
+  const icon5ref = useRef();
+  const icon6ref = useRef();
+  const hayDeTodoTextRef = useRef();
+
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+      gsap.fromTo(phoneRef.current, { opacity: 0, x: -100 }, {
+      scrollTrigger: {
+        trigger: phoneRef.current,
+        start: "top center",
+        end: "center center",
+      },
+      x: 0,
+      opacity: 1,
+      duration: 1,
+      delay: 0.3,
+    });
   }, []);
 
   return (
@@ -37,7 +57,7 @@ export const Section3 = () => {
               </p>
             </div>
             <div className={styles.iphoneWrapper}>
-              <div className={styles.iPhoneChat}>
+              <div ref={phoneRef} className={styles.iPhoneChat}>
                 <Image
                   src="/assets/img/section3/iPhoneChat.png"
                   alt=""
