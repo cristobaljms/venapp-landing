@@ -6,6 +6,7 @@
   overflow: hidden;
   background: linear-gradient(90deg, #7851ea, #4c27af);
   padding: 78px 0;
+  scroll-snap-align: start;
 }
 
 .content {

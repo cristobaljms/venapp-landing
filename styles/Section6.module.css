@@ -3,6 +3,7 @@
   height: 100vh;
   background-color: var(--section-2-background-color);
   display: flex;
+  opacity: 0;
 }
 
 .badge {
@@ -27,6 +28,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  transform: translateX(100px);
+  opacity: 0;
+  
 }
 
 .content h2 {

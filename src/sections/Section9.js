@@ -1,12 +1,43 @@
 import Image from "next/image";
 import styles from "../../styles/Section9.module.css";
+import { gsap } from "gsap-trial";
+import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
+import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
+import { useRef } from "react";
 
 export const Section9 = () => {
+  const imgref = useRef();
+  const textref = useRef();
+
+  useIsomorphicLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: "#section9",
+          start: "top center",
+          end: "center center",
+          scrub: true,
+        },
+      })
+      .to("#section9", {
+        opacity: 1,
+      })
+      .to(textref.current, {
+        opacity: 1,
+        x: 0,
+      })      
+      .to(imgref.current, {
+        opacity: 1,
+        y: 0,
+      });
+  }, []);
+
   return (
     <div  id="section9" className={styles.container}>
       <div className="container">
         <div className={styles.content}>
-          <div className={styles.textContent}>
+          <div ref={textref} className={styles.textContent}>
             <h2>{strings.title}</h2>
             <h3>{strings.subttitle}</h3>
             <p>
@@ -28,7 +59,7 @@ export const Section9 = () => {
               />
             </div>
           </div>
-          <div className={styles.phoneContent}>
+          <div ref={imgref} className={styles.phoneContent}>
             <Image
               src="/assets/img/section9/phone2.png"
               alt="ven app smartphone"

@@ -130,7 +130,7 @@ const IndexPage = () => {
         </div>
         <div ref={stepref_6}>
           <Section6 />
-        </div>
+        </div> 
         <div ref={stepref_7}>
           <Section7 />
         </div>

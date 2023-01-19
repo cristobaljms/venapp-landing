@@ -83,19 +83,19 @@ const AnimationProvider = ({children,...props}) => {
     [inView1,inView2,isScrollingUp]
   )
 
-  console.log("IN VIEW",{
-    inView1,
-    inView2,
-    inView3,
-    //entry1,
-    //entry2,
-    currentSection,
-    isScrollingUp,
-    width,
-    height,
-    sizeFactor,
-    sizeFactorWidth
-  });
+  // console.log("IN VIEW",{
+  //   inView1,
+  //   inView2,
+  //   inView3,
+  //   //entry1,
+  //   //entry2,
+  //   currentSection,
+  //   isScrollingUp,
+  //   width,
+  //   height,
+  //   sizeFactor,
+  //   sizeFactorWidth
+  // });
 
   return (
     <AnimationContext.Provider {...props} value = {{

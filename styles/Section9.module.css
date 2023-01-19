@@ -5,6 +5,7 @@
   position: relative;
   padding: 78px 0;
   overflow: hidden;
+  opacity: 0;
 }
 
 .content {
@@ -20,11 +21,15 @@
   height: 100%;
   width: 50%;
   margin-top: 116px;
+  transform: translateX(-100px);
+  opacity: 0;
 }
 
 .phoneContent {
   width: 50%;
   position: relative;
+  transform: translateY(50%);
+  opacity: 0;
 }
 
 .container h2 {
