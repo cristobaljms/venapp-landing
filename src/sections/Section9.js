@@ -11,26 +11,47 @@ export const Section9 = () => {
 
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#section9",
-          start: "top center",
-          end: "center center",
-          scrub: true,
-        },
-      })
-      .to("#section9", {
+    const trigger = {
+      trigger: "#section9",
+      toggleActions: "restart none restart none",
+    }
+
+    gsap.fromTo(
+      "#section9",
+      { opacity: 0 },
+      {
+        scrollTrigger: trigger,
         opacity: 1,
-      })
-      .to(textref.current, {
-        opacity: 1,
+        duration: 0.5,
+        delay: 0.1,
+      }
+    );
+
+    gsap.fromTo(
+      textref.current,
+      { opacity: 0, x: 100 },
+      {
+        scrollTrigger: trigger,
         x: 0,
-      })      
-      .to(imgref.current, {
+        delay: 0.5,
         opacity: 1,
+        duration: 1,
+        ease: "circle",
+      }
+    );
+
+    gsap.fromTo(
+      imgref.current,
+      { opacity: 0, y: 100 },
+      {
+        scrollTrigger: trigger,
         y: 0,
-      });
+        delay: 0.5,
+        opacity: 1,
+        duration: 1,
+        ease: "circle",
+      }
+    );
   }, []);
 
   return (

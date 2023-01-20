@@ -3,7 +3,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  background: linear-gradient(90deg,#4C27AF,#7851EA);
+  background: linear-gradient(90deg, #4c27af, #7851ea);
 }
 
 .smartphone {
@@ -32,8 +32,6 @@
 .imgVenapp {
   position: absolute;
   top: 132px;
-  transform: translateY(100px);
-  opacity: 0;
 }
 
 .imgVenappTrazo {
@@ -66,20 +64,19 @@
   }
 }
 
-
 @media screen and (max-width: 1600px) {
   .imgVenapp {
     top: 100px;
   }
-  
+
   .imgVenappTrazo {
     top: 100px;
   }
-  
+
   .img2 {
     top: 320px;
   }
-  
+
   .imageGroupWrapper {
     bottom: -80px;
   }

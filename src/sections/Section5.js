@@ -12,35 +12,47 @@ export const Section5 = () => {
 
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    const trigger = {
+      trigger: "#section5",
+      toggleActions: "restart none restart none",
+    };
+
+    gsap.fromTo(
+      "#section5",
+      { opacity: 0 },
+      {
+        scrollTrigger: trigger,
+        opacity: 1,
+        duration: 0.5,
+        delay: 0.1,
+      }
+    );
+
     gsap.fromTo(
       image1ref.current,
       { opacity: 0, x: -150 },
       {
-        scrollTrigger: {
-          trigger: textContentRef.current,
-          start: "top center",
-          end: "center center",
-        },
+        scrollTrigger: trigger,
         x: 0,
         opacity: 1,
         duration: 0.5,
         delay: 0.3,
+        ease: "circle",
       }
     );
+
     gsap.fromTo(
       image2ref.current,
       { opacity: 0, x: -150, rotate: 180 },
       {
-        scrollTrigger: {
-          trigger: textContentRef.current,
-          start: "top center",
-          end: "center center",
-        },
+        scrollTrigger: trigger,
         x: 0,
         opacity: 1,
         duration: 0.5,
         delay: 0.7,
-        rotate: 0
+        rotate: 0,
+        ease: "circle",
       }
     );
   }, []);
@@ -56,7 +68,6 @@ export const Section5 = () => {
             style={{ objectFit: "contain" }}
           />
         </div>
-
         <Image
           ref={image1ref}
           src="/assets/img/section5/phone.png"

@@ -5,34 +5,48 @@ import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
 import { useRef } from "react";
 
 export const Section6 = () => {
-  const textref = useRef();
+  const text2ref = useRef();
 
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap
-      .timeline({
+    gsap.fromTo(
+      "#section6",
+      { opacity: 0 },
+      {
         scrollTrigger: {
           trigger: "#section6",
-          start: "top center",
-          end: "center center",
-          scrub: true,
+          toggleActions: "restart none restart none",
         },
-      })
-      .to("#section6", {
         opacity: 1,
-      })
-      .to(textref.current, {
-        opacity: 1,
+        duration: 0.5,
+        delay: 0.1,
+      }
+    );
+
+    gsap.fromTo(
+      text2ref.current,
+      { opacity: 0, x: 100 },
+      {
+        scrollTrigger: {
+          trigger: "#section6",
+          toggleActions: "restart none restart none",
+        },
         x: 0,
-      })      
+        opacity: 1,
+        duration: 1,
+        delay: 0.5,
+        ease: "circle",
+      }
+    );
   }, []);
 
   return (
-    <div  id="section6" className={styles.container}>
+    <div id="section6" className={styles.container}>
       <div className={styles.background}></div>
-      <div ref={textref} className={styles.content}>
+      <div ref={text2ref} className={styles.content}>
         <div className={styles.badge}>
-          {strings.ven}<span>U</span>
+          {strings.ven}
+          <span>U</span>
         </div>
         <h2>{strings.title}</h2>
         <p>{strings.descriptions}</p>

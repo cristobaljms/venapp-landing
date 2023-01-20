@@ -14,78 +14,77 @@ export const Section4 = () => {
 
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    const trigger = {
+      trigger: "#section4",
+      toggleActions: "restart none restart none",
+    };
+
+    gsap.fromTo(
+      "#section4",
+      { opacity: 0 },
+      {
+        scrollTrigger: trigger,
+        opacity: 1,
+        duration: 0.5,
+        delay: 0.1,
+      }
+    );
+
+    const fadeParams = {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      delay: 1,
+      ease: "circle",
+    };
+
     gsap.fromTo(
       phoneRef.current,
       { opacity: 0, y: 150 },
       {
-        scrollTrigger: {
-          trigger: "#text1Wrapper",
-          start: "top center",
-          end: "center center",
-        },
-        y: 0,
-        opacity: 1,
-        duration: 1,
+        scrollTrigger: trigger,
+        ...fadeParams,
         delay: 1,
       }
     );
+
     gsap.fromTo(
       card1Ref.current,
       { opacity: 0, y: 150 },
       {
-        scrollTrigger: {
-          trigger: "#text1Wrapper",
-          start: "top center",
-          end: "center center",
-        },
-        y: 0,
-        opacity: 1,
-        duration: 1,
+        scrollTrigger: trigger,
+        ...fadeParams,
         delay: 0.1,
       }
     );
+
     gsap.fromTo(
       card2Ref.current,
       { opacity: 0, y: 150 },
       {
-        scrollTrigger: {
-          trigger: "#text1Wrapper",
-          start: "top center",
-          end: "center center",
-        },
-        y: 0,
-        opacity: 1,
-        duration: 1,
+        scrollTrigger: trigger,
+        ...fadeParams,
         delay: 0.6,
       }
     );
+
     gsap.fromTo(
       card3Ref.current,
       { opacity: 0, y: 150 },
       {
-        scrollTrigger: {
-          trigger: "#text1Wrapper",
-          start: "top center",
-          end: "center center",
-        },
-        y: 0,
-        opacity: 1,
-        duration: 1,
+        scrollTrigger: trigger,
+        ...fadeParams,
         delay: 0.6,
       }
     );
+
     gsap.fromTo(
       card4Ref.current,
       { opacity: 0, y: 150 },
       {
-        scrollTrigger: {
-          trigger: "#text1Wrapper",
-          start: "top center",
-          end: "center center",
-        },
-        y: 0,
-        opacity: 1,
-        duration: 1,
+        scrollTrigger: trigger,
+        ...fadeParams,
         delay: 0.1,
       }
     );
@@ -114,7 +113,7 @@ export const Section4 = () => {
         </div>
       </div>
       <div className={styles.images}>
-        <div  ref={card1Ref} className={`${styles.card} ${styles.card1}`}>
+        <div ref={card1Ref} className={`${styles.card} ${styles.card1}`}>
           <Image
             src="/assets/img/section4/image1.png"
             alt=""

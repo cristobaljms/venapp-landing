@@ -12,64 +12,73 @@ export const Section8 = () => {
 
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#section8",
-          start: "top center",
-          end: "center center",
-          toggleActions: "restart none none none",
-          scrub: true,
-        },
-      })
-      .to("#section8", {
+
+    const trigger = {
+      trigger: "#section8",
+      toggleActions: "restart none restart none",
+    }
+
+    gsap.fromTo(
+      "#section8",
+      { opacity: 0 },
+      {
+        scrollTrigger: trigger,
         opacity: 1,
-        delay: 0.2,
-        ease: "ease",
-      });
+        duration: 0.5,
+        delay: 0.1,
+      }
+    );
 
-    let timelineOut = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#section8",
-        start: "center center",
-        toggleActions: "restart none none none",
-        scrub: true,
-      },
-    });
+    gsap.fromTo(
+      video1ref.current,
+      { opacity: 0, x: -100 },
+      {
+        scrollTrigger: trigger,
+        x: 0,
+        delay: 0.3,
+        opacity: 1,
+        duration: 1
+      }
+    );
 
-    timelineOut
-      .to(video1ref.current, {
-        x: -100,
-        delay: 0,
-        opacity: 0,
-      })
-      .to(
-        video3ref.current,
-        {
-          x: 100,
-          delay: 0,
-          opacity: 0,
-        },
-        "<"
-      )
-      .to(
-        video2ref.current,
-        {
-          y: -200,
-          delay: 0,
-          opacity: 0,
-        },
-        "<"
-      )
-      .to(
-        textref.current,
-        {
-          y: 200,
-          delay: 0,
-          opacity: 0,
-        },
-        "<"
-      );
+    gsap.fromTo(
+      video3ref.current,
+      { opacity: 0, x: 100 },
+      {
+        scrollTrigger: trigger,
+        x: 0,
+        delay: 0.3,
+        opacity: 1,
+        duration: 1,
+        ease: "circle",
+      }
+    );
+
+    gsap.fromTo(
+      video2ref.current,
+      { opacity: 0, y: -200 },
+      {
+        scrollTrigger: trigger,
+        y: 0,
+        delay: 0.3,
+        opacity: 1,
+        duration: 1,
+        ease: "circle",
+      }
+    );
+
+    gsap.fromTo(
+      textref.current,
+      { opacity: 0, y: 200 },
+      {
+        scrollTrigger: trigger,
+        y: 0,
+        delay: 0.3,
+        opacity: 1,
+        duration: 1,
+        ease: "circle",
+      }
+    );
   }, []);
 
   return (

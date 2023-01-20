@@ -17,101 +17,61 @@ export const Section2 = () => {
 
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.to(phoneRef.current, {
-      scrollTrigger: {
-        trigger: phoneRef.current,
-        start: "top center",
-        end: "center center",
-      },
+
+    const trigger = {
+      trigger: phoneRef.current,
+      toggleActions: "restart none restart none",
+    };
+
+    const fadeParams = {
       x: 0,
-      opacity: 1,
-      duration: 1,
-      delay: 0.3,
-    });
-    
-    gsap.to(icon1ref.current, {
-      scrollTrigger: {
-        trigger: phoneRef.current,
-        start: "top center",
-        end: "center center",
-      },
       y: 0,
       opacity: 1,
       duration: 1,
       delay: 0.5,
+      ease: "circle",
+    };
+
+    gsap.to(phoneRef.current, {
+      scrollTrigger: trigger,
+      ...fadeParams,
+      delay: 0.3,
+    });
+
+    gsap.to(icon1ref.current, {
+      scrollTrigger: trigger,
+      ...fadeParams,
       rotate: 180,
     });
 
     gsap.to(icon2ref.current, {
-      scrollTrigger: {
-        trigger: phoneRef.current,
-        start: "top center",
-        end: "center center",
-      },
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      delay: 0.5,
+      scrollTrigger: trigger,
+      ...fadeParams,
     });
 
     gsap.to(icon3ref.current, {
-      scrollTrigger: {
-        trigger: phoneRef.current,
-        start: "top center",
-        end: "center center",
-      },
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      delay: 0.5,
+      scrollTrigger: trigger,
+      ...fadeParams,
     });
 
     gsap.to(icon4ref.current, {
-      scrollTrigger: {
-        trigger: phoneRef.current,
-        start: "top center",
-        end: "center center",
-      },
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      delay: 0.5,
+      scrollTrigger: trigger,
+      ...fadeParams,
     });
 
     gsap.to(icon5ref.current, {
-      scrollTrigger: {
-        trigger: phoneRef.current,
-        start: "top center",
-        end: "center center",
-      },
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      delay: 0.5,
+      scrollTrigger: trigger,
+      ...fadeParams,
     });
 
     gsap.to(icon6ref.current, {
-      scrollTrigger: {
-        trigger: phoneRef.current,
-        start: "top center",
-        end: "center center",
-      },
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      delay: 0.5,
+      scrollTrigger: trigger,
+      ...fadeParams,
     });
 
     gsap.to(hayDeTodoTextRef.current, {
-      scrollTrigger: {
-        trigger: phoneRef.current,
-        start: "top center",
-        end: "center center",
-      },
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      delay: 0.5,
+      scrollTrigger: trigger,
+      ...fadeParams,
     });
   }, []);
 

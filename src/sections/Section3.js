@@ -19,154 +19,119 @@ export const Section3 = () => {
 
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    
+    const trigger = {
+      trigger: "#section3",
+      toggleActions: "restart none restart none",
+    };
+
+    gsap.fromTo(
+      "#section3",
+      { opacity: 0 },
+      {
+        scrollTrigger: trigger,
+        opacity: 1,
+        duration: 0.5,
+        delay: 0.1,
+      }
+    );
+
+    const fadeParams = {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      delay: 0.3,
+      ease: "circle",
+    };
+
     gsap.fromTo(
       phoneRef.current,
       { opacity: 0, x: -150 },
       {
-        scrollTrigger: {
-          trigger: phoneRef.current,
-          start: "top center",
-          end: "center center",
-        },
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 0.3,
+        scrollTrigger: trigger,
+        ...fadeParams,
       }
     );
+
     gsap.fromTo(
       textRef.current,
       { opacity: 0, x: -150 },
       {
-        scrollTrigger: {
-          trigger: phoneRef.current,
-          start: "top center",
-          end: "center center",
-        },
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 0.3,
+        scrollTrigger: trigger,
+        ...fadeParams,
       }
     );
+
     gsap.fromTo(
       card1ref.current,
       { opacity: 0, y: 100 },
       {
-        scrollTrigger: {
-          trigger: phoneRef.current,
-          start: "top center",
-          end: "center center",
-        },
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 0.3,
+        scrollTrigger: trigger,
+        ...fadeParams,
       }
     );
+
     gsap.fromTo(
       card2ref.current,
       { opacity: 0, y: 100 },
       {
-        scrollTrigger: {
-          trigger: phoneRef.current,
-          start: "top center",
-          end: "center center",
-        },
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 0.3,
+        scrollTrigger: trigger,
+        ...fadeParams,
       }
     );
+
     gsap.fromTo(
       card3ref.current,
       { opacity: 0, y: 100 },
       {
-        scrollTrigger: {
-          trigger: phoneRef.current,
-          start: "top center",
-          end: "center center",
-        },
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 0.3,
+        scrollTrigger: trigger,
+        ...fadeParams,
       }
     );
+
     gsap.fromTo(
       globo1Ref.current,
       { opacity: 0, y: 100 },
       {
-        scrollTrigger: {
-          trigger: phoneRef.current,
-          start: "top center",
-          end: "center center",
-        },
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 0.3,
+        scrollTrigger: trigger,
+        ...fadeParams,
       }
     );
+
     gsap.fromTo(
       globo2Ref.current,
       { opacity: 0, y: 100 },
       {
-        scrollTrigger: {
-          trigger: phoneRef.current,
-          start: "top center",
-          end: "center center",
-        },
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 0.3,
+        scrollTrigger: trigger,
+        ...fadeParams,
       }
     );
+
     gsap.fromTo(
       globo3Ref.current,
       { opacity: 0, y: 100 },
       {
-        scrollTrigger: {
-          trigger: phoneRef.current,
-          start: "top center",
-          end: "center center",
-        },
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 0.3,
+        scrollTrigger: trigger,
+        ...fadeParams,
       }
     );
+
     gsap.fromTo(
       fila1Ref.current,
       { opacity: 0, x: -150 },
       {
-        scrollTrigger: {
-          trigger: phoneRef.current,
-          start: "top center",
-          end: "center center",
-        },
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 0.3,
+        scrollTrigger: trigger,
+        ...fadeParams,
       }
     );
+
     gsap.fromTo(
       fila2Ref.current,
       { opacity: 0, x: 150 },
       {
-        scrollTrigger: {
-          trigger: phoneRef.current,
-          start: "top center",
-          end: "center center",
-        },
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 0.3,
+        scrollTrigger: trigger,
+        ...fadeParams,
       }
     );
   }, []);

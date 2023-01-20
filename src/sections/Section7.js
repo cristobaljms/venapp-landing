@@ -7,26 +7,39 @@ import { useRef } from "react";
 
 export const Section7 = () => {
   const imgref = useRef();
-  const textref = useRef();
+  const text2ref = useRef();
 
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap
-      .timeline({
+    gsap.fromTo(
+      "#section7",
+      { opacity: 0 },
+      {
         scrollTrigger: {
           trigger: "#section7",
-          start: "top center",
-          end: "center center",
-          scrub: true,
+          toggleActions: "restart none restart none",
         },
-      })
-      .to("#section7", {
         opacity: 1,
-      })
-      .to(textref.current, {
-        opacity: 1,
+        duration: 0.5,
+        delay: 0.1,
+      }
+    );
+
+    gsap.fromTo(
+      text2ref.current,
+      { opacity: 0, x: -100 },
+      {
+        scrollTrigger: {
+          trigger: "#section7",
+          toggleActions: "restart none restart none",
+        },
         x: 0,
-      })      
+        opacity: 1,
+        duration: 1,
+        delay: 0.5,
+        ease: "circle",
+      }
+    );   
   }, []);
   
   return (
@@ -38,7 +51,7 @@ export const Section7 = () => {
         style={{ objectFit: "cover" }}
       />
       <div className={styles.container}>
-        <div ref={textref} className={styles.content}>
+        <div ref={text2ref} className={styles.content}>
           <h2> {strings.title} </h2>
           <p> {strings.description} </p>
         </div>

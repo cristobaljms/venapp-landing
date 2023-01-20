@@ -5,7 +5,6 @@
   display: flex;
   justify-content: center;
   position: relative;
-  opacity: 0;
 }
 
 .container {
@@ -38,8 +37,6 @@
 .content {
   position: relative;
   width: 550px;
-  transform: translateX(-100px);
-  opacity: 0;
 }
 
 .content h2 {
@@ -72,12 +69,11 @@
   background-size: cover;
 }
 
-
 @media screen and (max-width: 1919px) {
   .content h2 {
     font-size: 80px;
   }
-  
+
   .content p {
     font-size: 22px;
   }
@@ -86,13 +82,13 @@
 @media screen and (max-width: 1600px) {
   .content {
     position: relative;
-    width: 405px
+    width: 405px;
   }
 
   .content h2 {
     font-size: 70px;
   }
-  
+
   .content p {
     font-size: 20px;
   }
@@ -129,7 +125,7 @@
   .content h2 {
     font-size: 50px;
   }
-  
+
   .content p {
     font-size: 18px;
   }
