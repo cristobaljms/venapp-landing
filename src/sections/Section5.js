@@ -4,12 +4,13 @@ import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useAnimationContext } from "../context/AnimationContext";
 import clx from "classnames";
+import { usePhoneContext } from "../components/PhoneFrame";
 
 export const Section5 = () => {
 
-  const { scrollY } = useScroll();
-  const { vh } = useAnimationContext();
-
+  const { vh, scrollRef } = useAnimationContext();
+  const { scrollY } = useScroll({ container: scrollRef, target: scrollRef});
+  const { phoneTrackRef5 } = usePhoneContext();
   //todo comics
   const allComicsTranslateX = useTransform(scrollY,
     [3*vh,4*vh],
@@ -48,14 +49,15 @@ export const Section5 = () => {
               style={{ objectFit: "contain" }}
             />
           </motion.div>
-
-          <Image
-            src="/assets/img/section5/phone.png"
-            alt=""
-            width={960}
-            height={706}
-            style={{ objectFit: "contain", maxWidth: "100%" }}
-          />
+          <div ref = {phoneTrackRef5} className={styles.phone}>
+            <Image
+              src="/assets/img/section5/phone.png"
+              alt=""
+              width={960}
+              height={706}
+              style={{ objectFit: "contain", maxWidth: "100%" }}
+            />
+          </div>
         </div>
         <motion.div 
           className="container"

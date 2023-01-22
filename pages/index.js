@@ -37,8 +37,10 @@ const IndexPage = () => {
     smoother && smoother.scrollTo("#Section4", true, "center center");
   }
 
+  const scrollRef = useRef();
+
   return (
-    <AnimationProvider>
+    <AnimationProvider scrollRef = {scrollRef}>
       <Wrapper
         url=""
         title="VenApp"
@@ -47,19 +49,19 @@ const IndexPage = () => {
         imageUrl=""
         imageAlt=""
       >
-        <PhoneFrame>
-          <div>
+          <div className="scroll-container" ref={scrollRef}>
+          <PhoneFrame>
             <Section1 />
             <Section2 />
             <Section3 />
             <Section4 />
             <Section5 />
-            <Section6 />
             <Section7 />
+            <Section6 />
             <Section8 />
             <Section9 />
+          </PhoneFrame>
           </div>
-        </PhoneFrame>
       </Wrapper>  
     </AnimationProvider>
   );

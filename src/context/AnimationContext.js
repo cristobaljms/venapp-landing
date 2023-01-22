@@ -8,8 +8,7 @@ const AnimationContext = React.createContext();
 
 export default AnimationContext;
 
-const AnimationProvider = ({children,...props}) => {
-
+const AnimationProvider = ({children, scrollRef, ...props}) => {
   const { isScrollingUp } = useScrollDirection()
   const [animateLabel,setAnimateLabel ] = React.useState("initial");
   const [ currentSection,setCurrentSection ] = React.useState("");
@@ -83,20 +82,6 @@ const AnimationProvider = ({children,...props}) => {
     [inView1,inView2,isScrollingUp]
   )
 
-  console.log("IN VIEW",{
-    inView1,
-    inView2,
-    inView3,
-    //entry1,
-    //entry2,
-    currentSection,
-    isScrollingUp,
-    width,
-    height,
-    sizeFactor,
-    sizeFactorWidth
-  });
-
   const toPxWidth = (value) => {
     return value * viewportWidth / 100;
   }
@@ -109,7 +94,15 @@ const AnimationProvider = ({children,...props}) => {
     return value * 100 / viewportHeight;
   }
 
-  const scaleHeightPercentPerfect = (widthValue,aspectRatio) => {
+  const toPercentWidth = value => {
+    return value * 100 / viewportWidth;
+  }
+
+  const widthToHeightPx = (value,aspectRatio) => {
+    return toPxWidth(value) / aspectRatio;
+  }
+
+  const scaleHeightPercentPerfect = (widthValue,aspectRatio = 1) => {
     return `${toPercentHeight( toPxWidth(widthValue) / aspectRatio) }%`
   }
 
@@ -121,14 +114,18 @@ const AnimationProvider = ({children,...props}) => {
       toPxWidth,
       toPxHeight,
       toPercentHeight,
+      toPercentWidth,
       scaleHeightPercentPerfect,
+
+      widthToHeightPx,
       sizeFactor,
       sizeFactorWidth,
       //sections
       ref1,
       ref2,
       ref3,
-      currentSection
+      currentSection,
+      scrollRef
     }}>
       {children}
       <div className={styles.panel}>

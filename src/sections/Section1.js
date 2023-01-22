@@ -6,8 +6,14 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import clx from 'classnames';
 import { useAnimationContext } from "../context/AnimationContext";
-import { BREAKPOINTS, mapDesireWidth, usePhoneContext } from "../components/PhoneFrame";
+import { BREAKPOINTS, mapDesireWidth, mapPhoneTop, usePhoneContext, mapDesireWidth2, mapDesireWidth3, mapPhoneTop2 } from "../components/PhoneFrame";
 import useBreakpoints from "use-breakpoint";
+
+const mapBorderRadius = {
+  m: 20,
+  l: 20,
+  xl: 40
+}
 
 const containerVariants = {
   initial: {
@@ -57,27 +63,70 @@ const textVariantsVenApp = {
 
 export const Section1 = () => {
 
-  const { isAnimate,toPxHeight, toPxWidth, vh, vw, sizeFactorWidth: sw, sizeFactor: s , ref1, currentSection } = useAnimationContext();
-  const { scrollY } = useScroll();
+  const { 
+    scrollRef, 
+    isAnimate,
+    toPxHeight, 
+    toPxWidth, 
+    vh, 
+    vw, 
+    ref1, 
+  } = useAnimationContext();
+  const { scrollY } = useScroll({ container: scrollRef, target: scrollRef });
   const { breakpoint : bp } = useBreakpoints(BREAKPOINTS);
-  const { finalHeightSection1 } = usePhoneContext();
-  console.log({finalHeightSection1, b: toPxHeight(finalHeightSection1)})
+  const { finalHeightSection1, finalHeightSection2, phoneDesireWidth3, phoneDesireWidth, phoneFinalTop4, phoneFinalTop, phoneLeftSection3 } = usePhoneContext();
+  
+  const phoneOffsetY = toPxHeight( phoneFinalTop );
+  const phoneOffsetY2 = toPxHeight( parseInt(mapPhoneTop2[bp]) );
+  const phoneOffsetY3 = toPxHeight( phoneFinalTop4 );
+
   //Container
   const containerTranslateY = useTransform(scrollY,
-    [0,vh,vh,vh*2],
-    [0, vh + 50, vh + 50, vh*2+50]
+    [0,vh,vh,vh*2,vh*2,vh*3],
+    [
+      0, vh + phoneOffsetY + 10, 
+      vh + phoneOffsetY + 10, vh * 2 + phoneOffsetY2 + 15,
+      vh * 2 + phoneOffsetY2 + 15, vh * 3 + phoneOffsetY3 + 15
+    ]
   );
 
-  const containerWidth      = useTransform(scrollY,[0,vh],[vw, mapDesireWidth[bp] - 15 - 10]);
+  const containerBorderRadius = useTransform(scrollY,
+    [0,vh],
+    [0 , mapBorderRadius[bp]] 
+  )
+
+  const containerWidth      = useTransform(scrollY,
+    [0,vh, vh, vh * 2],
+    [
+      vw, phoneDesireWidth - 15 - 0,
+      phoneDesireWidth - 15 - 0, mapDesireWidth2[bp] - 15 - 10,
+    ]
+  );
   
   const containerTranslateX = useTransform(scrollY,
-    [0, vh, vh, vh*2],
-    [0, toPxWidth(20) + 10, toPxWidth(20) + 10, toPxWidth(40) + 10]
+    [0, vh, vh, vh*2, vh*2, vh*3],
+    [
+      0, toPxWidth(20) + 10, 
+      toPxWidth(20) + 10, toPxWidth( phoneLeftSection3 ) + 10,
+      toPxWidth( phoneLeftSection3 ) + 10, toPxWidth( 32 ) + 10
+    ]
+
   );
 
   const containerOpacity = useTransform(scrollY,[vh,2*vh],[1,0]);
 
-  const containerHeight     = useTransform(scrollY,[0,vh],[vh, finalHeightSection1 - 25]);
+  const containerHeight     = useTransform(scrollY,
+    [0,vh, vh, vh * 2],
+    [
+      vh, finalHeightSection1 - 20,
+      finalHeightSection1 - 20, finalHeightSection2 - 20
+    ]
+  );
+  //Section 2
+  const section2Opacity = useTransform(scrollY,
+    [2*vh, 3*vh],
+    [1,0]
+  )
   //Header
   const headerTranslateY    = useTransform(scrollY,[0,vh * 0.10],["0%","-100%"])
   //ContentContainer
@@ -85,8 +134,7 @@ export const Section1 = () => {
   //Content
   const contentTop          = useTransform(scrollY,[0,vh],[0,-105]);
   //PeopleImage
-  const peopleImageTop      = useTransform(scrollY,[0,vh],[0,vh]);
-  const peopleImageHeight   = useTransform(scrollY,[0,vh],[576,340]);
+  const peopleImageHeight   = useTransform(scrollY,[0,vh],["100%","38%"]);
   //La nueva
   const textLaNuevaTop      = useTransform(scrollY,[0,vh],[0,-200]);
   const textLaNuevaScale    = useTransform(scrollY,[0,vh],[1,0.5]);
@@ -98,7 +146,28 @@ export const Section1 = () => {
   const text2Scale          = useTransform(scrollY,[0,vh],[1, 0.8]);
 
   return (
-    <section className={clx(styles.root)} id="section1" ref = {ref1}>
+    <section className={clx(styles.root)} ref = {ref1}>
+      <motion.div 
+        className={styles.section2Image} 
+        style = {{
+          translateY: containerTranslateY,
+          translateX: containerTranslateX,
+          width: containerWidth,
+          height: containerHeight,
+          borderRadius: containerBorderRadius,
+          opacity: section2Opacity
+        }}
+      />
+      {/*<motion.div 
+        className={styles.section3Image} 
+        style = {{
+          translateY: containerTranslateY,
+          translateX: containerTranslateX,
+          width: containerWidth,
+          height: containerHeight,
+          borderRadius: containerBorderRadius
+        }}
+      />*/}
       <motion.div 
         className={clx(styles.container,"slide section1")}
         animate={isAnimate ? "animate" : "initial"}
@@ -108,7 +177,8 @@ export const Section1 = () => {
           translateX: containerTranslateX,
           width: containerWidth,
           height: containerHeight,
-          opacity: containerOpacity
+          opacity: containerOpacity,
+          borderRadius: containerBorderRadius
         }}
       >
         <motion.div

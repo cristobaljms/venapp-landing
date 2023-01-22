@@ -3,13 +3,17 @@ import React, { useRef } from "react";
 import styles from "../../styles/Section3.module.css";
 import { useScroll, motion, useTransform } from "framer-motion";
 import { useAnimationContext } from "../context/AnimationContext";
+import { BREAKPOINTS, mapDesireWidth2, usePhoneContext, mapPhoneTop2 } from "../components/PhoneFrame";
 import clx from 'classnames';
+import { useBreakpoint } from "use-breakpoint";
 
 export const Section3 = () => {
 
-  const { ref3, vh } = useAnimationContext();
-  const { scrollY } = useScroll();
-  
+  const { scrollRef, ref3, vh , toPxHeight } = useAnimationContext();
+
+  const { finalHeightSection3, phoneDesireWidth3, phoneFinalTop5, phoneFinalTop4, phoneLeftSection3, phoneTrackRef, phoneDesireWidth, finalHeightSection1, finalHeightSection2 } = usePhoneContext();
+  const { scrollY } = useScroll({ container: scrollRef, target: scrollRef});
+  const { breakpoint: bp } = useBreakpoint(BREAKPOINTS);
   //root container
   const rootTranslateY = useTransform(scrollY,
     [vh, 2*vh, 2*vh, 3*vh],
@@ -17,6 +21,10 @@ export const Section3 = () => {
   );
 
   const rootOpacity = useTransform(scrollY, [2*vh, 3*vh], [1,0]);
+
+  const phoneOffsetY2 = toPxHeight( parseInt(mapPhoneTop2[bp]) );
+  const phoneOffsetY3 = toPxHeight( phoneFinalTop4 );
+  const phoneOffsetY4 = toPxHeight( phoneFinalTop5 );
 
   //Envia y recibe archivos container
   const textTranslateX = useTransform(scrollY,
@@ -53,8 +61,90 @@ export const Section3 = () => {
     [vh, 2*vh, 2*vh, 3*vh],
     ["100%", "0%", "0%", "-100%"]  
   )
+
+  //Imagen Seccion 3
+  const section3Width = useTransform(scrollY,
+    [vh*2,vh*3],
+    [
+      phoneDesireWidth - 15 - 0, phoneDesireWidth3 - 25
+    ]
+  )
+
+  const section3Height = useTransform(scrollY,
+    [vh*2,vh*3],
+    [
+      finalHeightSection2 - 20, finalHeightSection3 - 20
+    ] 
+  );
+
+  const section3Left = useTransform(scrollY, 
+    [vh*2,vh*3,vh*3,vh*4],
+    [
+      `${phoneLeftSection3 + 1.5}%` , "33%",
+      "33%", "5%"
+    ]
+  )
+
+  const section4TranslateY = useTransform(scrollY, 
+    [vh*2,vh*3,vh*3,vh*4],
+    [
+      phoneOffsetY2 + 15, vh + phoneOffsetY3 + 15,
+      vh + phoneOffsetY3 + 15, vh * 2 + phoneOffsetY4 + 15
+    ]
+  )
+
+  const section3BorderRadius = useTransform(scrollY, 
+    [vh*2,vh*3],
+    [
+      25, 50
+    ]
+  )
+
+  const section3Opacity = useTransform(scrollY, 
+    [vh*1,vh*2,vh*2,vh*2 + 1,vh*3 + 1,vh*4],
+    [
+      0, 0, 0, 1, 1, 0
+    ]
+  )
+
+  const section3Rotate = useTransform(scrollY,
+    [vh*3,vh*4],
+    [0,90] 
+  )
+  
+  const section3Opacity1 = useTransform(scrollY, 
+    [vh*1,vh*2,vh*2,vh*2 + 1],
+    [
+      0, 0, 0, 1
+    ]
+  )
+
   return (
     <section ref = {ref3}> 
+      <motion.div 
+        className={styles.section3Image}
+        style = {{
+          width: section3Width,
+          height: section3Height,
+          left: section3Left,
+          translateY: section4TranslateY,
+          borderRadius: section3BorderRadius,
+          opacity: section3Opacity,
+          rotate: section3Rotate
+        }}
+      />
+      <motion.div 
+        className={styles.section4Image}
+        style = {{
+          width: section3Width,
+          height: section3Height,
+          left: section3Left,
+          translateY: section4TranslateY,
+          borderRadius: section3BorderRadius,
+          opacity: section3Opacity1,
+          rotate: section3Rotate
+        }}
+      />
       <motion.div 
         id="section3" 
         className={clx(styles.root,"slide section3")}
@@ -98,7 +188,7 @@ export const Section3 = () => {
                 </p>
               </motion.div>
               <div className={styles.iphoneWrapper}>
-                <div className={styles.iPhoneChat}>
+                <div className={styles.iPhoneChat} ref={phoneTrackRef}>
                   <Image
                     src="/assets/img/section3/iPhoneChat.png"
                     alt=""

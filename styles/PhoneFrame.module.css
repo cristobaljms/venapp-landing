@@ -2,10 +2,20 @@
 .phone-frame {
   width: 445px;
   height: 879px;
-  position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
   width: 110%;
+  pointer-events: none;
+  position: fixed;
+}
 
+.phone-frame-container{
+  position: fixed;
+  width: 100vh;
+  height: 100vh;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }

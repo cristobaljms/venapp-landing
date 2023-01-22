@@ -8,6 +8,11 @@
   display: flex;
 }
 
+.phone {
+  position: relative;
+  /*opacity: 0;*/
+}
+
 .content {
   margin: 0 auto !important;
   width: 100%;

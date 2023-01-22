@@ -60,6 +60,28 @@
   bottom: -200px;
 }
 
+.section2Image {
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  background: url('/assets/img/phone-frame-2.png');
+  background-size: cover;
+}
+
+.section3Image {
+  width: 100vw;
+  height: 100vh;
+  background-color: blue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 899;
+}
+
 @media screen and (max-width: 1919px) {
   .content {
     max-width: 90vw;

@@ -4,7 +4,7 @@ import styles from '../../styles/PhoneFrame.module.css';
 import { useAnimationContext } from '../context/AnimationContext';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from "next/image";
-import { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState, useRef } from 'react';
 import useBreakpoints from "use-breakpoint";
 
 const PhonePhrameContext = createContext();
@@ -34,52 +34,81 @@ export const mapDesireWidth3 = {
 }
 
 
-const mapPhoneTop = {
+export const mapPhoneTop = {
   m: "10%",
   l: "5%",
   xl: "5%"
 }
 
+export const mapPhoneTop2 = {
+  m: "20%",
+  l: "20%",
+  xl: "20%"
+}
+
 const PhoneFrame = ({ children }) => {
 
-  const { vw, vh, toPxWidth, toPercentHeight, scaleHeightPercentPerfect } = useAnimationContext();
+  const { vw, vh, toPxWidth, toPercentWidth, toPercentHeight, scaleHeightPercentPerfect, scrollRef, widthToHeightPx, toPxHeight } = useAnimationContext();
   const { breakpoint: bp } = useBreakpoints(BREAKPOINTS);
-  const { scrollY } = useScroll();
+  const { scrollY } = useScroll({ container: scrollRef, target: scrollRef});
   const [ render, setRender ] = useState(false);
+
+  //Section 3 phone
+  const phoneTrackRef = useRef();
+  const phoneLeftSection3 = toPercentWidth( phoneTrackRef?.current?.getBoundingClientRect?.()?.left );
+  //Section 4 phone
+  const phoneTrackRef4 = useRef();
+  const phoneTopSection4 = toPercentHeight( phoneTrackRef4?.current?.getBoundingClientRect?.()?.top );
+  const phoneLeftSection4 = toPercentWidth( phoneTrackRef4?.current?.getBoundingClientRect?.()?.left )
+  //Section 5 phone
+  const phoneTrackRef5 = useRef();
+  console.log("COWBOY LIKE ME",{
+    a: phoneTrackRef5?.current?.getBoundingClientRect?.(),
+    phoneTopSection4
+  });
   //Phone data: taken from image
   const phoneWidth  = 445;
   const phoneHeight = 879;
   const phoneAspectRatio = phoneWidth / phoneHeight;
   //Phone desire data
   const offsetPercent = 15;
-  const phoneDesireWidth = mapDesireWidth[bp];
+  const phoneDesireWidth = toPxWidth(20);
   const phoneDesireWidth2 = mapDesireWidth2[bp];
   const phoneDesireWidth3 = mapDesireWidth3[bp];
   const phoneInitialWidthPercent = 100 + offsetPercent;
+  //Phone width
   const phoneFinalWidthPercent = phoneDesireWidth * 100 / vw;
   const phoneFinalWidthPercent2 = phoneDesireWidth2 * 100 / vw;
   const phoneFinalWidthPercent3 = phoneDesireWidth3 * 100 / vw;
   const phoneLeft = (vw * offsetPercent / 100) / -2
-
+  //Phone height
+  const phoneFinalHeightPercent = scaleHeightPercentPerfect(phoneFinalWidthPercent,phoneAspectRatio);
+  //Phone Translate Y
+  const phoneFinalTop = toPercentHeight( vh / 2 - widthToHeightPx(phoneFinalWidthPercent,phoneAspectRatio) / 2 )   
   const phoneInitialHeightPercent =  toPercentHeight( toPxWidth(phoneInitialWidthPercent) / phoneAspectRatio );
+  const phoneFinalHeight5 = widthToHeightPx( phoneFinalWidthPercent3, phoneAspectRatio );
+  const phoneFinalTop5 = toPercentHeight( vh / 2 - phoneFinalHeight5 / 2 )   
 
-  
+  React.useEffect( () => {
+
+  } , [])
+
   //Animate phone
   const phoneWidthAnimated = useTransform(scrollY,
     [ 0, vh, vh, vh * 2, vh*2, vh*3 ],
     [ 
-      `${ phoneInitialWidthPercent }%`, `${phoneFinalWidthPercent}%`, 
+      `${phoneInitialWidthPercent}%`, `${phoneFinalWidthPercent}%`, 
       `${phoneFinalWidthPercent}%`, `${phoneFinalWidthPercent2}%`,
       `${phoneFinalWidthPercent2}%`, `${phoneFinalWidthPercent3}%`
     ]
-  )
+  );
   
   const phoneLeftAnimated   = useTransform(scrollY,
     [0,vh,vh,vh*2, vh*2, vh*3, vh*3, vh * 4], 
     [ 
       `${phoneLeft * 100 / vw}%` , "20%", 
-      "20%" , "43%",
-      "43%" , "32%",
+      "20%" , `${phoneLeftSection3}%`,
+      `${phoneLeftSection3}%` , "32%",
       "32%" , "5%"
     ]
   )
@@ -96,10 +125,10 @@ const PhoneFrame = ({ children }) => {
   const phoneTop            = useTransform(scrollY,
     [0, vh, vh, vh * 2, vh * 2, vh * 3, vh * 3, vh * 4], 
     [ 
-      "-20%", mapPhoneTop[bp] ?? "5%",
-      "5%", "20%",
-      "20%", "38%",
-      "38%", "0%"
+      "-20%", `${phoneFinalTop}%`,
+      `${phoneFinalTop}%`, mapPhoneTop2[bp] ?? "5%",
+      mapPhoneTop2[bp] ?? "5%", `${phoneTopSection4}%`,
+      `${phoneTopSection4}%`, `${phoneFinalTop5}%`
     ]
   );
 
@@ -108,15 +137,12 @@ const PhoneFrame = ({ children }) => {
     [0,90] 
   )
 
-  const phoneOriginX = useTransform(scrollY,
-    [vh * 3, vh * 3 + 1],
-    ["0px","900px"] 
+  //PhoneOpacity
+  const phoneOpacity = useTransform(scrollY,
+    [ vh * 4, vh * 4 + 1 ],
+    [ 1, 0 ] 
   )
 
-  const phoneOriginY = useTransform(scrollY,
-    [vh * 3, vh * 3 + 1],
-    ["0px","0px"] 
-  )
   
   
   useEffect(() => {
@@ -128,33 +154,47 @@ const PhoneFrame = ({ children }) => {
 
   return (
     <PhonePhrameContext.Provider value = {{
-      finalHeightSection1: toPxWidth(phoneFinalWidthPercent) / phoneAspectRatio
+      finalHeightSection1: toPxWidth(phoneFinalWidthPercent) / phoneAspectRatio,
+      finalHeightSection2: toPxWidth(phoneFinalWidthPercent2) / phoneAspectRatio,
+      finalHeightSection3: toPxWidth(phoneFinalWidthPercent3) / phoneAspectRatio,
+      phoneDesireWidth,
+      phoneDesireWidth2,
+      phoneDesireWidth3,
+      phoneFinalTop,
+      phoneFinalTop4: phoneTopSection4,
+      phoneFinalTop5,
+      phoneTrackRef,
+      phoneTrackRef4,
+      phoneTrackRef5,
+      phoneLeftSection3
     }}>
-      <motion.div 
-        className={styles["phone-frame"]}
-        style = {{
-          width: phoneWidthAnimated,
-          left: phoneLeftAnimated,
-          height: phoneHeightAnimated,
-          top: phoneTop,
-          //scale: phoneScale
-          rotate: phoneRotate,
-          //originX: phoneOriginX,
-          //originY: phoneOriginY
-          
-        }}
-      >
-        <Image
-          src={"/assets/img/phone-square.png"}
-          alt=""
-          fill
-          style={{ 
-            objectFit: "cover"
-          }}
-          quality={75}
-        />
-      </motion.div>
       {children}
+        <motion.div 
+          className={styles["phone-frame"]}
+          style = {{
+            width: phoneWidthAnimated,
+            left: phoneLeftAnimated,
+            height: phoneHeightAnimated,
+            top: phoneTop,
+            //scale: phoneScale
+            rotate: phoneRotate,
+            opacity: phoneOpacity
+            //originX: phoneOriginX,
+            //originY: phoneOriginY
+            
+          }}
+        >
+          
+          <Image
+            src={"/assets/img/phone-square.png"}
+            alt=""
+            fill
+            style={{ 
+              objectFit: "cover"
+            }}
+            quality={75}
+          />
+        </motion.div>
     </PhonePhrameContext.Provider>
     
   )

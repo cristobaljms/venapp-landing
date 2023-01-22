@@ -13,8 +13,8 @@ import { useAnimationContext } from "../context/AnimationContext";
 
 export const Section2 = () => {
 
-  const { scrollY } = useScroll();
-  const { vh, currentSection, ref2 } = useAnimationContext();
+  const { vh, currentSection, ref2, scrollRef } = useAnimationContext();
+  const { scrollY } = useScroll({ container: scrollRef, target: scrollRef});
   //Hay de todo container
   const containerTranslateY = useTransform(scrollY,[0,vh,vh,vh*2],[vh,0,0,vh]);
   const containerTranslateY2 = useTransform(scrollY,[vh,vh*2],[0,vh]);

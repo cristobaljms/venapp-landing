@@ -4,6 +4,10 @@ body {
   font-family: "Poppins";
 }
 
+html {
+  scroll-snap-type: y mandatory;
+}
+
 :root {
 
   --section-1-background-color: #201D3C;
@@ -146,6 +150,11 @@ body {
   position: relative;
 }
 
+section {
+  scroll-snap-align: start;
+  position: relative;
+}
+
 .section1 {
   z-index: 900;
 }
@@ -169,4 +178,25 @@ body {
 
 .section6 {
   z-index: 400;
+}
+
+.section7 {
+  z-index: 300;
+}
+
+.section8 {
+  z-index: 200;
+} 
+
+.section9 {
+  z-index: 100;
+}
+
+.scroll-container {
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  scroll-snap-type: y mandatory;
 }

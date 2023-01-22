@@ -4,11 +4,13 @@ import clx from "classnames";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useAnimationContext } from "../context/AnimationContext";
 import Image from "next/image";
+import { usePhoneContext } from "../components/PhoneFrame";
 
 export const Section4 = () => {
 
-  const { scrollY } = useScroll();
-  const { vh }         = useAnimationContext();
+  const { vh, scrollRef }         = useAnimationContext();
+  const { scrollY } = useScroll({ container: scrollRef, target: scrollRef});
+  const { phoneTrackRef4 } = usePhoneContext();
 
   //Container 
   const rootTranslateY = useTransform(scrollY,
@@ -29,7 +31,7 @@ export const Section4 = () => {
   )
 
   //Imagenes fila 1
-  const rowImage1TranslateY = useTransform(scrollY,[2*vh, 3*vh],["100%","0%"] );
+  const rowImage1TranslateY = useTransform(scrollY,[3*vh, 4*vh],["0%","100%"] );
 
   //Inner container
   const innerContainerTranslateY = useTransform(scrollY,[3*vh, 4*vh],[0,vh] );
@@ -50,15 +52,15 @@ export const Section4 = () => {
         > 
           <div className="container">
             <div className={styles.content}>
+              <div className={styles.textWrapper}>
               <motion.span 
                 className={styles.venChantBtn}
                 style = {{ 
-                  translateX: buyCheaperTextTranslateX
+                  //translateX: buyCheaperTextTranslateX
                 }}
               >
                 <b>VenChat</b>
               </motion.span>
-              <div className={styles.textWrapper}>
                 <motion.div 
                   className={styles.text1}
                   style = {{
@@ -144,17 +146,20 @@ export const Section4 = () => {
                 quality={60}
               />
             </motion.div>
-            <motion.div 
+            <div 
+              
               className={styles.phone}
             >
-              <Image
+              <div ref = {phoneTrackRef4}>
+`              <Image
                 src="/assets/img/section4/phone.png"
                 alt=""
                 width={715}
                 height={648}
                 style={{ objectFit: "contain", maxHeight: "100%" }}
               />
-            </motion.div>
+              </div>
+            </div>
           </div>
         </motion.div>
       </motion.div>
