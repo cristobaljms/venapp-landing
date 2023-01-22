@@ -14,6 +14,10 @@
   position: relative;
 }
 
+.text11 {
+  width: 100%;
+}
+
 .content {
   margin: 0 auto !important;
   width: 100%;
@@ -36,8 +40,14 @@
   align-items: center;
 }
 
+.textInnerWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+}
+
 .text1 {
-  width: 50%;
   color: #201d3c;
 }
 
@@ -63,6 +73,7 @@
 .images {
   height: 100%;
   margin: 0 20px;
+  overflow: hidden;
 }
 
 .card {
@@ -171,6 +182,11 @@
 
   .venChantBtn {
     margin-bottom: 0;
+  }
+
+  .text11{
+    width: 50%;
+    margin-top: 20px;
   }
 
   .text1 h2 {

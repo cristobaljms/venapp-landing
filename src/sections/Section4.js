@@ -27,12 +27,12 @@ export const Section4 = () => {
   //Descripcion text
   const descriptionTextTranslateX = useTransform(scrollY,
     [2*vh, 3*vh, 3*vh, 4*vh],
-    ["100%","0%", "0%", "120%"] 
+    ["100%","0%", "0%", "160%"] 
   )
 
   //Imagenes fila 1
   const rowImage1TranslateY = useTransform(scrollY,[3*vh, 4*vh],["0%","100%"] );
-
+  const rowImageOpacity     = useTransform(scrollY,[3*vh, 4*vh],[1,0])
   //Inner container
   const innerContainerTranslateY = useTransform(scrollY,[3*vh, 4*vh],[0,vh] );
   return (
@@ -53,21 +53,25 @@ export const Section4 = () => {
           <div className="container">
             <div className={styles.content}>
               <div className={styles.textWrapper}>
-              <motion.span 
-                className={styles.venChantBtn}
-                style = {{ 
-                  //translateX: buyCheaperTextTranslateX
-                }}
-              >
-                <b>VenChat</b>
-              </motion.span>
                 <motion.div 
-                  className={styles.text1}
+                  className={styles.textInnerWrapper}
                   style = {{
                     translateX: buyCheaperTextTranslateX
                   }}
-                >
-                  <h2>Compra más y más barato</h2>
+                > 
+                  <motion.span 
+                    className={styles.venChantBtn}
+                    style = {{ 
+                      //translateX: buyCheaperTextTranslateX
+                    }}
+                  >
+                    <b>VenChat</b>
+                  </motion.span>
+                  <motion.div 
+                    className={clx(styles.text1,styles.text11)}
+                  >
+                    <h2>Compra más y más barato</h2>
+                  </motion.div>
                 </motion.div>
                 <motion.div 
                   className={styles.text2}
@@ -89,7 +93,8 @@ export const Section4 = () => {
             <motion.div 
               className={`${styles.card} ${styles.card1}`}
               style = {{
-                translateY: rowImage1TranslateY
+                translateY: rowImage1TranslateY,
+                opacity: rowImageOpacity
               }}
             >
               <Image
@@ -104,7 +109,8 @@ export const Section4 = () => {
             <motion.div 
               className={`${styles.card} ${styles.card2}`}
               style = {{
-                translateY: rowImage1TranslateY
+                translateY: rowImage1TranslateY,
+                opacity: rowImageOpacity
               }}
             >
               <Image
@@ -119,7 +125,8 @@ export const Section4 = () => {
             <motion.div
               className={`${styles.card} ${styles.card3}`}
               style = {{
-                translateY: rowImage1TranslateY
+                translateY: rowImage1TranslateY,
+                opacity: rowImageOpacity
               }}
             >
               <Image
@@ -134,7 +141,8 @@ export const Section4 = () => {
             <motion.div 
               className={`${styles.card} ${styles.card4}`}
               style = {{
-                translateY: rowImage1TranslateY
+                translateY: rowImage1TranslateY,
+                opacity: rowImageOpacity
               }}
             >
               <Image
