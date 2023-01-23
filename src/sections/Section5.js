@@ -8,19 +8,21 @@ import { usePhoneContext } from "../components/PhoneFrame";
 
 export const Section5 = () => {
 
-  const { vh, scrollRef } = useAnimationContext();
+  const { vh, scrollRef, toPxWidth, toPxHeight } = useAnimationContext();
   const { scrollY } = useScroll({ container: scrollRef, target: scrollRef});
-  const { phoneTrackRef5 } = usePhoneContext();
+  const { phoneTrackRef5, phoneAspectRatio } = usePhoneContext();
   //todo comics
   const allComicsTranslateX = useTransform(scrollY,
     [3*vh,4*vh],
     ["100%","0%"] 
   )
 
+  console.log("sadasdas",{p: toPxWidth(50), b: phoneAspectRatio})
+
   //comics image
   const comicImageTranslateY = useTransform(scrollY,
     [3*vh,4*vh],
-    ["20%","0%"] 
+    ["40%","-12%"] 
   )
 
   const comicImageOpacity = useTransform(scrollY,
@@ -30,32 +32,37 @@ export const Section5 = () => {
 
   return (
     <section> 
+      <motion.div 
+        className={styles.comicImg}
+        style = {{
+          opacity: comicImageOpacity,
+          translateY: comicImageTranslateY
+        }}
+      >
+        <Image
+          src="/assets/img/section5/comics.png"
+          alt=""
+          fill
+          style={{ objectFit: "contain" }}
+        />
+      </motion.div>
       <div 
         id="section5" 
         className={clx(styles.root, "slide section5")}
       >
         <div className={styles.image}>
-          <motion.div 
-            className={styles.comicImg}
+          <div 
+            ref = {phoneTrackRef5} 
+            className={styles.phone}
             style = {{
-              opacity: comicImageOpacity,
-              translateY: comicImageTranslateY
+              width: toPxHeight(50) / phoneAspectRatio
             }}
           >
             <Image
-              src="/assets/img/section5/comics.png"
-              alt=""
-              fill
-              style={{ objectFit: "contain" }}
-            />
-          </motion.div>
-          <div ref = {phoneTrackRef5} className={styles.phone}>
-            <Image
               src="/assets/img/section5/phone.png"
               alt=""
-              width={960}
-              height={706}
-              style={{ objectFit: "contain", maxWidth: "100%" }}
+              fill
+              style={{ objectFit: "cover" }}
             />
           </div>
         </div>

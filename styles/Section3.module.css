@@ -20,6 +20,7 @@
   width: 100px;
   height: 100px;
   background-color: aqua;
+  background-image: url("/assets/img/phone-frame-3.png");
   position: absolute;
   top: 0;
   left: 0;
@@ -29,7 +30,7 @@
 .section4Image {
   width: 100px;
   height: 100px;
-  background-color: palevioletred;
+  background-color: red;
   position: absolute;
   top: 0;
   left: 0;

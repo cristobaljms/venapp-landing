@@ -10,6 +10,13 @@
   position: fixed;
 }
 
+.comics {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1200;
+}
+
 .phone-frame-container{
   position: fixed;
   width: 100vh;
@@ -18,4 +25,15 @@
   top: 0;
   left: 0;
   pointer-events: none;
+}
+
+
+.background-section1 {
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }

@@ -156,7 +156,7 @@ section {
 }
 
 .section1 {
-  z-index: 900;
+  z-index: 910;
 }
 
 .section2 {
@@ -173,7 +173,7 @@ section {
 }
 
 .section5 {
-  z-index: 500;
+  z-index: 1500;
 }
 
 .section6 {

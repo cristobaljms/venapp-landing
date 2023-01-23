@@ -74,7 +74,7 @@ export const Section1 = () => {
   } = useAnimationContext();
   const { scrollY } = useScroll({ container: scrollRef, target: scrollRef });
   const { breakpoint : bp } = useBreakpoints(BREAKPOINTS);
-  const { finalHeightSection1, finalHeightSection2, phoneDesireWidth3, phoneDesireWidth, phoneFinalTop4, phoneFinalTop, phoneLeftSection3 } = usePhoneContext();
+  const { section1BackgroundHeight1, section1BackgroundHeight2, finalHeightSection1, finalHeightSection2, phoneDesireWidth3, phoneDesireWidth, phoneFinalTop4, phoneFinalTop, phoneLeftSection3 } = usePhoneContext();
   
   const phoneOffsetY = toPxHeight( phoneFinalTop );
   const phoneOffsetY2 = toPxHeight( parseInt(mapPhoneTop2[bp]) );
@@ -144,9 +144,50 @@ export const Section1 = () => {
   //2.0
   const text2Top            = useTransform(scrollY,[0,vh],[320,-125]);
   const text2Scale          = useTransform(scrollY,[0,vh],[1, 0.8]);
+  
+  //Section background
+  const sectionBackgroundHeight = useTransform(scrollY,
+    [0,vh],
+    [section1BackgroundHeight1,section1BackgroundHeight2 - 15] 
+  )
 
+  const sectionBackgroundTop = useTransform(scrollY,
+    [0,vh],
+    ["-10%","0%"] 
+  )
+
+  const sectionBackgroundWidth = useTransform(scrollY,
+    [0,vh, vh, vh * 2],
+    [
+      vw + 20, phoneDesireWidth - 15 - 0,
+      phoneDesireWidth - 15 - 0, mapDesireWidth2[bp] - 15 - 10,
+    ]
+  );
+
+  const sectionBackgroundOpacity = useTransform(scrollY,
+    [vh, 2*vh],
+    [1,0]
+  )
+
+  const sectionBackgroundLeft = useTransform(scrollY,
+    [0,vh],
+    ["-0.5%","0%"] 
+  )
   return (
     <section className={clx(styles.root)} ref = {ref1}>
+      <motion.div
+        className={styles["background-section1"]}
+        style = {{
+          translateY: containerTranslateY,
+          translateX: containerTranslateX,
+          width: sectionBackgroundWidth,
+          height: sectionBackgroundHeight,
+          borderRadius: containerBorderRadius,
+          opacity: sectionBackgroundOpacity,
+          top: sectionBackgroundTop,
+          left: sectionBackgroundLeft
+        }}
+      />
       <motion.div 
         className={styles.section2Image} 
         style = {{

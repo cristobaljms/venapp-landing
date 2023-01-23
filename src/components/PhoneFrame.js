@@ -62,10 +62,6 @@ const PhoneFrame = ({ children }) => {
   const phoneLeftSection4 = toPercentWidth( phoneTrackRef4?.current?.getBoundingClientRect?.()?.left )
   //Section 5 phone
   const phoneTrackRef5 = useRef();
-  console.log("COWBOY LIKE ME",{
-    a: phoneTrackRef5?.current?.getBoundingClientRect?.(),
-    phoneTopSection4
-  });
   //Phone data: taken from image
   const phoneWidth  = 445;
   const phoneHeight = 879;
@@ -74,13 +70,18 @@ const PhoneFrame = ({ children }) => {
   const offsetPercent = 15;
   const phoneDesireWidth = toPxWidth(20);
   const phoneDesireWidth2 = mapDesireWidth2[bp];
-  const phoneDesireWidth3 = mapDesireWidth3[bp];
+  const phoneDesireWidth3 = phoneTrackRef5?.current?.getBoundingClientRect?.()?.height
   const phoneInitialWidthPercent = 100 + offsetPercent;
   //Phone width
   const phoneFinalWidthPercent = phoneDesireWidth * 100 / vw;
   const phoneFinalWidthPercent2 = phoneDesireWidth2 * 100 / vw;
   const phoneFinalWidthPercent3 = phoneDesireWidth3 * 100 / vw;
-  const phoneLeft = (vw * offsetPercent / 100) / -2
+  //Phone left
+  const phoneLeft = (vw * offsetPercent / 100) / -2;
+  const phoneLeft5 = toPercentHeight( phoneTrackRef5?.current?.getBoundingClientRect?.()?.x );
+  console.log("asdasdsa",{
+    c: phoneLeft5
+  })
   //Phone height
   const phoneFinalHeightPercent = scaleHeightPercentPerfect(phoneFinalWidthPercent,phoneAspectRatio);
   //Phone Translate Y
@@ -143,8 +144,11 @@ const PhoneFrame = ({ children }) => {
     [ 1, 0 ] 
   )
 
-  
-  
+  const phonezIndex = useTransform(scrollY,
+    [vh*3 - 1, vh * 3],
+    [1000, 2000] 
+  )
+    
   useEffect(() => {
     setRender(true);
   }, [])
@@ -166,9 +170,13 @@ const PhoneFrame = ({ children }) => {
       phoneTrackRef,
       phoneTrackRef4,
       phoneTrackRef5,
-      phoneLeftSection3
+      phoneLeftSection3,
+      phoneAspectRatio,
+      //seccion 1 bg
+      section1BackgroundHeight1: toPxHeight(phoneInitialHeightPercent),
+      section1BackgroundHeight2: toPxWidth(phoneFinalWidthPercent) / phoneAspectRatio
     }}>
-      {children}
+        {children}
         <motion.div 
           className={styles["phone-frame"]}
           style = {{
@@ -176,6 +184,7 @@ const PhoneFrame = ({ children }) => {
             left: phoneLeftAnimated,
             height: phoneHeightAnimated,
             top: phoneTop,
+            zIndex: phonezIndex,
             //scale: phoneScale
             rotate: phoneRotate,
             opacity: phoneOpacity
@@ -184,7 +193,6 @@ const PhoneFrame = ({ children }) => {
             
           }}
         >
-          
           <Image
             src={"/assets/img/phone-square.png"}
             alt=""

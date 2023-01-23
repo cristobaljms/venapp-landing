@@ -118,6 +118,12 @@ export const Section3 = () => {
       0, 0, 0, 1
     ]
   )
+  //Section4 zIndex
+  const section4zIndex = useTransform(scrollY,
+    [vh*4 - 1, vh * 4, vh * 4, vh * 4 + 1],
+    [700, 2000, 2000, -1] 
+  )
+
 
   return (
     <section ref = {ref3}> 
@@ -142,7 +148,8 @@ export const Section3 = () => {
           translateY: section4TranslateY,
           borderRadius: section3BorderRadius,
           opacity: section3Opacity1,
-          rotate: section3Rotate
+          rotate: section3Rotate,
+          zIndex: section4zIndex
         }}
       />
       <motion.div 

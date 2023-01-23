@@ -11,6 +11,8 @@
 .phone {
   position: relative;
   /*opacity: 0;*/
+  height: 50%;
+  left: -10%
 }
 
 .content {
@@ -57,7 +59,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 50vw;
+  width: 100vw;
   display: flex;
   align-items: center;
 }
@@ -65,9 +67,10 @@
 .comicImg {
   position: absolute;
   top: 0;
-  right: -15%;
+  right: 35%;
   width: 718px;
   height: 624px;
+  z-index: 3000;
 }
 
 @media screen and (max-width: 1919px) {
