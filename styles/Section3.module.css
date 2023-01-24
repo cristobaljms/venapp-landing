@@ -24,17 +24,30 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 800;
+  z-index: 700;
 }
 
 .section4Image {
   width: 100px;
   height: 100px;
   background-color: red;
+  background-image: url("/assets/img/phone-frame-4.png");
+  background-size: cover;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 700;
+}
+
+.section3Background {
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+  background-image: url("/assets/img/phone-frame-3.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 800;
 }
 
 

@@ -120,8 +120,15 @@ export const Section3 = () => {
   )
   //Section4 zIndex
   const section4zIndex = useTransform(scrollY,
-    [vh*4 - 1, vh * 4, vh * 4, vh * 4 + 1],
+    [vh*3, vh * 3 + 1, vh * 4, vh * 4 + 1],
     [700, 2000, 2000, -1] 
+  )
+
+  const section3Opacity2 = useTransform(scrollY, 
+    [vh*1,vh*2,vh*2,vh*2 + 1, vh*3, vh*4],
+    [
+      0, 0, 0, 1, 1, 0
+    ]
   )
 
 
@@ -148,6 +155,19 @@ export const Section3 = () => {
           translateY: section4TranslateY,
           borderRadius: section3BorderRadius,
           opacity: section3Opacity1,
+          rotate: section3Rotate,
+          zIndex: section4zIndex
+        }}
+      />
+      <motion.div 
+        className={clx(styles.section4Image,styles.section3Background)}
+        style = {{
+          width: section3Width,
+          height: section3Height,
+          left: section3Left,
+          translateY: section4TranslateY,
+          borderRadius: section3BorderRadius,
+          opacity: section3Opacity2,
           rotate: section3Rotate,
           zIndex: section4zIndex
         }}
