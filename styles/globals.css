@@ -5,7 +5,7 @@ body {
 }
 
 html {
-  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -151,7 +151,7 @@ body {
 }
 
 section {
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   position: relative;
 }
 
@@ -200,4 +200,5 @@ section {
   position: relative;
   scroll-snap-type: y mandatory;
   scroll-snap-stop: always;
+  scroll-behavior: smooth;
 }
