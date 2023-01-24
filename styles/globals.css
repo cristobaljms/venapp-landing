@@ -199,4 +199,5 @@ section {
   overflow-x: hidden;
   position: relative;
   scroll-snap-type: y mandatory;
+  scroll-snap-stop: always;
 }
