@@ -79,9 +79,6 @@ const PhoneFrame = ({ children }) => {
   //Phone left
   const phoneLeft = (vw * offsetPercent / 100) / -2;
   const phoneLeft5 = toPercentHeight( phoneTrackRef5?.current?.getBoundingClientRect?.()?.x );
-  console.log("asdasdsa",{
-    c: phoneLeft5
-  })
   //Phone height
   const phoneFinalHeightPercent = scaleHeightPercentPerfect(phoneFinalWidthPercent,phoneAspectRatio);
   //Phone Translate Y

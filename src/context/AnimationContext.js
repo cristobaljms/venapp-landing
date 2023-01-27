@@ -129,11 +129,68 @@ const AnimationProvider = ({children, scrollRef, ...props}) => {
     }}>
       {children}
       <div className={styles.panel}>
-        <button className={styles.button} onClick = {() => { setAnimateLabel("initial") }}>
-          initial
+        <button className={styles.button} onClick = {() => { 
+          scrollRef.current.scroll({ 
+            top: 1080, behavior: 'smooth' 
+          });
+        }}>
+          1
         </button>
-        <button className={styles.button} onClick = {() => { setAnimateLabel("animate") }}>
-          animate
+        <button className={styles.button} onClick = {() => { 
+          scrollRef.current.scroll({ 
+            top: 1080 * 2, behavior: 'smooth' 
+          });
+        }}>
+          2
+        </button>
+        <button className={styles.button} onClick = {() => { 
+          scrollRef.current.scroll({ 
+            top: 1080 * 3, behavior: 'smooth' 
+          });
+        }}>
+          3 
+        </button>
+        <button className={styles.button} onClick = {() => { 
+          scrollRef.current.scroll({ 
+            top: 1080 * 4, behavior: 'smooth' 
+          });
+        }}>
+          4
+        </button>
+        <button className={styles.button} onClick = {() => { 
+          scrollRef.current.scroll({ 
+            top: 1080 * 5, behavior: 'smooth' 
+          });
+        }}>
+          5
+        </button>
+        <button className={styles.button} onClick = {() => { 
+          scrollRef.current.scroll({ 
+            top: 1080 * 6, behavior: 'smooth' 
+          });
+        }}>
+          6
+        </button>
+        <button className={styles.button} onClick = {() => { 
+          scrollRef.current.scroll({ 
+            top: 1080 * 7, behavior: 'smooth' 
+          });
+        }}>
+          7
+        </button>
+        <button className={styles.button} onClick = {() => { 
+          scrollRef.current.scroll({ 
+            top: 1080 * 8, behavior: 'smooth' 
+          });
+        }}>
+          8
+        </button>
+        <button className={styles.button} onClick = {() => { 
+          scrollRef.current.scroll({ 
+            top: 1080 * 9, behavior: 'smooth' 
+          });
+        }}>
+          9
         </button>
       </div>
     </AnimationContext.Provider>

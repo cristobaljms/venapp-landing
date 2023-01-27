@@ -17,8 +17,6 @@ export const Section5 = () => {
     ["100%","0%"] 
   )
 
-  console.log("sadasdas",{p: toPxWidth(50), b: phoneAspectRatio})
-
   //comics image
   const comicImageTranslateY = useTransform(scrollY,
     [3*vh,4*vh],

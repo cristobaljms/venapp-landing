@@ -1,4 +1,4 @@
-import { useRef, useContext } from "react";
+import React, { useRef, useContext, useEffect, useState } from "react";
 import Wrapper from "../src/layout/Wrapper";
 import PhoneFrame from "../src/components/PhoneFrame";
 import { Section1 } from "../src/sections/Section1";
@@ -10,34 +10,90 @@ import { Section5 } from "../src/sections/Section5";
 import { Section7 } from "../src/sections/Section7";
 import { Section8 } from "../src/sections/Section8";
 import { Section9 } from "../src/sections/Section9";
-
-
-import useIsomorphicLayoutEffect from "../src/animation/useIsomorphicLayoutEffect";
-import { SmootherContext } from "../src/context/SmootherContext";
-
-import gsap from "gsap-trial";
-import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
-import { ScrollToPlugin } from "gsap-trial/dist/ScrollToPlugin";
 import { AnimationProvider } from "../src/context/AnimationContext";
+import { useScroll } from "framer-motion";
+import { debounce, throttle } from "lodash";
+import { useScrollDirection } from "react-use-scroll-direction";
+function waitForScrollEnd () {
+  let last_changed_frame = 0
+  let last_x = window.scrollX
+  let last_y = window.scrollY
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+  return new Promise( resolve => {
+      setTimeout( () => {
+        resolve();
+      }, 300)
+  })
+}
+
 
 const IndexPage = () => {
-  const smoother = useContext(SmootherContext);
-
-  useIsomorphicLayoutEffect(() => {
-    smoother && smoother.effects("[data-speed], [data-lag]", {});
-
-    return () => {
-      smoother && smoother.effects().forEach((t) => t.kill());
-    };
-  }, [smoother]);
-
-  function scrollTo() {
-    smoother && smoother.scrollTo("#Section4", true, "center center");
-  }
-
   const scrollRef = useRef();
+
+  const scrollingRef = useRef(false);
+  const sectionRef = useRef(1);
+  const prevSectionRef = useRef(null);
+  const { isScrollingUp } = useScrollDirection(scrollRef.current ?? undefined);
+  const isScrollingUpRef = useRef(isScrollingUp);
+
+  console.log("fafdfd",isScrollingUpRef.current);
+
+  useEffect( () => {
+
+      document.addEventListener?.('scroll',event => {
+        console.log("SCROLL",event);
+      });
+
+      console.log("Use Effect");
+
+      let isScrollUp = false;
+
+      const d = throttle( () => {
+        waitForScrollEnd().then( () => { 
+          if( isScrollUp ){
+            sectionRef.current > 0 && sectionRef.current--;
+          }else {
+            sectionRef.current < 9 && sectionRef.current++;
+          }
+
+          scrollingRef.current = false;
+          console.log("here",isScrollingUpRef.current); 
+        } );
+      }, 1800)
+
+      const handleWheel = (event) => {
+          event.preventDefault();
+          console.log("WHEEL",event);
+
+          isScrollUp = event.wheelDelta > 0;
+
+          console.log("WHEEL EVENT CALLED",event);
+       
+          let scrolling = scrollingRef.current;
+          let section = sectionRef.current;
+
+          console.log({ section });
+          
+          if(!scrolling){
+
+            scrolling = true;
+
+            scrollRef.current.scroll({ 
+              top: 1080 * section, behavior: 'smooth' 
+            });
+          }
+
+          d();
+      }
+    
+      scrollRef.current?.addEventListener?.('wheel', handleWheel)
+
+      return () => {
+        scrollRef?.current?.removeEventListener('wheel', handleWheel);
+        console.log("clear")
+      }
+
+  } , [])
 
   return (
     <AnimationProvider scrollRef = {scrollRef}>
