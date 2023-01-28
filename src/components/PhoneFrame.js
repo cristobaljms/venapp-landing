@@ -169,6 +169,7 @@ const PhoneFrame = ({ children }) => {
       phoneTrackRef5,
       phoneLeftSection3,
       phoneAspectRatio,
+      phoneFinalWidthPercent3,
       //seccion 1 bg
       section1BackgroundHeight1: toPxHeight(phoneInitialHeightPercent),
       section1BackgroundHeight2: toPxWidth(phoneFinalWidthPercent) / phoneAspectRatio
