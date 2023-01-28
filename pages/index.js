@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useEffect, useState } from "react";
+import React, { useRef,  useEffect } from "react";
 import Wrapper from "../src/layout/Wrapper";
 import PhoneFrame from "../src/components/PhoneFrame";
 import { Section1 } from "../src/sections/Section1";
@@ -10,15 +10,12 @@ import { Section5 } from "../src/sections/Section5";
 import { Section7 } from "../src/sections/Section7";
 import { Section8 } from "../src/sections/Section8";
 import { Section9 } from "../src/sections/Section9";
+import Section2Image from "../src/components/Section2Image";
 import { AnimationProvider } from "../src/context/AnimationContext";
-import { useScroll } from "framer-motion";
-import { debounce, throttle } from "lodash";
+import { throttle } from "lodash";
 import { useScrollDirection } from "react-use-scroll-direction";
-function waitForScrollEnd () {
-  let last_changed_frame = 0
-  let last_x = window.scrollX
-  let last_y = window.scrollY
 
+function waitForScrollEnd () {
   return new Promise( resolve => {
       setTimeout( () => {
         resolve();
@@ -32,20 +29,10 @@ const IndexPage = () => {
 
   const scrollingRef = useRef(false);
   const sectionRef = useRef(1);
-  const prevSectionRef = useRef(null);
   const { isScrollingUp } = useScrollDirection(scrollRef.current ?? undefined);
   const isScrollingUpRef = useRef(isScrollingUp);
 
-  console.log("fafdfd",isScrollingUpRef.current);
-
   useEffect( () => {
-
-      document.addEventListener?.('scroll',event => {
-        console.log("SCROLL",event);
-      });
-
-      console.log("Use Effect");
-
       let isScrollUp = false;
 
       const d = throttle( () => {
@@ -57,22 +44,16 @@ const IndexPage = () => {
           }
 
           scrollingRef.current = false;
-          console.log("here",isScrollingUpRef.current); 
         } );
       }, 1800)
 
       const handleWheel = (event) => {
           event.preventDefault();
-          console.log("WHEEL",event);
 
           isScrollUp = event.wheelDelta > 0;
-
-          console.log("WHEEL EVENT CALLED",event);
        
           let scrolling = scrollingRef.current;
           let section = sectionRef.current;
-
-          console.log({ section });
           
           if(!scrolling){
 
@@ -90,7 +71,6 @@ const IndexPage = () => {
 
       return () => {
         scrollRef?.current?.removeEventListener('wheel', handleWheel);
-        console.log("clear")
       }
 
   } , [])
@@ -108,6 +88,7 @@ const IndexPage = () => {
           <div className="scroll-container" ref={scrollRef}>
           <PhoneFrame>
             <Section1 />
+            <Section2Image />
             <Section2 />
             <Section3 />
             <Section4 />

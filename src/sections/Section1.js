@@ -99,7 +99,7 @@ export const Section1 = () => {
     [0,vh, vh, vh * 2],
     [
       vw, phoneDesireWidth - 15 - 0,
-      phoneDesireWidth - 15 - 0, mapDesireWidth2[bp] - 15 - 10,
+      phoneDesireWidth - 15 - 0, mapDesireWidth2[bp] - 15 - 10
     ]
   );
   
@@ -188,7 +188,7 @@ export const Section1 = () => {
           left: sectionBackgroundLeft
         }}
       />
-      <motion.div 
+      {/*<motion.div 
         className={styles.section2Image} 
         style = {{
           translateY: containerTranslateY,
@@ -198,7 +198,7 @@ export const Section1 = () => {
           borderRadius: containerBorderRadius,
           opacity: section2Opacity
         }}
-      />
+      />*/}
       {/*<motion.div 
         className={styles.section3Image} 
         style = {{
