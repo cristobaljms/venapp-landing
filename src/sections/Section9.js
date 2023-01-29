@@ -69,7 +69,7 @@ export const Section9 = () => {
               }}
             >
               <Image
-                src="/assets/section_4/phone.png"
+                src="/assets/img/section9/phone.png"
                 alt="ven app smartphone"
                 width={694}
                 height={1330}
