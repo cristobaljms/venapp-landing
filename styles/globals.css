@@ -202,3 +202,12 @@ section {
   scroll-snap-stop: always;
   scroll-behavior: smooth;
 }
+
+.social-networks {
+  position: fixed;
+  z-index: 99999;
+  right: 0;
+  top: calc(50% - 97px);
+  display: flex;
+  flex-direction: column;
+}
