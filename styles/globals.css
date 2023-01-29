@@ -211,3 +211,13 @@ section {
   display: flex;
   flex-direction: column;
 }
+
+.social-networks img {
+  transition: all .2s ease-in-out;
+}
+
+.social-networks img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
