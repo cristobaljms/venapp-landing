@@ -98,6 +98,10 @@
   position: relative;
 }
 
+.wrapper {
+
+}
+
 @media screen and (max-width: 1400px) {
   .container {
     padding: 55px 0;

@@ -1,108 +1,95 @@
-.container {
+.formContainer {
   width: 100vw;
   height: 100vh;
-  background-color: var(--section-4-background-color);
+  background-color: #201d3c;
   position: relative;
   padding: 78px 0;
   overflow: hidden;
 }
 
-.content {
+.wrapper {
   width: 100%;
   height: 100%;
   display: flex;
+  align-items: center;
+  margin-top: 50px;
 }
 
-.textContent {
+.form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   height: 100%;
-  width: 50%;
-  margin-top: 116px;
+  width: 40%;
 }
 
-.phoneContent {
-  width: 50%;
-  position: relative;
-}
-
-.container h2 {
+.text1 {
+  color: #fff;
   font-size: 105px;
-  font-weight: 900;
-}
-
-.container h3 {
-  font-weight: 400;
-  font-size: 64px;
+  font-weight: 800;
   line-height: 1.2;
-  margin: 1.25rem 0;
+  max-width: 450px;
 }
 
-.container p {
-  font-size: 25px;
+.text2 {
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 70px;
 }
 
-.tag {
-  display: flex;
-  margin-top: 5rem;
-}
-
-.tag img {
-  margin-right: 2rem;
+.image {
+  position: absolute;
+  top: 0;
+  right: -732px;
 }
 
 @media screen and (max-width: 1919px) {
-  .container h2 {
+  .text1 {
     font-size: 90px;
   }
-  
-  .container h3 {
-    font-size: 60px;
-  }
-  
-  .container p {
+
+  .text2 {
     font-size: 22px;
   }
 }
 
-@media (max-width: 1600px) {
-  .container {
-    padding: 65px 0;
+@media screen and (max-width: 1600px) {
+  .image {
+    right: -642px;
   }
 
-  .container h2 {
+  .wrapper {
+    margin-top: 0px;
+  }
+
+  .text1 {
     font-size: 70px;
+    max-width: 350px;
   }
-  
-  .container h3 {
-    font-size: 56px;
-  }
-  
-  .container p {
+
+  .text2 {
     font-size: 20px;
   }
+}
 
-  .tag img {
-    width: 150px;
-    margin-top: 0;
+@media screen and (max-width: 1500px) {
+  .image {
+    right: -562px;
   }
 }
 
 @media screen and (max-width: 1400px) {
-  .container {
-    padding: 55px 0;
+  .text1 {
+    font-size: 50px;
+    max-width: 250px;
   }
 
-  .container h2 {
-    font-size: 50px;
-  }
-  
-  .container h3 {
-    font-size: 45px;
-  }
-  
-  .container p {
+  .text2 {
     font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .image {
+    right: -525px;
   }
 }

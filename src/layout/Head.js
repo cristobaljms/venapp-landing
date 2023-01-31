@@ -37,7 +37,7 @@ const DocHead = (props) => (
         crossOrigin="true"
       />
       <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap"
         rel="stylesheet"
       />
 

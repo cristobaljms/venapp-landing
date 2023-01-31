@@ -191,14 +191,14 @@ const PhoneFrame = ({ children }) => {
             
           }}
         >
-          <Image
-            src={"/assets/img/phone-square.png"}
+          <img
+            src={ "/assets/img/phone-square.png"}
             alt=""
-            fill
             style={{ 
-              objectFit: "cover"
+              objectFit: "cover",
+              width: "100%",
+              height: "100%",
             }}
-            quality={75}
           />
         </motion.div>
     </PhonePhrameContext.Provider>
