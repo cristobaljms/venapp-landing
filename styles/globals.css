@@ -220,3 +220,7 @@ section {
   transform: scale(1.1);
 }
 
+.form-group {
+  display: flex;
+  gap: 20px;
+}
