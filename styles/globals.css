@@ -149,11 +149,6 @@ body {
   position: relative;
 }
 
-section {
-  scroll-snap-align: center;
-  position: relative;
-}
-
 .section1 {
   z-index: 910;
 }
@@ -198,8 +193,11 @@ section {
   overflow-x: hidden;
   position: relative;
   scroll-snap-type: y mandatory;
-  scroll-snap-stop: always;
-  scroll-behavior: smooth;
+}
+
+section {
+  scroll-snap-align: end;
+  position: relative;
 }
 
 .social-networks {

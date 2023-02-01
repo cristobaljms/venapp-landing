@@ -5,7 +5,7 @@ import { useAnimationContext } from "../context/AnimationContext";
 import clx from "classnames";
 
 export const Section9 = () => {
-  const { scrollRef, vh } = useAnimationContext();
+  const { scrollRef, vh, ref9 } = useAnimationContext();
 
   const { scrollY } = useScroll({ container: scrollRef, target: scrollRef });
 
@@ -27,7 +27,7 @@ export const Section9 = () => {
   );
 
   return (
-    <section>
+    <section ref = {ref9}>
       <motion.div
         className={clx(styles.container, "slide section9")}
         style={{

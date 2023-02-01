@@ -29,7 +29,7 @@ const AnimationProvider = ({children, scrollRef, ...props}) => {
   });
   const { ref : ref2 , inView: inView2 , entry: entry2 } = useInView(inViewOptions);
   const { ref : ref3 , inView: inView3 , entry: entry3 } = useInView(inViewOptions);
-
+  const { ref : ref9 , inView: inView9 , entry: entry9 } = useInView(inViewOptions);
 
   React.useEffect(
     () => {
@@ -106,6 +106,7 @@ const AnimationProvider = ({children, scrollRef, ...props}) => {
     return `${toPercentHeight( toPxWidth(widthValue) / aspectRatio) }%`
   }
 
+
   return (
     <AnimationContext.Provider {...props} value = {{
       isAnimate: animateLabel === "animate",
@@ -124,8 +125,11 @@ const AnimationProvider = ({children, scrollRef, ...props}) => {
       ref1,
       ref2,
       ref3,
+      ref9,
       currentSection,
-      scrollRef
+      scrollRef,
+      inView1,
+      inView9
     }}>
       {children}
       <div className={styles.panel}>

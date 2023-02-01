@@ -11,9 +11,12 @@ import { Section7 } from "../src/sections/Section7";
 import { Section8 } from "../src/sections/Section8";
 import { Section9 } from "../src/sections/Section9";
 import Section2Image from "../src/components/Section2Image";
-import { AnimationProvider } from "../src/context/AnimationContext";
+import AnimationContext, { AnimationProvider } from "../src/context/AnimationContext";
 import { throttle } from "lodash";
 import { useScrollDirection } from "react-use-scroll-direction";
+
+import ReactFullpage from '@fullpage/react-fullpage';
+import Button from "../src/components/Button";
 
 function waitForScrollEnd() {
   return new Promise((resolve) => {
@@ -27,9 +30,26 @@ const IndexPage = () => {
   const scrollRef = useRef();
 
   const scrollingRef = useRef(false);
-  const sectionRef = useRef(1);
+  const sectionRef = useRef(0);
   const { isScrollingUp } = useScrollDirection(scrollRef.current ?? undefined);
   const isScrollingUpRef = useRef(isScrollingUp);
+
+  const onPress = (pos) => {
+
+    let section = sectionRef.current;
+
+    if(pos !== "bottom"){
+      sectionRef.current--;
+    }else {
+      sectionRef.current++;
+    }
+
+    scrollRef.current.scroll({
+      top: 1080 * sectionRef.current,
+      behavior: "smooth",
+    });
+
+  }
 
   useEffect(() => {
     let isScrollUp = false;
@@ -66,12 +86,13 @@ const IndexPage = () => {
       d();
     };
 
-    scrollRef.current?.addEventListener?.("wheel", handleWheel);
+    //scrollRef.current?.addEventListener?.("wheel", handleWheel);
 
     return () => {
-      scrollRef?.current?.removeEventListener("wheel", handleWheel);
+      //scrollRef?.current?.removeEventListener("wheel", handleWheel);
     };
   }, []);
+
 
   return (
     <AnimationProvider scrollRef={scrollRef}>
@@ -112,6 +133,26 @@ const IndexPage = () => {
           </a>
         </div>
         <div className="scroll-container" ref={scrollRef}>
+          <AnimationContext.Consumer>
+            {({ inView1 }) => {
+              return !inView1 && <Button 
+                position="top" 
+                onClick = {() => {
+                  onPress("top")
+                }}
+              />
+            }}
+          </AnimationContext.Consumer>
+          <AnimationContext.Consumer>
+            {({ inView9 }) => {
+              return !inView9 && <Button 
+                position="bottom" 
+                onClick = {() => {
+                  onPress("bottom")
+                }}
+              />
+            }}
+          </AnimationContext.Consumer>
           <PhoneFrame>
             <Section1 />
             <Section2Image />
