@@ -39,7 +39,7 @@
 .image {
   position: absolute;
   bottom: 0;
-  right: -732px;
+  right: -650px;
 }
 
 @media screen and (max-width: 1919px) {
@@ -54,7 +54,7 @@
 
 @media screen and (max-width: 1600px) {
   .image {
-    right: -642px;
+    right: -560px;
   }
 
   .wrapper {
