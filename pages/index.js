@@ -9,6 +9,7 @@ import { Section5 } from "../src/sections/Section5";
 import { Section7 } from "../src/sections/Section7";
 import { Section8 } from "../src/sections/Section8";
 import { Section9 } from "../src/sections/Section9";
+import { Section10 } from "../src/sections/Section10";
 
 import useIsomorphicLayoutEffect from "../src/animation/useIsomorphicLayoutEffect";
 
@@ -32,35 +33,7 @@ const IndexPage = () => {
   const stepref_7 = useRef();
   const stepref_8 = useRef();
   const stepref_9 = useRef();
-
-  // useIsomorphicLayoutEffect(() => {
-  //   let sections = gsap.utils.toArray("section"),
-  //     currentSection = sections[0];
-
-  //   gsap.defaults({ overwrite: "auto", duration: 0.3 });
-
-  //   // stretch out the body height according to however many sections there are.
-  //   gsap.set("body", { height: sections.length * 100 + "vh" });
-
-  //   // create a ScrollTrigger for each section
-  //   sections.forEach((section, i) => {
-  //     ScrollTrigger.create({
-  //       // use dynamic scroll positions based on the window height (offset by half to make it feel natural)
-  //       start: () => (i - 0.5) * innerHeight,
-  //       end: () => (i + 0.5) * innerHeight,
-  //       // when a new section activates (from either direction), set the section accordinglyl.
-  //       onToggle: (self) => self.isActive && setSection(section),
-  //     });
-  //   });
-
-  //   function setSection(newSection) {
-  //     if (newSection !== currentSection) {
-  //       gsap.to(currentSection, { scale: 1, autoAlpha: 0 });
-  //       gsap.to(newSection, { scale: 1, autoAlpha: 1 });
-  //       currentSection = newSection;
-  //     }
-  //   }
-  // }, []);
+  const stepref_10 = useRef();
 
   useIsomorphicLayoutEffect(() => {
     window.addEventListener("scroll", listener);
@@ -115,6 +88,12 @@ const IndexPage = () => {
     ) {
       setSection(9);
     }
+    if (
+      window.scrollY >= stepref_9.current.offsetTop &&
+      window.scrollY < stepref_10.current.offsetTop
+    ) {
+      setSection(10);
+    }
   };
 
   return (
@@ -126,6 +105,30 @@ const IndexPage = () => {
       imageUrl=""
       imageAlt=""
     >
+      <div className="social-networks">
+        <a
+          href="https://www.facebook.com/venappredsocial"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src="/assets/img/facebook.png" alt="" width={65} height={65} />
+        </a>
+        <a
+          href="https://twitter.com/VenAppSocial"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src="/assets/img/twitter.png" alt="" width={65} height={65} />
+        </a>
+        <a
+          href="https://www.instagram.com/venappsocial/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src="/assets/img/instagram.png" alt="" width={65} height={65} />
+        </a>
+      </div>
+
       <div className="content-path-button">
         <Link
           activeClass="active"
@@ -165,7 +168,10 @@ const IndexPage = () => {
         <Section8 />
       </section>
       <section ref={stepref_9}>
-        <Section9 />
+        <Section9 section={section} />
+      </section>
+      <section ref={stepref_10}>
+        <Section10 />
       </section>
     </Wrapper>
   );

@@ -171,3 +171,41 @@ body {
   top: 0;
   left: 0;
 }
+
+.social-networks {
+  position: fixed;
+  z-index: 99999;
+  right: 0;
+  top: calc(50% - 97px);
+  display: flex;
+  flex-direction: column;
+}
+
+.social-networks img {
+  transition: all .2s ease-in-out;
+}
+
+.social-networks img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.form-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-input {
+  padding: 7px 10px;
+  border-radius: 5px;
+  color: black;
+  width: 100%;
+}
+
+.form-button {
+  background-color: #DFE7EF;
+  color: #000;
+  padding: 15px 25px;
+  border-radius: 5px;
+}

@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
 import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
 import { useRef } from "react";
 
-export const Section9 = () => {
+export const Section9 = ({ section }) => {
   const imgref = useRef();
   const textref = useRef();
 
@@ -13,8 +13,8 @@ export const Section9 = () => {
     gsap.registerPlugin(ScrollTrigger);
     const trigger = {
       trigger: "#section9",
-      toggleActions: "restart none restart none",
-    }
+      toggleActions: "restart none none none",
+    };
 
     gsap.fromTo(
       "#section9",
@@ -53,9 +53,8 @@ export const Section9 = () => {
       }
     );
   }, []);
-
   return (
-    <div  id="section9" className={styles.container}>
+    <div id="section9" className={styles.container}>
       <div className="container">
         <div className={styles.content}>
           <div ref={textref} className={styles.textContent}>
@@ -80,13 +79,18 @@ export const Section9 = () => {
               />
             </div>
           </div>
-          <div ref={imgref} className={styles.phoneContent}>
+          <div
+            ref={imgref}
+            className={
+              section == 10 ? styles.phoneSticky : styles.phoneContent
+            }
+          >
             <Image
-              src="/assets/img/section9/phone2.png"
+              src="/assets/img/section9/phone.png"
               alt="ven app smartphone"
               width={694}
               height={1330}
-              style={{ objectFit: "contain", maxWidth: "80%" }}
+              style={{ objectFit: "contain" }}
             />
           </div>
         </div>

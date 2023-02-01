@@ -37,9 +37,16 @@ const DocHead = (props) => (
         crossOrigin="true"
       />
       <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap"
         rel="stylesheet"
       />
+
+      <script async={true}
+        id="ze-snippet"
+        src="https://static.zdassets.com/ekr/snippet.js?key=442c86ca-bf04-4fdc-ba3f-225ea7466c54"
+      >
+        {" "}
+      </script>
     </Head>
   </>
 );
