@@ -14,6 +14,7 @@ import Section2Image from "../src/components/Section2Image";
 import AnimationContext, { AnimationProvider } from "../src/context/AnimationContext";
 import { throttle } from "lodash";
 import { useScrollDirection } from "react-use-scroll-direction";
+import { Section10 } from './../src/sections/Section10';
 
 import ReactFullpage from '@fullpage/react-fullpage';
 import Button from "../src/components/Button";
@@ -164,6 +165,7 @@ const IndexPage = () => {
             <Section6 />
             <Section8 />
             <Section9 />
+            <Section10 />
           </PhoneFrame>
         </div>
       </Wrapper>

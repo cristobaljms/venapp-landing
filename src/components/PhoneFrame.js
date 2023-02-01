@@ -192,7 +192,7 @@ const PhoneFrame = ({ children }) => {
           }}
         >
           <Image
-            src={"/assets/img/phone-square.png"}
+            src="/assets/img/phone-square.png"
             alt=""
             fill
             style={{ 

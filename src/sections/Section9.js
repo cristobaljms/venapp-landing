@@ -78,7 +78,6 @@ export const Section9 = () => {
           </motion.div>
         </div>
       </motion.div>
-      <div className={styles.formContainer}></div>
     </section>
   );
 };
