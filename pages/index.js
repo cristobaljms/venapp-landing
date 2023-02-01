@@ -18,6 +18,7 @@ import { Section10 } from './../src/sections/Section10';
 
 import ReactFullpage from '@fullpage/react-fullpage';
 import Button from "../src/components/Button";
+import { useWindowHeight } from "@react-hook/window-size";
 
 function waitForScrollEnd() {
   return new Promise((resolve) => {
@@ -34,10 +35,13 @@ const IndexPage = () => {
   const sectionRef = useRef(0);
   const { isScrollingUp } = useScrollDirection(scrollRef.current ?? undefined);
   const isScrollingUpRef = useRef(isScrollingUp);
+  const h = useWindowHeight()
 
   const onPress = (pos) => {
 
     let section = sectionRef.current;
+
+    console.log("SECTION",sectionRef.current);
 
     if(pos !== "bottom"){
       sectionRef.current--;
@@ -46,7 +50,7 @@ const IndexPage = () => {
     }
 
     scrollRef.current.scroll({
-      top: 1080 * sectionRef.current,
+      top: h * sectionRef.current,
       behavior: "smooth",
     });
 
@@ -79,7 +83,7 @@ const IndexPage = () => {
         scrolling = true;
 
         scrollRef.current.scroll({
-          top: 1080 * section,
+          top: h * section,
           behavior: "smooth",
         });
       }
