@@ -24,7 +24,7 @@ const NavHome = () => {
         <Image
           src="/assets/img/LOGO.png"
           alt=""
-          width={258}
+          width={207}
           height={47}
           style={{
             position: "relative",
