@@ -60,15 +60,13 @@
 }
 
 .overlay {
-  width: 410px;
-  height: 535px;
+  width: 210px;
+  height: auto;
   position: absolute;
-  top: 10%;
+  top: 60%;
   right: -40%;
-  display: flex;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
   justify-content: center;
 }
 
@@ -86,20 +84,32 @@
 
 @keyframes loveIcon {
   0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  80% {
     opacity: 1;
   }
   100% {
-    transform: scale(6) translate(0, -70px);
+    transform: scale(8) translate(0, -40px);
     opacity: 0;
   }
 }
 
 @keyframes likeIcon {
   0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  80% {
     opacity: 1;
   }
   100% {
-    transform: scale(6) translate(0, -100px);
+    transform: scale(8) translate(0, -50px);
     opacity: 0;
   }
 }
@@ -137,7 +147,7 @@
   }
 
   .overlay {
-    height: 325px;
+
     top: 20%;
     right: -20%;
   }

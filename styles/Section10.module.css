@@ -36,6 +36,22 @@
   margin-bottom: 70px;
 }
 
+.text3 {
+  color: #fff;
+  font-size: 55px;
+  font-weight: 800;
+  line-height: 1.2;
+  max-width: 450px;
+  margin-top: 30px;
+}
+
+.text4 {
+  color: #ff3535;
+  font-size: 26px;
+  margin-bottom: 70px;
+  margin-top: 30px;
+}
+
 .image {
   position: absolute;
   bottom: 0;

@@ -86,25 +86,25 @@ export const Section7 = () => {
                 src="/section_1/love.png"
                 alt=""
                 className={styles.animatedIcon2}
-                style={{ animationDelay: "1500ms" }}
+                style={{ animationDelay: "2800ms" }}
               />
               <img
                 src="/section_1/like.png"
                 alt=""
                 className={styles.animatedIcon1}
-                style={{ animationDelay: "700ms" }}
+                style={{ animationDelay: "14ms" }}
               />
               <img
                 src="/section_1/love.png"
                 alt=""
                 className={styles.animatedIcon2}
-                style={{ animationDelay: "650ms" }}
+                style={{ animationDelay: "340ms" }}
               />
               <img
                 src="/section_1/like.png"
                 alt=""
                 className={styles.animatedIcon1}
-                style={{ animationDelay: "200ms" }}
+                style={{ animationDelay: "824ms" }}
               />
               <img
                 src="/section_1/love.png"
@@ -122,7 +122,7 @@ export const Section7 = () => {
                 src="/section_1/love.png"
                 alt=""
                 className={styles.animatedIcon2}
-                style={{ animationDelay: "2900ms" }}
+                style={{ animationDelay: "527ms" }}
               />
               <img
                 src="/section_1/like.png"
@@ -134,25 +134,25 @@ export const Section7 = () => {
                 src="/section_1/love.png"
                 alt=""
                 className={styles.animatedIcon2}
-                style={{ animationDelay: "2100ms" }}
+                style={{ animationDelay: "1720ms" }}
               />
               <img
                 src="/section_1/like.png"
                 alt=""
                 className={styles.animatedIcon1}
-                style={{ animationDelay: "3700ms" }}
+                style={{ animationDelay: "2780ms" }}
               />
               <img
                 src="/section_1/love.png"
                 alt=""
                 className={styles.animatedIcon2}
-                style={{ animationDelay: "1150ms" }}
+                style={{ animationDelay: "1750ms" }}
               />
               <img
                 src="/section_1/like.png"
                 alt=""
                 className={styles.animatedIcon1}
-                style={{ animationDelay: "1800ms" }}
+                style={{ animationDelay: "980ms" }}
               />
               <img
                 src="/section_1/love.png"
@@ -170,13 +170,13 @@ export const Section7 = () => {
                 src="/section_1/love.png"
                 alt=""
                 className={styles.animatedIcon2}
-                style={{ animationDelay: "2780ms" }}
+                style={{ animationDelay: "2280ms" }}
               />
               <img
                 src="/section_1/like.png"
                 alt=""
                 className={styles.animatedIcon1}
-                style={{ animationDelay: "500ms" }}
+                style={{ animationDelay: "3250ms" }}
               />
               <img
                 src="/section_1/love.png"
@@ -188,55 +188,55 @@ export const Section7 = () => {
                 src="/section_1/like.png"
                 alt=""
                 className={styles.animatedIcon1}
-                style={{ animationDelay: "700ms" }}
+                style={{ animationDelay: "1400ms" }}
               />
               <img
                 src="/section_1/love.png"
                 alt=""
                 className={styles.animatedIcon2}
-                style={{ animationDelay: "650ms" }}
+                style={{ animationDelay: "450ms" }}
               />
               <img
                 src="/section_1/like.png"
                 alt=""
                 className={styles.animatedIcon1}
-                style={{ animationDelay: "200ms" }}
+                style={{ animationDelay: "220ms" }}
               />
               <img
                 src="/section_1/love.png"
                 alt=""
                 className={styles.animatedIcon2}
-                style={{ animationDelay: "280ms" }}
+                style={{ animationDelay: "680ms" }}
               />
               <img
                 src="/section_1/like.png"
                 alt=""
                 className={styles.animatedIcon1}
-                style={{ animationDelay: "1350ms" }}
+                style={{ animationDelay: "1450ms" }}
               />
               <img
                 src="/section_1/love.png"
                 alt=""
                 className={styles.animatedIcon2}
-                style={{ animationDelay: "2900ms" }}
+                style={{ animationDelay: "2270ms" }}
               />
               <img
                 src="/section_1/like.png"
                 alt=""
                 className={styles.animatedIcon1}
-                style={{ animationDelay: "1800ms" }}
+                style={{ animationDelay: "1890ms" }}
               />
               <img
                 src="/section_1/love.png"
                 alt=""
                 className={styles.animatedIcon2}
-                style={{ animationDelay: "2100ms" }}
+                style={{ animationDelay: "1170ms" }}
               />
               <img
                 src="/section_1/like.png"
                 alt=""
                 className={styles.animatedIcon1}
-                style={{ animationDelay: "3700ms" }}
+                style={{ animationDelay: "3900ms" }}
               />
               <img
                 src="/section_1/love.png"
@@ -254,19 +254,13 @@ export const Section7 = () => {
                 src="/section_1/love.png"
                 alt=""
                 className={styles.animatedIcon2}
-                style={{ animationDelay: "1650ms" }}
+                style={{ animationDelay: "3450ms" }}
               />
               <img
                 src="/section_1/like.png"
                 alt=""
                 className={styles.animatedIcon1}
                 style={{ animationDelay: "2150ms" }}
-              />
-              <img
-                src="/section_1/love.png"
-                alt=""
-                className={styles.animatedIcon2}
-                style={{ animationDelay: "3780ms" }}
               />
             </div>
             <div className={styles["overlay-text"]}>{`${likes}K`}</div>

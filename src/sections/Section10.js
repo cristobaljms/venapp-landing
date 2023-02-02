@@ -1,15 +1,17 @@
+import React, { useState } from "react";
 import styles from "../../styles/Section10.module.css";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import {submitForm} from "../services/services";
 
 export const Section10 = () => {
+  const [status, setStatus] = useState("");
   const validationSchema = Yup.object().shape({
     firstname: Yup.string().required("Required"),
     lastname: Yup.string().required("Required"),
     email: Yup.string().email("Invalid value").required("Required"),
-    phone: Yup.string().required("Required"),
-    message: Yup.string().required("Required"),
+    phoneNumber: Yup.string().required("Required"),
+    content: Yup.string().required("Required"),
   });
 
   const formik = useFormik({
@@ -17,33 +19,18 @@ export const Section10 = () => {
       firstname: "",
       lastname: "",
       email: "",
-      phone: "",
-      message: "",
+      phoneNumber: "",
+      content: "",
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
-      console.log("asdasda");
+      setStatus("");
       try {
-        const payload = {
-          "ticket": {
-              "priority": "normal",
-              "subject": "Landing Page - venapp2",
-              "requester_id" : 1,
-              "ticket_form_id" : 4504810541851,
-              "custom_fields": [
-                  { "id": 4464362514587, "value" : "landing_page venapp 2" },
-                  { "id": 4463002109723, "value" : `${values.firstname} ${values.lastname}`},
-                  { "id": 4465474734235, "value" : values.phone },
-                  { "id": 4463003658907, "value" : values.email },
-                  { "id": 4471509649691, "value" : values.message }
-              ]
-          },
-      }
-        await submitForm(payload);
+        await submitForm(values);
+        setStatus("success");
       } catch (error) {
-        throw new Error(error);
+        setStatus("error");
       }
-      console.log(values);
     },
   });
 
@@ -57,6 +44,7 @@ export const Section10 = () => {
               Envíanos un mensaje y comparte con nosotros tus propuestas.
               ¡Juntos, mejor!
             </p>
+            {status == "success" ? <h2 className={styles.text3}>¡Gracias por tu aporte!</h2> : 
             <div>
               <div className="form-group">
                 <input
@@ -79,9 +67,9 @@ export const Section10 = () => {
               <div className="form-group">
                 <input
                   className="form-input"
-                  name="phone"
+                  name="phoneNumber"
                   type="text"
-                  value={formik.values.phone}
+                  value={formik.values.phoneNumber}
                   onChange={formik.handleChange}
                   placeholder="Telefono*"
                 />
@@ -97,19 +85,21 @@ export const Section10 = () => {
               <div className="form-group">
                 <textarea
                   className="form-input"
-                  name="message"
+                  name="content"
                   type="text"
-                  value={formik.values.message}
+                  value={formik.values.content}
                   onChange={formik.handleChange}
                   placeholder="Mensaje*"
                   rows="5"
                 />
               </div>
               <button className="form-button" onClick={formik.submitForm}>Enviar</button>
+              {status == "error" && <h3 className={styles.text4}>¡Oops! Hemos tenido un error, puedes intentarlo más tarde.</h3>}
             </div>
-          </div>
-          <div></div>
+        }
         </div>
+        <div></div>
+      </div>
         <img
           src="/assets/img/section9/image.png"
           className={styles.image}
