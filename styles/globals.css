@@ -209,7 +209,7 @@ body {
   border-radius: 5px;
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 1024px) {
   .social-networks {
     display: none;
   }

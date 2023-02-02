@@ -128,7 +128,7 @@
   }
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 1024px) {
 
   .content {
     justify-content: start;
