@@ -5,6 +5,7 @@
   position: relative;
   padding: 78px 0;
   opacity: 0;
+  overflow: hidden;
 }
 
 .content {

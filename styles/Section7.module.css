@@ -65,10 +65,49 @@
   position: absolute;
   top: 10%;
   right: -40%;
-  background-image: url("/section_1/hearts.png");
-  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: center;
 }
 
+.animatedIcon1 {
+  width: 5px;
+  height: 5px;
+  animation: likeIcon 4000ms infinite;
+}
+
+.animatedIcon2 {
+  width: 5px;
+  height: 5px;
+  animation: loveIcon 5000ms infinite;
+}
+
+@keyframes loveIcon {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(6) translate(0, -70px);
+    opacity: 0;
+  }
+}
+
+@keyframes likeIcon {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(6) translate(0, -100px);
+    opacity: 0;
+  }
+}
+
+.loveIcon {
+  width: 15px;
+  height: 15px;
+}
 @media screen and (max-width: 1919px) {
   .content h2 {
     font-size: 80px;
@@ -98,7 +137,6 @@
   }
 
   .overlay {
-    width: 250px;
     height: 325px;
     top: 20%;
     right: -20%;

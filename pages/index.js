@@ -88,12 +88,12 @@ const IndexPage = () => {
     ) {
       setSection(9);
     }
-    if (
-      window.scrollY >= stepref_9.current.offsetTop &&
-      window.scrollY < stepref_10.current.offsetTop
-    ) {
-      setSection(10);
-    }
+    // if (
+    //   window.scrollY >= stepref_9.current.offsetTop &&
+    //   window.scrollY < stepref_10.current.offsetTop
+    // ) {
+    //   setSection(10);
+    // }
   };
 
   return (
@@ -129,7 +129,7 @@ const IndexPage = () => {
         </a>
       </div>
 
-      {/* <div className="content-path-button">
+      <div className="content-path-button">
         <Link
           activeClass="active"
           to={`section${section}`}
@@ -141,7 +141,7 @@ const IndexPage = () => {
             <img src="/assets/img/flecha.png" alt="" />
           </div>
         </Link>
-      </div> */}
+      </div>
 
       <section ref={stepref_1}>
         <Section1 />
@@ -170,9 +170,9 @@ const IndexPage = () => {
       <section ref={stepref_9}>
         <Section9 section={section} />
       </section>
-      <section ref={stepref_10}>
+      {/* <section ref={stepref_10}>
         <Section10 />
-      </section>
+      </section> */}
     </Wrapper>
   );
 };
