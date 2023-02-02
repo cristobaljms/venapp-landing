@@ -47,7 +47,9 @@ export const Section7 = () => {
       if (likes >= 600) {
         setLikes(1);
       } else {
-        setLikes((likes) => {return (likes + 13)});
+        setLikes((likes) => {
+          return likes + 13;
+        });
       }
     }, 120);
   }, []);
@@ -74,194 +76,7 @@ export const Section7 = () => {
               height={1259}
               style={{ objectFit: "contain", maxHeight: "100%" }}
             />
-            <div className={styles.overlay}>
-              <img
-                src="/section_1/like.png"
-                alt=""
-                className={styles.animatedIcon1}
-                style={{ animationDelay: "500ms" }}
-              />
-              <img
-                src="/section_1/love.png"
-                alt=""
-                className={styles.animatedIcon2}
-                style={{ animationDelay: "2800ms" }}
-              />
-              <img
-                src="/section_1/like.png"
-                alt=""
-                className={styles.animatedIcon1}
-                style={{ animationDelay: "14ms" }}
-              />
-              <img
-                src="/section_1/love.png"
-                alt=""
-                className={styles.animatedIcon2}
-                style={{ animationDelay: "340ms" }}
-              />
-              <img
-                src="/section_1/like.png"
-                alt=""
-                className={styles.animatedIcon1}
-                style={{ animationDelay: "824ms" }}
-              />
-              <img
-                src="/section_1/love.png"
-                alt=""
-                className={styles.animatedIcon2}
-                style={{ animationDelay: "280ms" }}
-              />
-              <img
-                src="/section_1/like.png"
-                alt=""
-                className={styles.animatedIcon1}
-                style={{ animationDelay: "1350ms" }}
-              />
-              <img
-                src="/section_1/love.png"
-                alt=""
-                className={styles.animatedIcon2}
-                style={{ animationDelay: "527ms" }}
-              />
-              <img
-                src="/section_1/like.png"
-                alt=""
-                className={styles.animatedIcon1}
-                style={{ animationDelay: "3100ms" }}
-              />
-              <img
-                src="/section_1/love.png"
-                alt=""
-                className={styles.animatedIcon2}
-                style={{ animationDelay: "1720ms" }}
-              />
-              <img
-                src="/section_1/like.png"
-                alt=""
-                className={styles.animatedIcon1}
-                style={{ animationDelay: "2780ms" }}
-              />
-              <img
-                src="/section_1/love.png"
-                alt=""
-                className={styles.animatedIcon2}
-                style={{ animationDelay: "1750ms" }}
-              />
-              <img
-                src="/section_1/like.png"
-                alt=""
-                className={styles.animatedIcon1}
-                style={{ animationDelay: "980ms" }}
-              />
-              <img
-                src="/section_1/love.png"
-                alt=""
-                className={styles.animatedIcon2}
-                style={{ animationDelay: "1250ms" }}
-              />
-              <img
-                src="/section_1/like.png"
-                alt=""
-                className={styles.animatedIcon1}
-                style={{ animationDelay: "5100ms" }}
-              />
-              <img
-                src="/section_1/love.png"
-                alt=""
-                className={styles.animatedIcon2}
-                style={{ animationDelay: "2280ms" }}
-              />
-              <img
-                src="/section_1/like.png"
-                alt=""
-                className={styles.animatedIcon1}
-                style={{ animationDelay: "3250ms" }}
-              />
-              <img
-                src="/section_1/love.png"
-                alt=""
-                className={styles.animatedIcon2}
-                style={{ animationDelay: "1500ms" }}
-              />
-              <img
-                src="/section_1/like.png"
-                alt=""
-                className={styles.animatedIcon1}
-                style={{ animationDelay: "1400ms" }}
-              />
-              <img
-                src="/section_1/love.png"
-                alt=""
-                className={styles.animatedIcon2}
-                style={{ animationDelay: "450ms" }}
-              />
-              <img
-                src="/section_1/like.png"
-                alt=""
-                className={styles.animatedIcon1}
-                style={{ animationDelay: "220ms" }}
-              />
-              <img
-                src="/section_1/love.png"
-                alt=""
-                className={styles.animatedIcon2}
-                style={{ animationDelay: "680ms" }}
-              />
-              <img
-                src="/section_1/like.png"
-                alt=""
-                className={styles.animatedIcon1}
-                style={{ animationDelay: "1450ms" }}
-              />
-              <img
-                src="/section_1/love.png"
-                alt=""
-                className={styles.animatedIcon2}
-                style={{ animationDelay: "2270ms" }}
-              />
-              <img
-                src="/section_1/like.png"
-                alt=""
-                className={styles.animatedIcon1}
-                style={{ animationDelay: "1890ms" }}
-              />
-              <img
-                src="/section_1/love.png"
-                alt=""
-                className={styles.animatedIcon2}
-                style={{ animationDelay: "1170ms" }}
-              />
-              <img
-                src="/section_1/like.png"
-                alt=""
-                className={styles.animatedIcon1}
-                style={{ animationDelay: "3900ms" }}
-              />
-              <img
-                src="/section_1/love.png"
-                alt=""
-                className={styles.animatedIcon2}
-                style={{ animationDelay: "1150ms" }}
-              />
-              <img
-                src="/section_1/like.png"
-                alt=""
-                className={styles.animatedIcon1}
-                style={{ animationDelay: "3900ms" }}
-              />
-              <img
-                src="/section_1/love.png"
-                alt=""
-                className={styles.animatedIcon2}
-                style={{ animationDelay: "3450ms" }}
-              />
-              <img
-                src="/section_1/like.png"
-                alt=""
-                className={styles.animatedIcon1}
-                style={{ animationDelay: "2150ms" }}
-              />
-            </div>
+            <LikesAnimation />
             <div className={styles["overlay-text"]}>{`${likes}K`}</div>
           </div>
         </div>
@@ -269,6 +84,197 @@ export const Section7 = () => {
     </div>
   );
 };
+
+const LikesAnimation = () => (
+  <div className={styles.overlay}>
+    <img
+      src="/section_1/like.png"
+      alt=""
+      className={styles.animatedIcon1}
+      style={{ animationDelay: "500ms" }}
+    />
+    <img
+      src="/section_1/love.png"
+      alt=""
+      className={styles.animatedIcon2}
+      style={{ animationDelay: "2800ms" }}
+    />
+    <img
+      src="/section_1/like.png"
+      alt=""
+      className={styles.animatedIcon1}
+      style={{ animationDelay: "14ms" }}
+    />
+    <img
+      src="/section_1/love.png"
+      alt=""
+      className={styles.animatedIcon2}
+      style={{ animationDelay: "340ms" }}
+    />
+    <img
+      src="/section_1/like.png"
+      alt=""
+      className={styles.animatedIcon1}
+      style={{ animationDelay: "824ms" }}
+    />
+    <img
+      src="/section_1/love.png"
+      alt=""
+      className={styles.animatedIcon2}
+      style={{ animationDelay: "280ms" }}
+    />
+    <img
+      src="/section_1/like.png"
+      alt=""
+      className={styles.animatedIcon1}
+      style={{ animationDelay: "1350ms" }}
+    />
+    <img
+      src="/section_1/love.png"
+      alt=""
+      className={styles.animatedIcon2}
+      style={{ animationDelay: "527ms" }}
+    />
+    <img
+      src="/section_1/like.png"
+      alt=""
+      className={styles.animatedIcon1}
+      style={{ animationDelay: "3100ms" }}
+    />
+    <img
+      src="/section_1/love.png"
+      alt=""
+      className={styles.animatedIcon2}
+      style={{ animationDelay: "1720ms" }}
+    />
+    <img
+      src="/section_1/like.png"
+      alt=""
+      className={styles.animatedIcon1}
+      style={{ animationDelay: "2780ms" }}
+    />
+    <img
+      src="/section_1/love.png"
+      alt=""
+      className={styles.animatedIcon2}
+      style={{ animationDelay: "1750ms" }}
+    />
+    <img
+      src="/section_1/like.png"
+      alt=""
+      className={styles.animatedIcon1}
+      style={{ animationDelay: "980ms" }}
+    />
+    <img
+      src="/section_1/love.png"
+      alt=""
+      className={styles.animatedIcon2}
+      style={{ animationDelay: "1250ms" }}
+    />
+    <img
+      src="/section_1/like.png"
+      alt=""
+      className={styles.animatedIcon1}
+      style={{ animationDelay: "5100ms" }}
+    />
+    <img
+      src="/section_1/love.png"
+      alt=""
+      className={styles.animatedIcon2}
+      style={{ animationDelay: "2280ms" }}
+    />
+    <img
+      src="/section_1/like.png"
+      alt=""
+      className={styles.animatedIcon1}
+      style={{ animationDelay: "3250ms" }}
+    />
+    <img
+      src="/section_1/love.png"
+      alt=""
+      className={styles.animatedIcon2}
+      style={{ animationDelay: "1500ms" }}
+    />
+    <img
+      src="/section_1/like.png"
+      alt=""
+      className={styles.animatedIcon1}
+      style={{ animationDelay: "1400ms" }}
+    />
+    <img
+      src="/section_1/love.png"
+      alt=""
+      className={styles.animatedIcon2}
+      style={{ animationDelay: "450ms" }}
+    />
+    <img
+      src="/section_1/like.png"
+      alt=""
+      className={styles.animatedIcon1}
+      style={{ animationDelay: "220ms" }}
+    />
+    <img
+      src="/section_1/love.png"
+      alt=""
+      className={styles.animatedIcon2}
+      style={{ animationDelay: "680ms" }}
+    />
+    <img
+      src="/section_1/like.png"
+      alt=""
+      className={styles.animatedIcon1}
+      style={{ animationDelay: "1450ms" }}
+    />
+    <img
+      src="/section_1/love.png"
+      alt=""
+      className={styles.animatedIcon2}
+      style={{ animationDelay: "2270ms" }}
+    />
+    <img
+      src="/section_1/like.png"
+      alt=""
+      className={styles.animatedIcon1}
+      style={{ animationDelay: "1890ms" }}
+    />
+    <img
+      src="/section_1/love.png"
+      alt=""
+      className={styles.animatedIcon2}
+      style={{ animationDelay: "1170ms" }}
+    />
+    <img
+      src="/section_1/like.png"
+      alt=""
+      className={styles.animatedIcon1}
+      style={{ animationDelay: "3900ms" }}
+    />
+    <img
+      src="/section_1/love.png"
+      alt=""
+      className={styles.animatedIcon2}
+      style={{ animationDelay: "1150ms" }}
+    />
+    <img
+      src="/section_1/like.png"
+      alt=""
+      className={styles.animatedIcon1}
+      style={{ animationDelay: "3900ms" }}
+    />
+    <img
+      src="/section_1/love.png"
+      alt=""
+      className={styles.animatedIcon2}
+      style={{ animationDelay: "3450ms" }}
+    />
+    <img
+      src="/section_1/like.png"
+      alt=""
+      className={styles.animatedIcon1}
+      style={{ animationDelay: "2150ms" }}
+    />
+  </div>
+);
 
 const strings = {
   number: "12758K",
