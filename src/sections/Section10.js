@@ -1,6 +1,7 @@
 import styles from "../../styles/Section10.module.css";
 import * as Yup from "yup";
 import { useFormik } from "formik";
+import {submitForm} from "../services/services";
 
 export const Section10 = () => {
   const validationSchema = Yup.object().shape({
@@ -21,6 +22,27 @@ export const Section10 = () => {
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
+      console.log("asdasda");
+      try {
+        const payload = {
+          "ticket": {
+              "priority": "normal",
+              "subject": "Landing Page - venapp2",
+              "requester_id" : 1,
+              "ticket_form_id" : 4504810541851,
+              "custom_fields": [
+                  { "id": 4464362514587, "value" : "landing_page venapp 2" },
+                  { "id": 4463002109723, "value" : `${values.firstname} ${values.lastname}`},
+                  { "id": 4465474734235, "value" : values.phone },
+                  { "id": 4463003658907, "value" : values.email },
+                  { "id": 4471509649691, "value" : values.message }
+              ]
+          },
+      }
+        await submitForm(payload);
+      } catch (error) {
+        throw new Error(error);
+      }
       console.log(values);
     },
   });
@@ -35,7 +57,7 @@ export const Section10 = () => {
               Envíanos un mensaje y comparte con nosotros tus propuestas.
               ¡Juntos, mejor!
             </p>
-            <form>
+            <div>
               <div className="form-group">
                 <input
                   className="form-input"
@@ -83,8 +105,8 @@ export const Section10 = () => {
                   rows="5"
                 />
               </div>
-              <button className="form-button">Enviar</button>
-            </form>
+              <button className="form-button" onClick={formik.submitForm}>Enviar</button>
+            </div>
           </div>
           <div></div>
         </div>

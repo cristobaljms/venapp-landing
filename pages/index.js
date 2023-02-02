@@ -129,7 +129,7 @@ const IndexPage = () => {
         </a>
       </div>
 
-      <div className="content-path-button">
+      {/* <div className="content-path-button">
         <Link
           activeClass="active"
           to={`section${section}`}
@@ -141,7 +141,7 @@ const IndexPage = () => {
             <img src="/assets/img/flecha.png" alt="" />
           </div>
         </Link>
-      </div>
+      </div> */}
 
       <section ref={stepref_1}>
         <Section1 />
