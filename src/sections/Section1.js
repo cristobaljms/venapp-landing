@@ -55,7 +55,7 @@ export const Section1 = () => {
             />
             <div className={styles.imageGroupWrapper}>
               <Image
-                src="/assets/img/section1/group.png"
+                src="/assets/img/section1/group1.png"
                 fill
                 style={{ objectFit: "contain", bottom: 0 }}
                 alt=""

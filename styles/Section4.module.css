@@ -302,3 +302,22 @@
     height: 200px;
   }
 }
+
+@media screen and (max-width: 389px) {
+  .text1 h2 {
+    line-height: 1;
+  }
+  
+  .text2 p {
+    line-height: 1;
+  }
+
+  .card2 {
+    left: 5%;
+  }
+
+  .card3 {
+    right: 5%;
+  }
+}
+

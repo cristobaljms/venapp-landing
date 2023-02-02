@@ -156,7 +156,21 @@ body {
 
 @media (max-width: 1281px) {
   .path-button {
-    top: 82vh;
+    top: calc(100vh - 100px);
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+  }
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 781px) {
+  .path-button {
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
   }
   .container {
     max-width: 1200px;
