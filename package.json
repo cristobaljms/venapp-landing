@@ -20,6 +20,7 @@
     "react-scroll": "^1.8.9",
     "react-sticky-el": "^2.0.9",
     "react-transition-group": "^4.4.5",
+    "use-breakpoint": "^3.0.6",
     "yup": "^0.32.11"
   },
   "devDependencies": {
