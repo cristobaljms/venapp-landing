@@ -81,3 +81,32 @@
     bottom: -80px;
   }
 }
+
+@media screen and (max-width: 376px) {
+
+  .imgNueva {
+    width: 176px;
+  }
+
+  .imgVenapp {
+    top: 50px;
+  }
+
+  .imgVenappTrazo {
+    top: 50px;
+  }
+
+  .img2 {
+    top: 100px;
+    right: auto
+  }
+
+  .imageGroupWrapper {
+    bottom: -190px;
+    left: -270px;
+  }
+  .imageGroupWrapper img {
+    width: 250%!important;
+    max-width: none;
+  }
+}

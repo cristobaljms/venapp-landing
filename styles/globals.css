@@ -208,3 +208,9 @@ body {
   padding: 15px 25px;
   border-radius: 5px;
 }
+
+@media screen and (max-width: 376px) {
+  .social-networks {
+    display: none;
+  }
+}
