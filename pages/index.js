@@ -64,14 +64,14 @@ const IndexPage = () => {
     ) {
       setSection(5);
     }
+    // if (
+    //   window.scrollY >= stepref_5.current.offsetTop &&
+    //   window.scrollY < stepref_6.current.offsetTop
+    // ) {
+    //   setSection(6);
+    // }
     if (
       window.scrollY >= stepref_5.current.offsetTop &&
-      window.scrollY < stepref_6.current.offsetTop
-    ) {
-      setSection(6);
-    }
-    if (
-      window.scrollY >= stepref_6.current.offsetTop &&
       window.scrollY < stepref_7.current.offsetTop
     ) {
       setSection(7);
@@ -158,9 +158,9 @@ const IndexPage = () => {
       <section ref={stepref_5}>
         <Section5 />
       </section>
-      <section ref={stepref_6}>
+      {/* <section ref={stepref_6}>
         <Section6 />
-      </section>
+      </section> */}
       <section ref={stepref_7}>
         <Section7 />
       </section>
