@@ -4,8 +4,10 @@ import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
 import { gsap } from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
 import Image from "next/image";
+import useWindowSize from "./../hooks/useWindowSize";
 
 export const Section4 = () => {
+  const { isDesktop } = useWindowSize();
   const phoneRef = React.useRef();
   const card1Ref = useRef();
   const card2Ref = useRef();
@@ -154,13 +156,23 @@ export const Section4 = () => {
           />
         </div>
         <div ref={phoneRef} className={styles.phone}>
-          <Image
-            src="/assets/img/section4/phone.png"
-            alt=""
-            width={715}
-            height={648}
-            style={{ objectFit: "contain", maxHeight: "100%" }}
-          />
+          {isDesktop ? (
+            <Image
+              src="/assets/img/section4/phone.png"
+              alt=""
+              width={715}
+              height={648}
+              style={{ objectFit: "contain", maxHeight: "100%" }}
+            />
+          ) : (
+            <Image
+              src="/assets/img/section4/phoneMobile.png"
+              alt=""
+              width={715}
+              height={648}
+              style={{ objectFit: "contain", maxHeight: "100%" }}
+            />
+          )}
         </div>
       </div>
     </div>
