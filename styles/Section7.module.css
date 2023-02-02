@@ -16,7 +16,7 @@
 }
 
 .phone {
-  margin-bottom: -340px;
+  margin-bottom: -280px;
   max-height: 100vh;
 }
 
@@ -147,8 +147,6 @@
   }
 
   .overlay {
-
-    top: 20%;
     right: -20%;
   }
 

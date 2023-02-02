@@ -89,7 +89,7 @@
 
 @media screen and (max-width: 1500px) {
   .image {
-    right: -562px;
+    right: -522px;
   }
 }
 
@@ -102,10 +102,8 @@
   .text2 {
     font-size: 18px;
   }
-}
 
-@media screen and (max-width: 1300px) {
   .image {
-    right: -525px;
+    right: -480px;
   }
 }

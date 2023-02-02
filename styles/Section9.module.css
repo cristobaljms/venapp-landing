@@ -108,6 +108,14 @@
     width: 150px;
     margin-top: 0;
   }
+
+  .phoneContent {
+    max-width: 600px;
+  }
+  
+  .phoneSticky {
+    max-width: 600px;
+  }
 }
 
 @media screen and (max-width: 1400px) {
@@ -125,5 +133,13 @@
 
   .container p {
     font-size: 18px;
+  }
+
+  .phoneContent {
+    max-width: 540px;
+  }
+  
+  .phoneSticky {
+    max-width: 540px;
   }
 }
