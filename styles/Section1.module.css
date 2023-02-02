@@ -84,6 +84,10 @@
 
 @media screen and (max-width: 376px) {
 
+  .root {
+    height: 120vh;
+  }
+
   .imgNueva {
     width: 176px;
   }
@@ -103,8 +107,10 @@
 
   .imageGroupWrapper {
     bottom: -190px;
+    left: -270px;
   }
   .imageGroupWrapper img {
-    width: 200%!important;
+    width: 250%!important;
+    max-width: none;
   }
 }
