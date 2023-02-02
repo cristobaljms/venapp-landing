@@ -170,6 +170,7 @@
   }
 
   .comicImg img {
+    display: none;
     width: 265px!important;
     height: 230px!important;
     right: 130px!important;
@@ -178,7 +179,7 @@
     left: auto!important;
     transform: rotate(12deg);
   }
-
+  
   .text1 {
     font-size: 40px;
     margin-bottom: 20px;
@@ -188,5 +189,20 @@
     font-size: 16px;
     font-weight: 600;
     max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .comicImg img {
+    display: block;
+    right: 32px!important;
+    bottom: 90px!important;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .comicImg img {
+    right: 130px!important;
+    bottom: 11px!important;
   }
 }
