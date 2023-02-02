@@ -4,10 +4,14 @@ import { gsap } from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
 import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
 import { useRef } from "react";
+import { useBreakpoint } from "use-breakpoint";
+
+const BP = { mobile: 0, desktop: 920 };
 
 export const Section9 = ({ section }) => {
   const imgref = useRef();
   const textref = useRef();
+  const { breakpoint } = useBreakpoint(BP)
 
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -46,12 +50,14 @@ export const Section9 = ({ section }) => {
       {
         scrollTrigger: trigger,
         y: 0,
+        ...(breakpoint === "mobile" ? { x: "-50%" } : {}),
         delay: 0.5,
         opacity: 1,
         duration: 1,
         ease: "circle",
       }
     );
+
   }, []);
   return (
     <div id="section9" className={styles.container}>
