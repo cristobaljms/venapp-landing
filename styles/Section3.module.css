@@ -230,7 +230,7 @@
 @media screen and (max-width: 376px) {
   
   .root {
-    height: 245vh;
+    height: 200vh;
     position: relative;
     width: 100%;
     display: flex;
