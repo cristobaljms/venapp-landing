@@ -109,7 +109,7 @@ export const Section9 = ({ section }) => {
 
 const strings = {
   title: "!Empieza ya!",
-  subttitle: "Seamos parte de la evolucion digital de Venezuela",
+  subttitle: "Seamos parte de la evolución digital de Venezuela",
   description: "Dale un vistazo y descubre todo lo",
   description2: "que puedes hacer con VenApp",
 };
