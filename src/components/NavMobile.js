@@ -5,6 +5,7 @@ import styles from "../../styles/Navbar.module.css";
 
 const NavMobile = () => {
   const [open, setOpen] = useState(false);
+
   const onClickMobileMenu = () => {
     const selectElement = (element) => document.querySelector(element);
     selectElement(".hamburger").classList.toggle("active");
@@ -53,13 +54,10 @@ const NavMobile = () => {
       </div>
       {open && (
         <div className={styles.navbarOpened}>
-          <NavLink href="/" delay={0.1}>
-            Descubre
+          <NavLink href="#descubre" delay={0.1}>
+            <span onClick={onClickMobileMenu}>Descubre</span>
           </NavLink>
-          <NavLink href="/" delay={0.2}>
-            ¿Cómo Funciona?
-          </NavLink>
-          <NavLink href="/" delay={0.3}>
+          <NavLink href="#descargas" delay={0.3}>
             <button
               style={{
                 backgroundColor: "white",
@@ -69,6 +67,7 @@ const NavMobile = () => {
                 fontSize: "18px",
                 padding: "10px 30px",
               }}
+              onClick={onClickMobileMenu}
             >
               Descargar APP
             </button>

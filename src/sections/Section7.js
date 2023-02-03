@@ -44,13 +44,12 @@ export const Section7 = () => {
 
   useEffect(() => {
     setInterval(() => {
-      console.log(likes);
       if (likes >= 600) {
         setLikes(1);
       } else {
-        setLikes((likes) => {return (likes + 6)});
+        setLikes((likes) => {return (likes + 13)});
       }
-    }, 80);
+    }, 120);
   }, []);
 
   return (

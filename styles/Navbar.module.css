@@ -1,5 +1,5 @@
 .navbarOpened {
-  background: linear-gradient(167.79deg, #634acd 0%, #274ab6 99.09%);
+    background: linear-gradient(90deg, #4c27af, #7851ea);
   top: 0;
   left: 0;
   height: 100vh;
@@ -9,6 +9,6 @@
   padding: calc(100vh * 0.07) 0;
   display: flex;
   flex-direction: column;
-    align-items: center;
+  align-items: center;
   transform-origin: center top;
 }
