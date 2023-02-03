@@ -223,6 +223,15 @@ body {
   border-radius: 5px;
 }
 
+.footer {
+  width: "100%";
+  display: "flex";
+  justify-content: "space-between";
+  align-items: "center";
+  padding: 7rem 2rem;
+  background-color: "#F3F3F8";
+}
+
 @media screen and (max-width: 1024px) {
   .social-networks {
     display: none;

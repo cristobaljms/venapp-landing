@@ -1,4 +1,4 @@
-const Header = (props) => {
+const Footer = (props) => {
 
   return (
     <footer style={{ 
@@ -24,4 +24,4 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+export default Footer;
