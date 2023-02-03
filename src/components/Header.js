@@ -6,7 +6,12 @@ const Header = (props) => {
   const { isDesktop } = useWindowSize();
 
   return (
-    <header style={{ width: "100%" }}>
+    <header
+      style={{
+        width: "100%",
+        background: "linear-gradient(90deg, #4c27af, #7851ea)",
+      }}
+    >
       {/* <Nav /> */}
       {isDesktop ? <Nav /> : <NavMobile />}
     </header>

@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import Wrapper from "../src/layout/Wrapper";
 import styles from "../styles/c2p.module.css";
+import Header from "./../src/components/Header";
 
 const C2pPage = () => {
   return (
@@ -12,6 +13,7 @@ const C2pPage = () => {
       imageUrl=""
       imageAlt=""
     >
+      <Header />
       <div className="container" style={{ color: "#000" }}>
         <br />
         <br />
@@ -21,9 +23,10 @@ const C2pPage = () => {
           <img
             src="/assets/img/VenApp_Logotipo_Dark.svg"
             alt=""
-            style={{ width: 200 }}
+            style={{ width: 250 }}
           />
         </div>
+        <br />
         <br />
         <h1 className={styles.text1}>
           ¿Cómo solicito la clave temporal para hacer un pago móvil C2P?
