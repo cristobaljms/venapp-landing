@@ -104,24 +104,17 @@
   }
 
   .image {
-    right: -480px;
+    right: -500px;
   }
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1279px) {
   .form {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
     width: 100%;
   }
-
-  .image {
-    position: absolute;
-    bottom: 0;
-    right: 0px;
-    width: 600px;
-    max-width: 600px;
-  }
 }
 
+
+@media screen and (max-width: 600px) {
+
+}

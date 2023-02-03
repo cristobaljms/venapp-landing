@@ -22,13 +22,11 @@
   width: 50%;
   margin-top: 116px;
   transform: translateX(-100px);
-  opacity: 0;
 }
 
 .phoneContent {
   position: absolute;
   transform: translateY(50%);
-  opacity: 0;
   left: 46%;
   z-index: 10;
   top: 100px;
@@ -38,7 +36,6 @@
 .phoneSticky {
   position: relative;
   transform: translateY(50%);
-  opacity: 0;
   position: fixed;
   left: 46%;
   top: 100px;
@@ -46,7 +43,6 @@
   padding-left: 8px;
   max-width: 694px;
 }
-
 
 .container h2 {
   font-size: 105px;
@@ -67,10 +63,7 @@
 .tag {
   display: flex;
   margin-top: 5rem;
-}
-
-.tag img {
-  margin-right: 2rem;
+  gap: 20px;
 }
 
 @media screen and (max-width: 1919px) {
@@ -112,7 +105,7 @@
   .phoneContent {
     max-width: 600px;
   }
-  
+
   .phoneSticky {
     max-width: 600px;
   }
@@ -138,98 +131,62 @@
   .phoneContent {
     max-width: 540px;
   }
-  
+
   .phoneSticky {
     max-width: 540px;
   }
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1279px) {
+  .content {
+    flex-direction: column;
+  }
+
   .textContent {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
     width: 100%;
-    margin-top: 116px;
-    transform: translateX(-100px);
-    opacity: 0;
-    padding: 0 1rem;
+    margin-top: 0;
   }
 
   .phoneContent {
-    position: absolute;
-    transform: translateY(50%) translateX(-50%);
-    opacity: 0;
-    left: 0;
-    z-index: 10;
-    bottom: 0;
-    max-width: 694px;
-    width: 350px;
-  }
-  
-  .phoneSticky {
     position: relative;
-    transform: translateY(50%);
-    opacity: 0;
-    position: fixed;
-    left: 46%;
-    top: 100px;
-    z-index: 10;
-    padding-left: 8px;
     max-width: 694px;
+    width: 100%;
+    left: auto;
+    top: 0;
+    margin: 0 auto;
   }
 
   .tag {
     display: flex;
-    margin-top: 5rem;
+    margin-top: 3rem;
     justify-content: center;
     gap: 1rem;
   }
 
-  .tag img {
-    margin-right: 0rem;
-    width: 100%
+  .container h2 {
+    font-size: 42px;
   }
 
-  .container h3 {
-    font-size: 36px;
+  .container h2 {
+    font-size: 42px;
   }
 
   .container p {
-    font-size: 26px;
-    font-weight: 100;
+    font-size: 16px;
   }
-  
 }
 
-@media screen and (max-width: 920px) {
 
-  .phoneSticky {
-    position: relative;
-    transform: translateY(50%);
-    opacity: 0;
-    position: fixed;
-    left: 50%;
-    bottom: -100px;
-    z-index: 10;
-    padding-left: 8px;
-    max-width: 350px;
-    display: flex;
-    align-items:  flex-end;
+@media screen and (max-width: 600px) {
+  .container h2 {
+    font-size: 34px;
   }
 
-  .phoneContent {
-    position: absolute;
-    transform: translateY(50%);
-    opacity: 0;
-    left: 50%;
-    z-index: 10;
-    bottom: -100px;
-    max-width: 350px;
-    display: flex;
-    align-items:  flex-end;
-    width: 100%;
+  .container h3 {
+    font-size: 30px;
   }
-
 }

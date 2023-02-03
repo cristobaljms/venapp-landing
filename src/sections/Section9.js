@@ -4,14 +4,12 @@ import { gsap } from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
 import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
 import { useRef } from "react";
-import { useBreakpoint } from "use-breakpoint";
-
-const BP = { mobile: 0, desktop: 920 };
+import useWindowSize from "./../hooks/useWindowSize";
 
 export const Section9 = ({ section }) => {
+  const { isDesktop } = useWindowSize();
   const imgref = useRef();
   const textref = useRef();
-  const { breakpoint } = useBreakpoint(BP)
 
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -50,14 +48,12 @@ export const Section9 = ({ section }) => {
       {
         scrollTrigger: trigger,
         y: 0,
-        ...(breakpoint === "mobile" ? { x: "-50%" } : {}),
         delay: 0.5,
         opacity: 1,
         duration: 1,
         ease: "circle",
       }
     );
-
   }, []);
   return (
     <div id="section9" className={styles.container}>
@@ -71,7 +67,11 @@ export const Section9 = ({ section }) => {
               {strings.description2}
             </p>
             <div className={styles.tag}>
-              <a rel="noreferrer" href="/tienda" target="_blank">
+              <a
+                rel="noreferrer"
+                href="https://play.google.com/store/apps/details?id=com.techandpeople.techchat.app&hl=en_US&gl=US&pli=1"
+                target="_blank"
+              >
                 <Image
                   src="/assets/img/section9/google-play.png"
                   alt="google store tag"
@@ -79,7 +79,11 @@ export const Section9 = ({ section }) => {
                   height={64}
                 />
               </a>
-              <a rel="noreferrer" href="/tienda" target="_blank">
+              <a
+                rel="noreferrer"
+                href="https://apps.apple.com/us/app/venapp/id1584649053"
+                target="_blank"
+              >
                 <Image
                   src="/assets/img/section9/app-store.png"
                   alt="app store tag"
@@ -89,18 +93,32 @@ export const Section9 = ({ section }) => {
               </a>
             </div>
           </div>
-          <div
-            ref={imgref}
-            className={section == 10 ? styles.phoneSticky : styles.phoneContent}
-          >
-            <Image
-              src="/assets/img/section9/phone.png"
-              alt="ven app smartphone"
-              width={694}
-              height={1330}
-              style={{ objectFit: "contain" }}
-            />
-          </div>
+          {isDesktop ? (
+            <div
+              ref={imgref}
+              className={
+                section == 10 ? styles.phoneSticky : styles.phoneContent
+              }
+            >
+              <Image
+                src="/assets/img/section9/phone.png"
+                alt="ven app smartphone"
+                width={694}
+                height={1330}
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+          ) : (
+            <div ref={imgref} className={styles.phoneContent}>
+              <Image
+                src="/assets/img/section9/phone.png"
+                alt="ven app smartphone"
+                width={694}
+                height={1330}
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -108,7 +126,7 @@ export const Section9 = ({ section }) => {
 };
 
 const strings = {
-  title: "!Empieza ya!",
+  title: "¡Empieza ya!",
   subttitle: "Seamos parte de la evolución digital de Venezuela",
   description: "Dale un vistazo y descubre todo lo",
   description2: "que puedes hacer con VenApp",
