@@ -31,13 +31,10 @@ const Nav = () => (
         overflow: "hidden",
       }}
     >
-      <NavLink href="/" delay={1.5}>
+      <NavLink href="#descubre" delay={1.3}>
         Descubre
       </NavLink>
-      <NavLink href="/" delay={1.6}>
-        ¿Cómo Funciona?
-      </NavLink>
-      <NavLink href="/" delay={1.7}>
+      <NavLink href="#descargas" delay={1.5}>
         <button
           style={{
             backgroundColor: "white",

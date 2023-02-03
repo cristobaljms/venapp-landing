@@ -65,25 +65,27 @@ export const Section9 = ({ section }) => {
               {strings.description2}
             </p>
             <div className={styles.tag}>
-              <Image
-                src="/assets/img/section9/google-play.png"
-                alt="google store tag"
-                width={217}
-                height={64}
-              />
-              <Image
-                src="/assets/img/section9/app-store.png"
-                alt="app store tag"
-                width={217}
-                height={64}
-              />
+              <a rel="noreferrer" href="http://venapp.com/tienda" target="_blank">
+                <Image
+                  src="/assets/img/section9/google-play.png"
+                  alt="google store tag"
+                  width={217}
+                  height={64}
+                />
+              </a>
+              <a rel="noreferrer" href="http://venapp.com/tienda" target="_blank">
+                <Image
+                  src="/assets/img/section9/app-store.png"
+                  alt="app store tag"
+                  width={217}
+                  height={64}
+                />
+              </a>
             </div>
           </div>
           <div
             ref={imgref}
-            className={
-              section == 10 ? styles.phoneSticky : styles.phoneContent
-            }
+            className={section == 10 ? styles.phoneSticky : styles.phoneContent}
           >
             <Image
               src="/assets/img/section9/phone.png"

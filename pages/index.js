@@ -144,7 +144,7 @@ const IndexPage = () => {
       <section ref={stepref_1}>
         <Section1 />
       </section>
-      <section ref={stepref_2}>
+      <section id="descubre" ref={stepref_2}>
         <Section2 />
       </section>
       <section ref={stepref_3}>
@@ -165,7 +165,7 @@ const IndexPage = () => {
       {/* <section ref={stepref_8}>
         <Section8 />
       </section> */}
-      <section ref={stepref_9}>
+      <section id="descargas" ref={stepref_9}>
         <Section9 section={section} />
       </section>
       <section ref={stepref_10}>

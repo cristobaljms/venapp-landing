@@ -7,7 +7,8 @@ const Header = (props) => {
 
   return (
     <header style={{ width: "100%" }}>
-      {isDesktop ? <Nav /> : <NavMobile />}
+      <Nav />
+      {/* {isDesktop ? <Nav /> : <NavMobile />} */}
     </header>
   );
 };
