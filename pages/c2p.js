@@ -1,6 +1,7 @@
 import Wrapper from "../src/layout/Wrapper";
 import styles from "../styles/c2p.module.css";
 import Header from "./../src/components/Header";
+import Footer from "./../src/components/Footer";
 
 const C2pPage = () => {
   return (
@@ -109,8 +110,8 @@ const C2pPage = () => {
         </p>
         <br />
         <br />
-        <br />
       </div>
+      <Footer/>
     </Wrapper>
   );
 };

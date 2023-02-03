@@ -54,10 +54,10 @@ const NavMobile = () => {
       </div>
       {open && (
         <div className={styles.navbarOpened}>
-          <NavLink href="#descubre" delay={0.1}>
+          <NavLink href="/#descubre" delay={0.1}>
             <span onClick={onClickMobileMenu}>Descubre</span>
           </NavLink>
-          <NavLink href="#descargas" delay={0.3}>
+          <NavLink href="/#descargas" delay={0.3}>
             <button
               style={{
                 backgroundColor: "white",

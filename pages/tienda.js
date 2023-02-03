@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
-import { useNavigate} from 'react-router-dom';
+
 import Link from 'next/link';
 
 const Tienda = () => {
-  //let navigate = useNavigate()
   useEffect(() => {
     const redirect = () => {
       const userAgent = navigator.userAgent;
@@ -13,8 +12,6 @@ const Tienda = () => {
         window.location.href = 'https://apps.apple.com/us/app/venapp/id1584649053';
       } else if (isAndroid) {
         window.location.href = 'https://play.google.com/store/apps/details?id=com.techandpeople.techchat.app&hl=en_US&gl=US&pli=1';
-      } else {
-        //navigate('/');
       }
     };
     redirect();
