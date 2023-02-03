@@ -8,8 +8,8 @@ export const PrivacyTerms = () => {
 
   return (
       <div className={styles.root} id="PrivacyTerms">
-      <div>
         <Header />
+      <div className="container">
         <section className={styles.privacyTerms}>
             <div className={styles.imgCont}>
                 <img className="" src="/assets/img/LOGO.png"/>
@@ -301,8 +301,8 @@ export const PrivacyTerms = () => {
             <p>VenApp se reserva el derecho a cambiar estas Políticas y Condiciones en cualquier momento, las cuales aplicarán inmediatamente después de que hayan sido publicadas en la APP. Por favor, visite de forma regular esta página del APP.</p>
             <p>Su opinión es importante para nosotros. Si tiene comentarios o quejas sobre las Políticas y Condiciones de Venta, favor de enviarlas al correo electrónico <strong>eventos@venapp.com</strong></p>
         </section>
-        <Footer/>
       </div>
+        <Footer/>
     </div>
   );
 };
