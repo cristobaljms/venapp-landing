@@ -1,9 +1,15 @@
 import Nav from "./Nav";
+import NavMobile from "./NavMobile";
+import useWindowSize from "./../hooks/useWindowSize";
 
-const Header = (props) => (
-  <header style={{ width: "100%" }}>
-    <Nav />
-  </header>
-);
+const Header = (props) => {
+  const { isDesktop } = useWindowSize();
+
+  return (
+    <header style={{ width: "100%" }}>
+      {isDesktop ? <Nav /> : <NavMobile />}
+    </header>
+  );
+};
 
 export default Header;

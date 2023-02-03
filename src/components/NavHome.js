@@ -3,8 +3,10 @@ import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
+import useWindowSize from "./../hooks/useWindowSize";
 
 const NavHome = () => {
+  const { isDesktop } = useWindowSize();
   const icon = useRef();
 
   useIsomorphicLayoutEffect(() => {
@@ -21,16 +23,29 @@ const NavHome = () => {
   return (
     <Link href="/">
       <span ref={icon} style={{ display: "inline-block", opacity: 0 }}>
-        <Image
-          src="/assets/img/LOGO.png"
-          alt=""
-          width={207}
-          height={47}
-          style={{
-            position: "relative",
-            left: "4px",
-          }}
-        />
+        {isDesktop ? (
+          <Image
+            src="/assets/img/LOGO.png"
+            alt=""
+            width={207}
+            height={47}
+            style={{
+              position: "relative",
+              left: "4px",
+            }}
+          />
+        ) : (
+          <Image
+            src="/assets/img/LOGO.png"
+            alt=""
+            width={120}
+            height={27}
+            style={{
+              position: "relative",
+              left: "4px",
+            }}
+          />
+        )}
       </span>
     </Link>
   );

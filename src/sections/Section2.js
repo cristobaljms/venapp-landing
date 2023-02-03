@@ -99,7 +99,7 @@ export const Section2 = () => {
                 quality={75}
               />
             </span>
-            <div ref={icon1ref} className={styles.icon1}>
+            {/* <div ref={icon1ref} className={styles.icon1}>
               <Image
                 src={"/assets/img/section2/icon1.png"}
                 alt=""
@@ -152,7 +152,7 @@ export const Section2 = () => {
                 height={49}
                 quality={75}
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
