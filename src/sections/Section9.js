@@ -71,7 +71,7 @@ export const Section9 = ({ section }) => {
               {strings.description2}
             </p>
             <div className={styles.tag}>
-              <a rel="noreferrer" href="http://venapp.com/tienda" target="_blank">
+              <a rel="noreferrer" href="/tienda" target="_blank">
                 <Image
                   src="/assets/img/section9/google-play.png"
                   alt="google store tag"
@@ -79,7 +79,7 @@ export const Section9 = ({ section }) => {
                   height={64}
                 />
               </a>
-              <a rel="noreferrer" href="http://venapp.com/tienda" target="_blank">
+              <a rel="noreferrer" href="/tienda" target="_blank">
                 <Image
                   src="/assets/img/section9/app-store.png"
                   alt="app store tag"
