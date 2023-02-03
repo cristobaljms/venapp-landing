@@ -12,7 +12,7 @@ export const PrivacyTerms = () => {
       <div className="container">
         <section className={styles.privacyTerms}>
             <div className={styles.imgCont}>
-                <img className="" src="/assets/img/LOGO.png"/>
+                <img className="" src="/assets/img/VenApp_Logotipo_Dark.svg"/>
             </div>
             <h1 className={styles.title}>POLÍTICA DE PRIVACIDAD - TERMINOS Y CONDICIONES DE USO</h1>
             <div className={styles.bar}/>

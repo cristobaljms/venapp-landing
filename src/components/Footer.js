@@ -14,7 +14,7 @@ const Footer = (props) => {
         }}>
             <div style={{
             }}>
-                <img src="/assets/img/LOGO.png" style={{
+                <img src="/assets/img/VenApp_Logotipo_Dark.svg" style={{
                     width: "120px",
                     height: "27px"
                 }}/>
