@@ -280,5 +280,5 @@ const strings = {
   number: "12758K",
   title: "Conecta Comparte y expande tu mundo",
   description:
-    "Podras compartir contenido, eventos, imagenes, videos y mucho mas.",
+    "Podrás compartir contenido, eventos, imagenes, videos y mucho mas.",
 };
