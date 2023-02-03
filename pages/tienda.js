@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate} from 'react-router-dom';
 import Link from 'next/link';
 
-const tienda = () => {
+const Tienda = () => {
   //let navigate = useNavigate()
   useEffect(() => {
     const redirect = () => {
@@ -29,4 +29,4 @@ const tienda = () => {
   );
 };
 
-export default tienda;
+export default Tienda;
