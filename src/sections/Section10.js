@@ -78,7 +78,7 @@ export const Section10 = () => {
                     type="text"
                     value={formik.values.phoneNumber}
                     onChange={formik.handleChange}
-                    placeholder="Telefono*"
+                    placeholder="Teléfono*"
                   />
                   <input
                     className="form-input"
