@@ -3,8 +3,10 @@ services:
     venapp-service:
        container_name: venapp-landing
        build: .
+       restart: always
     nginx-service:
        container_name: nginx
        build: ./docker-files
        ports:
          - "443:443"
+       restart: always
