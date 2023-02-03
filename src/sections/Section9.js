@@ -69,7 +69,7 @@ export const Section9 = ({ section }) => {
             <div className={styles.tag}>
               <a
                 rel="noreferrer"
-                href="http://venapp.com/tienda"
+                href="https://play.google.com/store/apps/details?id=com.techandpeople.techchat.app&hl=en_US&gl=US&pli=1"
                 target="_blank"
               >
                 <Image
@@ -81,7 +81,7 @@ export const Section9 = ({ section }) => {
               </a>
               <a
                 rel="noreferrer"
-                href="http://venapp.com/tienda"
+                href="https://apps.apple.com/us/app/venapp/id1584649053"
                 target="_blank"
               >
                 <Image

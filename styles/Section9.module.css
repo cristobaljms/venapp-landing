@@ -63,10 +63,7 @@
 .tag {
   display: flex;
   margin-top: 5rem;
-}
-
-.tag img {
-  margin-right: 2rem;
+  gap: 20px;
 }
 
 @media screen and (max-width: 1919px) {
