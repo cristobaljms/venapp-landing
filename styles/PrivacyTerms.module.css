@@ -1,0 +1,65 @@
+.root {
+    display: flex;
+    position: relative;
+    width: 100%;
+    color: black;
+}
+
+.privacyTerms {
+    padding: 5rem;
+}
+
+.privacyTerms h2, .privacyTerms p, .privacyTerms ul {
+    margin-bottom: 1rem;
+}
+
+.privacyTerms ul {
+    padding-inline-start: 40px;
+}
+
+.privacyTerms ul li {
+    list-style-type: disc;
+}
+
+.privacyTerms ul li ul li {
+    list-style-type: circle;
+}
+
+.privacyTerms .numberedList li {
+    list-style-type: decimal;
+}
+
+.listGap li {
+    margin-bottom: 1rem;
+}
+
+.privacyTerms h2 {
+    font-family: Roboto !important;
+    font-weight: 600;
+}
+
+.title {
+    font-size: 30px;
+    font-family: 'Poppins';
+    color: black;
+    font-weight: 700;
+}
+
+.bar {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.imgCont {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.imgCont img {
+    width: 190px;
+    height: 110px;
+}
