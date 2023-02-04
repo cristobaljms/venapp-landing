@@ -97,7 +97,7 @@ export const Section4 = () => {
       <div className="container">
         <div className={styles.content}>
           <span className={styles.venChantBtn}>
-            <b>VenChat</b>
+            <b>VenMarket</b>
           </span>
           <div id="text1Wrapper" className={styles.textWrapper}>
             <div className={styles.text1}>
