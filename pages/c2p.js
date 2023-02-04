@@ -1,4 +1,3 @@
-import { useState, useRef } from "react";
 import Wrapper from "../src/layout/Wrapper";
 import styles from "../styles/c2p.module.css";
 import Header from "./../src/components/Header";
