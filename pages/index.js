@@ -107,7 +107,7 @@ const IndexPage = () => {
     >
       <div className="social-networks">
         <a
-          href="https://www.facebook.com/venappredsocial"
+          href="https://www.facebook.com/profile.php?id=100083278103287"
           target="_blank"
           rel="noreferrer"
         >
