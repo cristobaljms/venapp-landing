@@ -1,4 +1,4 @@
-import React, { useRef,  useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import Wrapper from "../src/layout/Wrapper";
 import PhoneFrame from "../src/components/PhoneFrame";
 import { Section1 } from "../src/sections/Section1";
@@ -14,15 +14,18 @@ import Section2Image from "../src/components/Section2Image";
 import { AnimationProvider } from "../src/context/AnimationContext";
 import { throttle } from "lodash";
 import { useScrollDirection } from "react-use-scroll-direction";
+import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
+import { ScrollSmoother } from "gsap-trial/dist/ScrollSmoother";
+import { gsap } from "gsap-trial";
+import useIsomorphicLayoutEffect from "../src/animation/useIsomorphicLayoutEffect";
 
-function waitForScrollEnd () {
-  return new Promise( resolve => {
-      setTimeout( () => {
-        resolve();
-      }, 300)
-  })
+function waitForScrollEnd() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, 300);
+  });
 }
-
 
 const IndexPage = () => {
   const scrollRef = useRef();
@@ -32,51 +35,50 @@ const IndexPage = () => {
   const { isScrollingUp } = useScrollDirection(scrollRef.current ?? undefined);
   const isScrollingUpRef = useRef(isScrollingUp);
 
-  useEffect( () => {
-      let isScrollUp = false;
+  useIsomorphicLayoutEffect(() => {
+    let isScrollUp = false;
 
-      const d = throttle( () => {
-        waitForScrollEnd().then( () => { 
-          if( isScrollUp ){
-            sectionRef.current > 0 && sectionRef.current--;
-          }else {
-            sectionRef.current < 9 && sectionRef.current++;
-          }
+    const d = throttle(() => {
+      waitForScrollEnd().then(() => {
+        if (isScrollUp) {
+          sectionRef.current > 0 && sectionRef.current--;
+        } else {
+          sectionRef.current < 9 && sectionRef.current++;
+        }
 
-          scrollingRef.current = false;
-        } );
-      }, 1800)
+        scrollingRef.current = false;
+      });
+    }, 1800);
 
-      const handleWheel = (event) => {
-          event.preventDefault();
+    const handleWheel = (event) => {
+      event.preventDefault();
 
-          isScrollUp = event.wheelDelta > 0;
-       
-          let scrolling = scrollingRef.current;
-          let section = sectionRef.current;
-          
-          if(!scrolling){
+      isScrollUp = event.wheelDelta > 0;
 
-            scrolling = true;
+      let scrolling = scrollingRef.current;
+      let section = sectionRef.current;
 
-            scrollRef.current.scroll({ 
-              top: 1080 * section, behavior: 'smooth' 
-            });
-          }
+      if (!scrolling) {
+        scrolling = true;
 
-          d();
-      }
-    
-      scrollRef.current?.addEventListener?.('wheel', handleWheel)
-
-      return () => {
-        scrollRef?.current?.removeEventListener('wheel', handleWheel);
+        scrollRef.current.scroll({
+          top: 1080 * section,
+          behavior: "smooth",
+        });
       }
 
-  } , [])
+      d();
+    };
+
+    scrollRef.current?.addEventListener?.("wheel", handleWheel);
+
+    return () => {
+      scrollRef?.current?.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
 
   return (
-    <AnimationProvider scrollRef = {scrollRef}>
+    <AnimationProvider scrollRef={scrollRef}>
       <Wrapper
         url=""
         title="VenApp"
@@ -85,7 +87,7 @@ const IndexPage = () => {
         imageUrl=""
         imageAlt=""
       >
-          <div className="scroll-container" ref={scrollRef}>
+        <div className="scroll-container" ref={scrollRef}>
           <PhoneFrame>
             <Section1 />
             <Section2Image />
@@ -98,8 +100,8 @@ const IndexPage = () => {
             <Section8 />
             <Section9 />
           </PhoneFrame>
-          </div>
-      </Wrapper>  
+        </div>
+      </Wrapper>
     </AnimationProvider>
   );
 };
