@@ -4,8 +4,11 @@ import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
 import { gsap } from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
 import Image from "next/image";
+import useWindowSize from "./../hooks/useWindowSize";
 
 export const Section5 = () => {
+  const { isDesktop } = useWindowSize();
+
   const image1ref = useRef();
   const image2ref = useRef();
   const textContentRef = useRef();
@@ -68,14 +71,25 @@ export const Section5 = () => {
             style={{ objectFit: "contain" }}
           />
         </div>
-        <Image
-          ref={image1ref}
-          src="/assets/img/section5/phone.png"
-          alt=""
-          width={960}
-          height={706}
-          style={{ objectFit: "contain", maxWidth: "100%" }}
-        />
+        {isDesktop ? (
+          <Image
+            ref={image1ref}
+            src="/assets/img/section5/phone.png"
+            alt=""
+            width={960}
+            height={706}
+            style={{ objectFit: "contain", maxWidth: "100%" }}
+          />
+        ) : (
+          <Image
+            ref={image1ref}
+            src="/assets/img/section5/phone.png"
+            alt=""
+            width={420}
+            height={322}
+            style={{ objectFit: "contain", maxWidth: "100%" }}
+          />
+        )}
       </div>
       <div className="container">
         <div ref={textContentRef} className={styles.content}>
