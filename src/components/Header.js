@@ -12,7 +12,6 @@ const Header = (props) => {
         background: "linear-gradient(90deg, #4c27af, #7851ea)",
       }}
     >
-      {/* <Nav /> */}
       {isDesktop ? <Nav /> : <NavMobile />}
     </header>
   );
