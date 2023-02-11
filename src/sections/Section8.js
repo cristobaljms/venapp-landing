@@ -2,7 +2,10 @@ import styles from "../../styles/Section8.module.css";
 import { gsap } from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
 import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import Modal from "react-modal";
+import ReactPlayer from "react-player";
+import Image from "next/image";
 
 export const Section8 = () => {
   const video1ref = useRef();
@@ -16,7 +19,7 @@ export const Section8 = () => {
     const trigger = {
       trigger: "#section8",
       toggleActions: "restart none restart none",
-    }
+    };
 
     gsap.fromTo(
       "#section8",
@@ -37,7 +40,7 @@ export const Section8 = () => {
         x: 0,
         delay: 0.3,
         opacity: 1,
-        duration: 1
+        duration: 1,
       }
     );
 
@@ -81,22 +84,71 @@ export const Section8 = () => {
     );
   }, []);
 
+  const customStyles = {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+    },
+  };
+
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [video, setVideo] = useState("");
+
+  function openModal(url) {
+    setVideo(url);
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  //   REGISTRO.png
+  // SUPERCOMIC.png
+  // VENU.png
+  // CREAR PUBLICACION.png
+  // DASHBOARD.png
+
   return (
     <div id="section8" className={styles.root}>
       <div className="container">
         <div className={styles["inner-container"]}>
           <div className={styles["videos-container"]}>
             <div ref={video1ref}>
-              <div className={styles.square}></div>
-              <p>Lorem ipsum dolor sit amet</p>
+              <div
+                className={styles.square}
+                onClick={() =>
+                  openModal("https://www.youtube.com/watch?v=gbtkKGKf5Gg")
+                }
+              >
+                <Image
+                  src="/assets/img/section8/REGISTRO.png"
+                  fill
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
             </div>
             <div ref={video2ref}>
-              <div className={styles.square}></div>
-              <p>Lorem ipsum dolor sit amet</p>
+              <div className={styles.square}>
+                <Image
+                  src="/assets/img/section8/SUPERCOMIC.png"
+                  fill
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
             </div>
             <div ref={video3ref}>
-              <div className={styles.square}></div>
-              <p>Lorem ipsum dolor sit amet</p>
+              <div className={styles.square}>
+                <Image
+                  src="/assets/img/section8/CREARPUBLICACION.png"
+                  fill
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
             </div>
           </div>
 
@@ -109,6 +161,15 @@ export const Section8 = () => {
           </div>
         </div>
       </div>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel=""
+      >
+        <button onClick={closeModal}>close</button>
+        <ReactPlayer url="https://www.youtube.com/watch?v=wWgIAphfn2U" />
+      </Modal>
     </div>
   );
 };
@@ -119,4 +180,3 @@ const strings = {
   description:
     "Conoce todo lo que puedes hacer con tu VenApp y sacale provecho.",
 };
-

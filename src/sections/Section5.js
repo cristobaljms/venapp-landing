@@ -97,7 +97,7 @@ export const Section5 = () => {
             <div className={styles.venChantBtn}>
               <b>VenComics</b>
             </div>
-            <h2 className={styles.text1}>Todos tus comics</h2>
+            <h2 className={styles.text1}>Todos tus cómics</h2>
             <p className={styles.text2}>
               La plataforma con el más amplio catálogo de cómics disponible para
               ti. Al suscribirte podrás encontrar tus historietas preferidas y
