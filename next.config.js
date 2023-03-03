@@ -2,9 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    publicKey: '13gegfw6hejxnuT8cjxu6iyvrzvGtLOghcvLftt2BYlgCcVf1TD',
-    baseUrl: 'https://develhurricanehub.venapp.com',
+    baseUrl: "https://hub.venapp.com",
+    publicKey: "555gegffefej565xnuT8cjxj56jiyvrzvGtLOsgecvLftt265kgCf1TAA",
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
