@@ -4,8 +4,10 @@ import styles from "../../styles/Section3.module.css";
 import useIsomorphicLayoutEffect from "../animation/useIsomorphicLayoutEffect";
 import { gsap } from "gsap-trial";
 import { ScrollTrigger } from "gsap-trial/dist/ScrollTrigger";
+import useWindowSize from "./../hooks/useWindowSize";
 
 export const Section3 = () => {
+  const { isDesktop } = useWindowSize();
   const phoneRef = React.useRef();
   const card1ref = useRef();
   const card2ref = useRef();
@@ -19,7 +21,7 @@ export const Section3 = () => {
 
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    
+
     const trigger = {
       trigger: "#section3",
       toggleActions: "restart none restart none",
@@ -152,6 +154,59 @@ export const Section3 = () => {
               Chatea, comparte y mantente conectado a través de VenChat.
             </p>
           </div>
+          {!isDesktop && (
+            <div className={styles.iphoneWrapper}>
+              <div ref={phoneRef} className={styles.iPhoneChat}>
+                <Image
+                  src="/assets/img/section3/iPhoneChat.png"
+                  alt=""
+                  width={425}
+                  height={924}
+                  style={{ objectFit: "contain", maxHeight: "100%" }}
+                />
+                <img
+                  ref={globo1Ref}
+                  className={styles.globo1}
+                  src="/assets/img/section3/globo-1.png"
+                  alt=""
+                />
+                <img
+                  ref={globo2Ref}
+                  className={styles.globo2}
+                  src="/assets/img/section3/globo-2.png"
+                  alt=""
+                />
+                <img
+                  ref={globo3Ref}
+                  className={styles.globo3}
+                  src="/assets/img/section3/globo-3.png"
+                  alt=""
+                />
+              </div>
+              {!isDesktop && (
+                <div className={styles.filas}>
+                  <div ref={fila1Ref} className={styles.fila1}>
+                    <Image
+                      src="/assets/img/section3/fila-1.png"
+                      alt=""
+                      width={1131}
+                      height={172}
+                      style={{ objectFit: "contain" }}
+                    />
+                  </div>
+                  <div ref={fila2Ref} className={styles.fila2}>
+                    <Image
+                      src="/assets/img/section3/fila-2.png"
+                      alt=""
+                      width={1131}
+                      height={172}
+                      style={{ objectFit: "contain" }}
+                    />
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
           <div className={styles.imagesWrapper}>
             <div ref={card1ref} className={styles.card}>
               <div className={styles.cardTitleWrapper}>
@@ -162,35 +217,59 @@ export const Section3 = () => {
                 individual para que los mensajes se eliminen automáticamente.
               </p>
             </div>
-            <div className={styles.iphoneWrapper}>
-              <div ref={phoneRef} className={styles.iPhoneChat}>
-                <Image
-                  src="/assets/img/section3/iPhoneChat.png"
-                  alt=""
-                  width={425}
-                  height={924}
-                  style={{ objectFit: "contain", maxHeight: "100%" }}
-                />
+            {isDesktop && (
+              <div className={styles.iphoneWrapper}>
+                <div ref={phoneRef} className={styles.iPhoneChat}>
+                  <Image
+                    src="/assets/img/section3/iPhoneChat.png"
+                    alt=""
+                    width={425}
+                    height={924}
+                    style={{ objectFit: "contain", maxHeight: "100%" }}
+                  />
+                  <img
+                    ref={globo1Ref}
+                    className={styles.globo1}
+                    src="/assets/img/section3/globo-1.png"
+                    alt=""
+                  />
+                  <img
+                    ref={globo2Ref}
+                    className={styles.globo2}
+                    src="/assets/img/section3/globo-2.png"
+                    alt=""
+                  />
+                  <img
+                    ref={globo3Ref}
+                    className={styles.globo3}
+                    src="/assets/img/section3/globo-3.png"
+                    alt=""
+                  />
+                </div>
+                {!isDesktop && (
+                  <div className={styles.filas}>
+                    <div ref={fila1Ref} className={styles.fila1}>
+                      <Image
+                        src="/assets/img/section3/fila-1.png"
+                        alt=""
+                        width={1131}
+                        height={172}
+                        style={{ objectFit: "contain" }}
+                      />
+                    </div>
+                    <div ref={fila2Ref} className={styles.fila2}>
+                      <Image
+                        src="/assets/img/section3/fila-2.png"
+                        alt=""
+                        width={1131}
+                        height={172}
+                        style={{ objectFit: "contain" }}
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
-              <img
-                ref={globo1Ref}
-                className={styles.globo1}
-                src="/assets/img/section3/globo-1.png"
-                alt=""
-              />
-              <img
-                ref={globo2Ref}
-                className={styles.globo2}
-                src="/assets/img/section3/globo-2.png"
-                alt=""
-              />
-              <img
-                ref={globo3Ref}
-                className={styles.globo3}
-                src="/assets/img/section3/globo-3.png"
-                alt=""
-              />
-            </div>
+            )}
             <div ref={card2ref} className={styles.card}>
               <div className={styles.cardTitleWrapper}>
                 <h3 className={styles.cardTitle}>Mensaje Oculto</h3>
@@ -211,26 +290,28 @@ export const Section3 = () => {
                 promociones ¡Tú decides!
               </p>
             </div>
-            <div className={styles.filas}>
-              <div ref={fila1Ref} className={styles.fila1}>
-                <Image
-                  src="/assets/img/section3/fila-1.png"
-                  alt=""
-                  width={1131}
-                  height={172}
-                  style={{ objectFit: "contain" }}
-                />
+            {isDesktop && (
+              <div className={styles.filas}>
+                <div ref={fila1Ref} className={styles.fila1}>
+                  <Image
+                    src="/assets/img/section3/fila-1.png"
+                    alt=""
+                    width={1131}
+                    height={172}
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
+                <div ref={fila2Ref} className={styles.fila2}>
+                  <Image
+                    src="/assets/img/section3/fila-2.png"
+                    alt=""
+                    width={1131}
+                    height={172}
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
               </div>
-              <div ref={fila2Ref} className={styles.fila2}>
-                <Image
-                  src="/assets/img/section3/fila-2.png"
-                  alt=""
-                  width={1131}
-                  height={172}
-                  style={{ objectFit: "contain" }}
-                />
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

@@ -58,7 +58,6 @@
   width: 42%;
   position: relative;
   height: 100%;
-  max-width: 432px;
   z-index: 10;
 }
 
@@ -76,8 +75,10 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  max-width: 60vw;
   height: 100%;
   gap: 5px;
+  padding-bottom: 200px;
 }
 
 .fila1 {
@@ -91,6 +92,7 @@
 .globo1 {
   position: absolute;
   right: 100%;
+  top: 0;
 }
 
 .globo2 {
@@ -102,6 +104,7 @@
 .globo3 {
   position: absolute;
   left: 100%;
+  top: 0;
 }
 
 .card {
@@ -109,6 +112,10 @@
   color: #fff;
   max-width: 211px;
   width: 25%;
+}
+
+.card:nth-last-of-type(2) {
+  margin-bottom: -22px;
 }
 
 .cardTitleWrapper {
@@ -126,16 +133,21 @@
   font-size: 15px;
 }
 
+.iphoneContent {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 1919px) {
   .text1 {
     font-size: 80px;
     line-height: 1.15;
-    color: #fff;
   }
 
   .text2 {
     font-size: 21px;
-    color: #fff;
     font-weight: 500;
     margin-top: 15px;
   }
@@ -153,21 +165,16 @@
     left: 100%;
     width: 120px;
   }
-  .filas {
-    padding-bottom: 50px;
-  }
 }
 
-@media screen and (max-width: 1535px) {
+@media screen and (max-width: 1600px) {
   .text1 {
     font-size: 70px;
     line-height: 1.15;
-    color: #fff;
   }
 
   .text2 {
     font-size: 20px;
-    color: #fff;
     font-weight: 500;
     margin-top: 15px;
   }
@@ -183,158 +190,103 @@
   .globo3 {
     width: 120px;
   }
-
-  .filas {
-    padding-bottom: 100px;
-  }
 }
 
-@media screen and (max-width: 1365px) {
+@media screen and (max-width: 1400px) {
   .content {
     gap: 10px;
   }
 
   .textWrapper {
     width: 25%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .imagesWrapper {
-    display: flex;
-    position: relative;
     width: 75%;
-    align-items: flex-end;
     gap: 5px;
   }
 
   .text1 {
     font-size: 50px;
     line-height: 1.15;
-    color: #fff;
   }
 
   .text2 {
     font-size: 18px;
-    color: #fff;
-    font-weight: 500;
-    margin-top: 15px;
-  }
-
-  .filas {
-    justify-content: flex-start;
   }
 }
 
-@media screen and (max-width: 1024px) {
-  
+@media screen and (max-width: 1279px) {
   .root {
-    height: 200vh;
-    position: relative;
-    width: 100%;
-    display: flex;
-    overflow: hidden;
-    background: linear-gradient(90deg, #7851ea, #4c27af);
-    padding: 78px 0;
+    padding: 55px 0;
+    height: auto;
   }
   
   .content {
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 0 auto !important;
-    gap: 50px;
-    width: 100%;
-    height: 100%;
+    align-items: center;
   }
   
   .textWrapper {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    max-width: 440px;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 50px;
   }
   
   .imagesWrapper {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 80%;
-    align-items: flex-end;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
     gap: 30px;
-  }
-  
-  .venChantBtn {
-    background-color: #90cc55;
-    border-radius: 25px;
-    color: #000;
-    padding: 10px 25px;
-    margin-bottom: 30px;
   }
   
   .text1 {
     font-size: 30px;
     line-height: 1.15;
-    color: #fff;
   }
   
   .text2 {
     font-size: 16px;
-    color: #fff;
     font-weight: 600;
     margin-top: 15px;
   }
   
   .iphoneWrapper {
-    width: 42%;
-    position: relative;
-    height: 100%;
-    max-width: 432px;
-    z-index: 10;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
   
   .iPhoneChat {
-    position: absolute;
+    position: relative;
     width: 250px;
     height: 500px;
     display: flex;
     align-items: flex-end;
-    top: -780px;
-    left: -100px;
   }
   
   .filas {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    gap: 5px;
-    top: -530px;
+    z-index: -1;
+    max-width: 600px;
+    width: 600px;
+    padding-bottom: 100px;
   }
   
   .fila1 {
-    transform: translate(-110px, 0px);
     margin-left: -30px;
-  }
-
-  .fila1 img, .fila2 img {
-    max-width: 200%!important;
   }
   
   .fila2 {
-    transform: translate(-100px, 0px);
     margin-right: -30px;
   }
   
   .globo1 {
     position: absolute;
-    right: 185%;
-    top: -765px;
+    right: 90%;
+    top: 0;
     width: 100px;
     height: 90px;
   }
@@ -342,25 +294,29 @@
   .globo2 {
     transform: translate(30px, 0px);
     position: absolute;
-    left: 0;
-    top: -810px;
+    right: 40%;
+    top: -30px;
     width: 46px;
     height: 40px;
   }
   
   .globo3 {
     position: absolute;
-    left: 135%;
+    left: 90%;
     width: 55px;
     height: 50px;
-    top: -725px;
+    top: 0;
   }
   
   .card {
     z-index: 10;
     color: #fff;
-    max-width: 270px;
+    max-width: 350px;
     width: 100%;
+  }
+
+  .card:nth-last-of-type(2) {
+    margin-bottom: 0;
   }
   
   .cardTitleWrapper {
@@ -368,6 +324,7 @@
     border-bottom: 3px solid #fff;
     margin-bottom: 12px;
   }
+
   .cardTitle {
     max-width: 150px;
     font-size: 23px;
