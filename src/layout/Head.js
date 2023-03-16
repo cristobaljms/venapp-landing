@@ -1,5 +1,6 @@
 import Head from "next/head";
 import PropTypes from "prop-types";
+import { FB_PIXEL_ID } from "../../lib/fpixel";
 
 const DocHead = (props) => (
   <>
@@ -41,12 +42,22 @@ const DocHead = (props) => (
         rel="stylesheet"
       />
 
-      <script async={true}
+      <script
+        async={true}
         id="ze-snippet"
         src="https://static.zdassets.com/ekr/snippet.js?key=442c86ca-bf04-4fdc-ba3f-225ea7466c54"
       >
         {" "}
       </script>
+
+      <noscript>
+        <img
+          height="1"
+          width="1"
+          style={{ display: "none" }}
+          src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
+        />
+      </noscript>
     </Head>
   </>
 );

@@ -109,6 +109,11 @@
   color: #fff;
   max-width: 211px;
   width: 25%;
+  margin-bottom: -12px;
+}
+
+.card:nth-of-type(4) {
+  margin-bottom: -32px;
 }
 
 .cardTitleWrapper {
@@ -185,7 +190,7 @@
   }
 
   .filas {
-    padding-bottom: 100px;
+    padding-bottom: 150px;
   }
 }
 
@@ -228,9 +233,8 @@
 }
 
 @media screen and (max-width: 1024px) {
-  
   .root {
-    height: 200vh;
+    height: 100vh;
     position: relative;
     width: 100%;
     display: flex;
