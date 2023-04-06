@@ -5,19 +5,14 @@ export default function Document() {
   return (
     <Html lang="en" style={{ scrollBehavior: "smooth" }}>
       <Head>
-      <meta
-          property="al:android:url"
-          content="https://play.google.com/store/apps/details?id=com.techandpeople.techchat.app"
-        />
+        <meta property="og:url" content="https://venapp.com/" />
+        <meta property="al:android:url" content="https://venapp.com/" />
         <meta
           property="al:android:package"
           content="com.techandpeople.techchat.app"
         />
         <meta property="al:android:app_name" content="VenApp" />
-        <meta
-          property="al:web:url"
-          content="https://venapp.com/"
-        />
+        <meta property="al:web:url" content="https://venapp.com/" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
